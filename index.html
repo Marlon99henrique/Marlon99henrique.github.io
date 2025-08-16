@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,93 +8,127 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #f5f5f5;
+      background-color: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
     header {
-      background-color: #222;
+      background-color: #0d253f;
       color: white;
       padding: 2rem;
       text-align: center;
     }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.3rem 0;
+    }
+    header a {
+      color: #00b4d8;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
-      padding: 1rem;
+      padding: 1.5rem;
       background: white;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
     }
-    h1, h2 {
-      color: #444;
+    h2 {
+      color: #0d253f;
+      margin-bottom: 1rem;
     }
     ul {
       padding-left: 1.2rem;
     }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      background-color: #0d253f;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .btn:hover {
+      background-color: #005f73;
+    }
     footer {
       text-align: center;
       padding: 1rem;
-      background: #222;
+      background: #0d253f;
       color: white;
-    }
-    a {
-      color: #0077cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      font-size: 0.9rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Marlon Henrique</h1>
     <p>Cientista de Dados Júnior em formação</p>
-    <p><a href="https://github.com/Marlon99henrique" target="_blank">GitHub</a> | <a href="#" target="_blank">LinkedIn</a></p>
+    <p>
+      <a href="https://github.com/Marlon99henrique" target="_blank">GitHub</a> | 
+      <a href="#" target="_blank">LinkedIn</a>
+    </p>
   </header>
 
   <section>
-    <h2>Sobre mim</h2>
-    <p>Sou estudante de Ciência de Dados, atualmente no 3º semestre da faculdade. Estou focado em me tornar um Cientista de Dados Júnior e venho desenvolvendo habilidades com Python, Git, GitHub e análise de dados através de cursos online e projetos pessoais.</p>
+    <h2>Resumo</h2>
+    <p>Sou estudante de Ciência de Dados (3º semestre) com foco em ingressar como Cientista de Dados Júnior. Possuo experiência prática em Python, Git, GitHub e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Tenho interesse em Machine Learning, Estatística e soluções baseadas em dados que geram valor real para empresas.</p>
   </section>
 
   <section>
     <h2>Habilidades Técnicas</h2>
     <ul>
-      <li>Python para análise de dados</li>
-      <li>Git e GitHub</li>
-      <li>Machine Learning (em aprendizado)</li>
-      <li>Estatística e probabilidade</li>
-      <li>Criação de projetos com foco em portfólio</li>
+      <li>Python para Análise de Dados (Pandas, NumPy, Matplotlib, Seaborn)</li>
+      <li>Versionamento com Git e GitHub</li>
+      <li>Estatística e Probabilidade aplicadas</li>
+      <li>Fundamentos de Machine Learning</li>
+      <li>SQL para extração e manipulação de dados</li>
     </ul>
   </section>
 
   <section>
-    <h2>Projetos</h2>
+    <h2>Projetos em Destaque</h2>
     <ul>
-      <li><strong>Simulador de Carregamento de Chunks em Jogos</strong> – sistema para economia de processamento gráfico, usando Python</li>
-      <li><strong>Análises com Pandas e NumPy</strong> – projetos feitos durante cursos da Udemy</li>
-      <li><strong>Repositórios de estudo</strong> – incluindo controle de versão e GitHub Pages</li>
+      <li><strong>Simulador de Carregamento de Chunks em Jogos</strong> – Otimização de processamento gráfico em Python <br><a class="btn" href="#">Ver no GitHub</a></li>
+      <li><strong>Análises com Pandas e NumPy</strong> – Análises exploratórias e limpeza de dados <br><a class="btn" href="#">Ver no GitHub</a></li>
+      <li><strong>Portfólio Técnico</strong> – Repositórios organizados por assunto e aplicação prática <br><a class="btn" href="#">Ver no GitHub</a></li>
     </ul>
   </section>
 
   <section>
-    <h2>Cursos</h2>
+    <h2>Cursos e Certificações</h2>
     <ul>
       <li>Ciência de Dados (Udemy)</li>
-      <li>Git e GitHub (Udemy)</li>
-      <li>Python (Udemy)</li>
       <li>Python para Data Science (Udemy)</li>
+      <li>Git e GitHub (Udemy)</li>
+      <li>Python do Básico ao Avançado (Udemy)</li>
     </ul>
   </section>
 
   <section>
     <h2>Contato</h2>
-    <p>Email: marlon.99henrique@gmail.com</p>
+    <p>Email: <a href="mailto:marlon.99henrique@gmail.com">marlon.99henrique@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Marlon Henrique</p>
+    <p>© 2025 Marlon Henrique | Desenvolvido por mim com ❤️</p>
   </footer>
+
 </body>
 </html>
