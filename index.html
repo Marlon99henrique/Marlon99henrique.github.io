@@ -4,74 +4,122 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Marlon Henrique</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --primary-color: #0d253f;
+      --accent-color: #00b4d8;
+      --hover-color: #90e0ef;
+      --bg-light: #f0f2f5;
+      --text-dark: #333;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.6;
     }
+
     header {
-      background-color: #0d253f;
+      background-color: var(--primary-color);
       color: white;
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
+
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
     }
+
     header p {
-      margin: 0.3rem 0;
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
     }
-    header a {
-      color: #00b4d8;
-      text-decoration: none;
+
+    .social-icons {
+      margin-top: 1rem;
+    }
+
+    .social-icons a {
+      color: var(--accent-color);
       margin: 0 10px;
-      font-weight: bold;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
-    header a:hover {
-      text-decoration: underline;
+
+    .social-icons a:hover {
+      color: var(--hover-color);
     }
+
     section {
       max-width: 900px;
       margin: 2rem auto;
-      padding: 1.5rem;
+      padding: 2rem;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
+
     h2 {
-      color: #0d253f;
+      color: var(--primary-color);
       margin-bottom: 1rem;
+      font-size: 1.6rem;
     }
+
     ul {
       padding-left: 1.2rem;
     }
+
     li {
       margin-bottom: 0.5rem;
     }
+
     .btn {
       display: inline-block;
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      background-color: #0d253f;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--primary-color);
       color: white;
       border-radius: 5px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      transition: background-color 0.3s ease;
     }
+
     .btn:hover {
       background-color: #005f73;
     }
+
     footer {
       text-align: center;
       padding: 1rem;
-      background: #0d253f;
+      background: var(--primary-color);
       color: white;
       font-size: 0.9rem;
       margin-top: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 1.2rem;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -80,15 +128,17 @@
   <header>
     <h1>Marlon Henrique</h1>
     <p>Cientista de Dados Júnior em formação</p>
-    <p>
-      <a href="https://github.com/Marlon99henrique" target="_blank">GitHub</a> | 
-      <a href="#" target="_blank">LinkedIn</a>
-    </p>
+    <div class="social-icons">
+      <a href="https://github.com/Marlon99henrique" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:marlon.99henrique@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </header>
 
   <section>
     <h2>Resumo</h2>
-    <p>Sou estudante de Ciência de Dados (3º semestre) com foco em ingressar como Cientista de Dados Júnior. Possuo experiência prática em Python, Git, GitHub e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Tenho interesse em Machine Learning, Estatística e soluções baseadas em dados que geram valor real para empresas.</p>
+    <p>Sou estudante de Ciência de Dados (3º semestre) com foco em ingressar como Cientista de Dados Júnior. Tenho experiência prática em Python, Git, GitHub e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Me interesso por Machine Learning, Estatística e soluções baseadas em dados que geram valor real para empresas.</p>
+    <a class="btn" href="https://link-para-seu-curriculo.com" target="_blank">📄 Baixar Currículo</a>
   </section>
 
   <section>
@@ -100,13 +150,22 @@
       <li>Fundamentos de Machine Learning</li>
       <li>SQL para extração e manipulação de dados</li>
     </ul>
-  
+
     <h2>Cursos e Certificações</h2>
     <ul>
       <li>Ciência de Dados (Udemy)</li>
       <li>Python para Data Science (Udemy)</li>
       <li>Git e GitHub (Udemy)</li>
       <li>Python do Básico ao Avançado (Udemy)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projetos em Destaque</h2>
+    <ul>
+      <li><strong>📊 Análise de Vendas:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/analise_vendas" target="_blank">Exploração de dados com gráficos e insights</a></li>
+      <li><strong>🕸️ Web Scraping:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/web_scraping" target="_blank">Coleta de dados de e-commerce com Python</a></li>
+      <li><strong>📈 Previsão de Preços:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/previsao_precos" target="_blank">Modelo de regressão linear simples</a></li>
     </ul>
   </section>
 
