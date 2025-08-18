@@ -76,10 +76,18 @@
 
     ul {
       padding-left: 1.2rem;
+      list-style-type: none;
     }
 
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .list-item-title {
+        font-weight: bold;
+        color: var(--primary-color);
+        display: block;
+        margin-bottom: 0.2rem;
     }
 
     .btn {
@@ -96,6 +104,18 @@
 
     .btn:hover {
       background-color: #005f73;
+    }
+    
+    .project-link {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--accent-color);
+        text-decoration: none;
+    }
+    
+    .project-link:hover {
+        text-decoration: underline;
     }
 
     footer {
@@ -127,7 +147,7 @@
 
   <header>
     <h1>Marlon Henrique</h1>
-    <p>Cientista de Dados Júnior em formação</p>
+    <p>Cientista de Dados Júnior em Formação</p>
     <div class="social-icons">
       <a href="https://github.com/Marlon99henrique" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -137,35 +157,46 @@
 
   <section>
     <h2>Resumo</h2>
-    <p>Sou estudante de Ciência de Dados (3º semestre) com foco em ingressar como Cientista de Dados Júnior. Tenho experiência prática em Python, Git, GitHub e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Me interesso por Machine Learning, Estatística e soluções baseadas em dados que geram valor real para empresas.</p>
+    <p>Sou um estudante de Ciência de Dados (3º semestre) com experiência prática em Python, Git, GitHub e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Busco aplicar minhas habilidades em Machine Learning, Estatística e soluções baseadas em dados para gerar insights acionáveis e valor para o negócio.</p>
     <a class="btn" href="https://link-para-seu-curriculo.com" target="_blank">📄 Baixar Currículo</a>
   </section>
 
   <section>
     <h2>Habilidades Técnicas</h2>
     <ul>
-      <li>Python para Análise de Dados (Pandas, NumPy, Matplotlib, Seaborn)</li>
-      <li>Versionamento com Git e GitHub</li>
-      <li>Estatística e Probabilidade aplicadas</li>
-      <li>Fundamentos de Machine Learning</li>
-      <li>SQL para extração e manipulação de dados</li>
+      <li><span class="list-item-title">Linguagens:</span> Python, SQL</li>
+      <li><span class="list-item-title">Bibliotecas:</span> Pandas, NumPy, Matplotlib, Seaborn, scikit-learn</li>
+      <li><span class="list-item-title">Ferramentas:</span> Git, GitHub, Jupyter Notebooks</li>
+      <li><span class="list-item-title">Conceitos:</span> Estatística, Machine Learning, Análise Exploratória de Dados (AED)</li>
     </ul>
 
     <h2>Cursos e Certificações</h2>
     <ul>
-      <li>Ciência de Dados (Udemy)</li>
-      <li>Python para Data Science (Udemy)</li>
-      <li>Git e GitHub (Udemy)</li>
-      <li>Python do Básico ao Avançado (Udemy)</li>
+      <li>**Modelling Data Developer** - Descomplica Faculdade Digital (Carga Horária: 240h)</li>
+      <li>**Programming and Communication** - Descomplica Faculdade Digital (Carga Horária: 240h)</li>
+      <li>**Math Computing Basics** - Descomplica Faculdade Digital (Carga Horária: 160h)</li>
+      <li>**Developer Thinking** - Descomplica Faculdade Digital (Carga Horária: 160h)</li>
     </ul>
   </section>
 
   <section>
     <h2>Projetos em Destaque</h2>
     <ul>
-      <li><strong>📊 Análise de Vendas:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/analise_vendas" target="_blank">Exploração de dados com gráficos e insights</a></li>
-      <li><strong>🕸️ Web Scraping:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/web_scraping" target="_blank">Coleta de dados de e-commerce com Python</a></li>
-      <li><strong>📈 Previsão de Preços:</strong> <a href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/previsao_precos" target="_blank">Modelo de regressão linear simples</a></li>
+      <li>
+        <span class="list-item-title">📊 Análise de Vendas:</span> 
+        Análise de dados de vendas de uma loja de varejo para identificar padrões de compra e as categorias de produtos mais lucrativas.
+        <a class="project-link" href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/analise_vendas" target="_blank">Ver no GitHub</a>
+      </li>
+      <li>
+        <span class="list-item-title">🕸️ Web Scraping:</span> 
+        Projeto para coletar dados de e-commerce e construir um dataset para futuras análises de preços e sortimento de produtos.
+        <a class="project-link" href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/web_scraping" target="_blank">Ver no GitHub</a>
+      </li>
+      <li>
+        <span class="list-item-title">📈 Previsão de Preços:</span> 
+        Desenvolvimento de um modelo de regressão linear para prever preços de imóveis, aplicando conceitos de Machine Learning.
+        <a class="project-link" href="https://github.com/Marlon99henrique/python-data-science/tree/main/04_projetos/previsao_precos" target="_blank">Ver no GitHub</a>
+      </li>
     </ul>
   </section>
 
