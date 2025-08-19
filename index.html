@@ -1,749 +1,754 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfólio | Marlon Henrique - Cientista de Dados Júnior</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <style>
-
-        :root {
-
-            --primary-color: #0d253f;
-
-            --secondary-color: #00b4d8;
-
-            --accent-color: #90e0ef;
-
-            --bg-light: #f4f7f9;
-
-            --text-dark: #333;
-
-            --card-bg: #ffffff;
-
-            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
-
-            --transition-speed: 0.3s;
-
-        }
-
-
-
-        * {
-
-            box-sizing: border-box;
-
-            margin: 0;
-
-            padding: 0;
-
-        }
-
-
-
-        body {
-
-            font-family: 'Poppins', sans-serif;
-
-            background-color: var(--bg-light);
-
-            color: var(--text-dark);
-
-            line-height: 1.6;
-
-        }
-
-
-
-        .container {
-
-            max-width: 1100px;
-
-            margin: 0 auto;
-
-            padding: 0 1.5rem;
-
-        }
-
-
-
-        header {
-
-            background-color: var(--primary-color);
-
-            color: white;
-
-            padding: 3rem 0;
-
-            text-align: center;
-
-        }
-
-
-
-        header h1 {
-
-            font-size: 2.8rem;
-
-            margin-bottom: 0.5rem;
-
-        }
-
-
-
-        header p {
-
-            font-size: 1.2rem;
-
-            opacity: 0.8;
-
-        }
-
-        
-
-        .social-icons {
-
-            margin-top: 1.5rem;
-
-        }
-
-
-
-        .social-icons a {
-
-            color: var(--secondary-color);
-
-            margin: 0 1rem;
-
-            font-size: 1.6rem;
-
-            transition: color var(--transition-speed);
-
-        }
-
-
-
-        .social-icons a:hover {
-
-            color: var(--accent-color);
-
-        }
-
-
-
-        .section {
-
-            padding: 3rem 0;
-
-        }
-
-
-
-        .section h2 {
-
-            font-size: 2rem;
-
-            color: var(--primary-color);
-
-            text-align: center;
-
-            margin-bottom: 2rem;
-
-            position: relative;
-
-        }
-
-        
-
-        .section h2::after {
-
-            content: '';
-
-            width: 50px;
-
-            height: 3px;
-
-            background-color: var(--secondary-color);
-
-            position: absolute;
-
-            bottom: -10px;
-
-            left: 50%;
-
-            transform: translateX(-50%);
-
-        }
-
-
-
-        /* About Section */
-
-        #about p {
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-            text-align: center;
-
-            font-size: 1.1rem;
-
-        }
-
-        
-
-        /* Portfolio Section */
-
-        #portfolio {
-
-            background-color: var(--primary-color);
-
-            color: white;
-
-        }
-
-        
-
-        #portfolio h2 {
-
-            color: white;
-
-        }
-
-        
-
-        .portfolio-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
-            gap: 2rem;
-
-        }
-
-        
-
-        .portfolio-card {
-
-            background-color: var(--card-bg);
-
-            color: var(--text-dark);
-
-            padding: 1.5rem;
-
-            border-radius: 8px;
-
-            box-shadow: var(--shadow-light);
-
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-
-            text-align: center;
-
-        }
-
-        
-
-        .portfolio-card:hover {
-
-            transform: translateY(-10px);
-
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
-        }
-
-        
-
-        .portfolio-card h3 {
-
-            font-size: 1.4rem;
-
-            color: var(--primary-color);
-
-            margin-bottom: 0.5rem;
-
-        }
-
-        
-
-        .portfolio-card p {
-
-            font-size: 0.95rem;
-
-            margin-bottom: 1.5rem;
-
-        }
-
-        
-
-        .portfolio-card a {
-
-            display: inline-block;
-
-            background-color: var(--secondary-color);
-
-            color: white;
-
-            padding: 0.6rem 1.5rem;
-
-            border-radius: 50px;
-
-            text-decoration: none;
-
-            font-weight: 600;
-
-            transition: background-color var(--transition-speed);
-
-        }
-
-        
-
-        .portfolio-card a:hover {
-
-            background-color: var(--accent-color);
-
-            color: var(--primary-color);
-
-        }
-
-
-
-        /* Skills Section */
-
-        .skills-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
-            gap: 1.5rem;
-
-            text-align: center;
-
-        }
-
-        
-
-        .skill-category {
-
-            padding: 1rem;
-
-            background-color: var(--card-bg);
-
-            border-radius: 8px;
-
-            box-shadow: var(--shadow-light);
-
-        }
-
-        
-
-        .skill-category h3 {
-
-            font-size: 1.2rem;
-
-            color: var(--primary-color);
-
-            margin-bottom: 0.8rem;
-
-        }
-
-        
-
-        .skill-list {
-
-            list-style-type: none;
-
-            padding: 0;
-
-            font-size: 0.95rem;
-
-        }
-
-
-
-        /* Certifications Section */
-
-        .cert-list {
-
-            list-style-type: none;
-
-            padding: 0;
-
-        }
-
-        
-
-        .cert-item {
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding: 1rem;
-
-            background-color: var(--card-bg);
-
-            border-radius: 8px;
-
-            margin-bottom: 1rem;
-
-            box-shadow: var(--shadow-light);
-
-        }
-
-        
-
-        .cert-item-title {
-
-            font-weight: 600;
-
-            color: var(--primary-color);
-
-        }
-
-        
-
-        .cert-item a {
-
-            color: var(--secondary-color);
-
-            text-decoration: none;
-
-            font-weight: 600;
-
-        }
-
-        
-
-        .cert-item a:hover {
-
-            text-decoration: underline;
-
-        }
-
-
-
-        /* Contact Section */
-
-        #contact {
-
-            text-align: center;
-
-        }
-
-
-
-        #contact p {
-
-            font-size: 1.1rem;
-
-            margin-bottom: 1rem;
-
-        }
-
-        
-
-        #contact a {
-
-            color: var(--primary-color);
-
-            text-decoration: none;
-
-            font-weight: 600;
-
-        }
-
-        
-
-        #contact a:hover {
-
-            text-decoration: underline;
-
-        }
-
-
-
-        footer {
-
-            background-color: var(--primary-color);
-
-            color: white;
-
-            text-align: center;
-
-            padding: 1.5rem 0;
-
-            font-size: 0.9rem;
-
-        }
-
-        
-
-    </style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Marlon Henrique - Cientista de Dados Júnior com habilidades em Python, Machine Learning e Análise de Dados">
+    <meta name="keywords" content="Ciência de Dados, Python, Machine Learning, Portfólio, Análise de Dados">
+    <title>Portfólio | Marlon Henrique - Cientista de Dados Júnior</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d253f;
+            --secondary-color: #00b4d8;
+            --accent-color: #90e0ef;
+            --bg-light: #f4f7f9;
+            --text-dark: #333;
+            --card-bg: #ffffff;
+            --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .social-icons {
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            color: var(--secondary-color);
+            margin: 0 1rem;
+            font-size: 1.6rem;
+            transition: color var(--transition-speed);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .section h2::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* About Section */
+        #about .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #portfolio h2 {
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .portfolio-card {
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .portfolio-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portfolio-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-card a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-speed);
+        }
+        
+        .portfolio-card a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            transition: transform var(--transition-speed);
+        }
+        
+        .skill-category:hover {
+            transform: scale(1.03);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        /* Certifications Section - Novo Design Interativo */
+        .certifications-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cert-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cert-tab {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--card-bg);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all var(--transition-speed);
+        }
+        
+        .cert-tab.active {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .cert-tab:hover:not(.active) {
+            background-color: rgba(0, 180, 216, 0.1);
+        }
+        
+        .cert-content {
+            display: none;
+        }
+        
+        .cert-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .cert-accordion {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .cert-accordion-header {
+            padding: 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color var(--transition-speed);
+        }
+        
+        .cert-accordion-header:hover {
+            background-color: #0a1e32;
+        }
+        
+        .cert-accordion-header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+        
+        .cert-accordion-header i {
+            transition: transform var(--transition-speed);
+        }
+        
+        .cert-accordion-header.active i {
+            transform: rotate(180deg);
+        }
+        
+        .cert-accordion-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-speed), padding var(--transition-speed);
+        }
+        
+        .cert-accordion-content-inner {
+            padding: 1.5rem;
+        }
+        
+        .cert-accordion.active .cert-accordion-content {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .cert-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .cert-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--secondary-color);
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+        }
+        
+        .cert-links a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+
+        #contact .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+        }
+        
+        #contact p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+        }
+        
+        .contact-link:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Botão de voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-speed);
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .cert-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-
-
-    <header>
-
-        <div class="container">
-
-            <h1>Marlon Henrique</h1>
-
-            <p>Cientista de Dados Júnior em Formação</p>
-
-            <div class="social-icons">
-
-                <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-
-                <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-
-                <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <section id="about" class="section">
-
-        <div class="container">
-
-            <h2>Sobre Mim</h2>
-
-            <p>Sou um estudante de Ciência de Dados com experiência prática em Python, Git e análise de dados, adquirida por meio de projetos pessoais e cursos especializados. Busco aplicar minhas habilidades em Machine Learning, Estatística e soluções de Data-Driven para gerar insights acionáveis e valor para o negócio.</p>
-
-        </div>
-
-    </section>
-
-
-
-    <section id="portfolio" class="section">
-
-        <div class="container">
-
-            <h2>Meus Projetos</h2>
-
-            <div class="portfolio-grid">
-
-                <div class="portfolio-card">
-
-                    <h3>Análise de Dados com Pandas</h3>
-
-                    <p>Demonstração de habilidades em limpeza, transformação e análise de dados usando a biblioteca Pandas.</p>
-
-                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados/tree/main/pandas" target="_blank">Ver Projeto</a>
-
-                </div>
-
-                <div class="portfolio-card">
-
-                    <h3>Visualização de Dados com Matplotlib e Seaborn</h3>
-
-                    <p>Criação de visualizações e dashboards para comunicar insights de forma clara e eficaz.</p>
-
-                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados/tree/main/matplotlib_seaborn" target="_blank">Ver Projeto</a>
-
-                </div>
-
-                <div class="portfolio-card">
-
-                    <h3>Introdução ao Machine Learning</h3>
-
-                    <p>Exemplo de um modelo de regressão para prever valores, cobrindo as etapas de pré-processamento e treinamento.</p>
-
-                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados/tree/main/machine_learning" target="_blank">Ver Projeto</a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <section id="skills" class="section">
-
-        <div class="container">
-
-            <h2>Habilidades Técnicas</h2>
-
-            <div class="skills-grid">
-
-                <div class="skill-category">
-
-                    <h3>Linguagens</h3>
-
-                    <ul class="skill-list">
-
-                        <li>Python</li>
-
-                        <li>SQL</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="skill-category">
-
-                    <h3>Bibliotecas</h3>
-
-                    <ul class="skill-list">
-
-                        <li>Pandas</li>
-
-                        <li>NumPy</li>
-
-                        <li>Matplotlib</li>
-
-                        <li>Seaborn</li>
-
-                        <li>scikit-learn</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="skill-category">
-
-                    <h3>Ferramentas</h3>
-
-                    <ul class="skill-list">
-
-                        <li>Jupyter Notebooks</li>
-
-                        <li>Git & GitHub</li>
-
-                    </ul>
-
-                </div>
-
-                <div class="skill-category">
-
-                    <h3>Conceitos</h3>
-
-                    <ul class="skill-list">
-
-                        <li>Análise Exploratória de Dados (AED)</li>
-
-                        <li>Estatística</li>
-
-                        <li>Machine Learning</li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <section id="certifications" class="section">
-
-        <div class="container">
-
-            <h2>Cursos e Certificações</h2>
-
-            <ul class="cert-list">
-
-                <li class="cert-item">
-
-                    <span><span class="cert-item-title">Modelling Data Developer</span> - Descomplica Faculdade Digital</span>
-
-                    <a href="#" target="_blank">Ver Certificado</a>
-
-                </li>
-
-                <li class="cert-item">
-
-                    <span><span class="cert-item-title">Programming and Communication</span> - Descomplica Faculdade Digital</span>
-
-                    <a href="#" target="_blank">Ver Certificado</a>
-
-                </li>
-
-                <li class="cert-item">
-
-                    <span><span class="cert-item-title">Math Computing Basics</span> - Descomplica Faculdade Digital</span>
-
-                    <a href="#" target="_blank">Ver Certificado</a>
-
-                </li>
-
-                <li class="cert-item">
-
-                    <span><span class="cert-item-title">Developer Thinking</span> - Descomplica Faculdade Digital</span>
-
-                    <a href="#" target="_blank">Ver Certificado</a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-    </section>
-
-
-
-    <section id="contact" class="section">
-
-        <div class="container">
-
-            <h2>Contato</h2>
-
-            <p>Fique à vontade para entrar em contato para oportunidades ou para falar sobre projetos de dados.</p>
-
-            <p>Email: <a href="mailto:marlon.99henrique@gmail.com">marlon.99henrique@gmail.com</a></p>
-
-        </div>
-
-    </section>
-
-
-
-    <footer>
-
-        <div class="container">
-
-            <p>&copy; 2025 Marlon Henrique. Desenvolvido por mim com ❤️</p>
-
-        </div>
-
-    </footer>
-
-
-
+    <header>
+        <div class="container">
+            <h1>Marlon Henrique</h1>
+            <p>Cientista de Dados Júnior em Formação</p>
+            <div class="social-icons">
+                <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-content">
+                <p>Sou um <span class="highlight">Cientista de Dados em formação</span> com experiência prática em <span class="highlight">Python, SQL e análise de dados</span>, adquirida por meio de projetos pessoais e cursos especializados.</p>
+                <p>Minha paixão é transformar dados em insights acionáveis. Busco aplicar minhas habilidades em <span class="highlight">Machine Learning, Estatística e soluções Data-Driven</span> para resolver problemas complexos e gerar valor para os negócios.</p>
+                <p>Atualmente, estou focado em aprofundar meus conhecimentos em <span class="highlight">modelos preditivos e engenharia de dados</span>, enquanto desenvolvo projetos que demonstrem minha capacidade de extrair conhecimento a partir de dados.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2>Meus Projetos</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>Índice de Projetos</h3>
+                    <p>Um guia centralizado para todos os meus projetos práticos, organizados por tema e complexidade.</p>
+                    <p><strong>Tecnologias:</strong> Python, Pandas, Jupyter Notebooks</p>
+                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados" target="_blank">Ver Repositório</a>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Jornada em Ciência de Dados</h3>
+                    <p>Repositório que documenta minha trajetória de aprendizado com anotações, notebooks e resumos.</p>
+                    <p><strong>Tecnologias:</strong> Python, Markdown, Git</p>
+                    <a href="https://github.com/Marlon99henrique/jornada-ciencia-dados" target="_blank">Ver Repositório</a>
+                </div>
+                <div class="portfolio-card">
+                    <h3>Análise de Dados Públicos</h3>
+                    <p>Projetos de análise exploratória utilizando datasets públicos para prática de visualização e insights.</p>
+                    <p><strong>Tecnologias:</strong> Pandas, Matplotlib, Seaborn</p>
+                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados" target="_blank">Ver Exemplos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Habilidades Técnicas</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Linguagens & Bancos</h3>
+                    <ul class="skill-list">
+                        <li>Python (Pandas, NumPy)</li>
+                        <li>SQL (Consultas básicas)</li>
+                        <li>R (Básico)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Análise & Visualização</h3>
+                    <ul class="skill-list">
+                        <li>Pandas/NumPy</li>
+                        <li>Matplotlib/Seaborn</li>
+                        <li>Estatística Descritiva</li>
+                        <li>Power BI (Básico)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <ul class="skill-list">
+                        <li>scikit-learn</li>
+                        <li>Modelos Supervisionados</li>
+                        <li>Pré-processamento</li>
+                        <li>Validação de Modelos</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Ferramentas & Métodos</h3>
+                    <ul class="skill-list">
+                        <li>Git & GitHub</li>
+                        <li>Jupyter Notebooks</li>
+                        <li>Metodologias Ágeis</li>
+                        <li>Google Colab</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2>Formação e Certificações</h2>
+            
+            <div class="certifications-container">
+                <div class="cert-tabs">
+                    <div class="cert-tab active" data-tab="courses">Cursos</div>
+                    <div class="cert-tab" data-tab="modules">Módulos</div>
+                </div>
+                
+                <div class="cert-content active" id="courses-content">
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Formação Cientista de Dados</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Curso abrangente que cobre desde fundamentos de Python até aplicações práticas de Machine Learning e análise de dados, com diversos projetos hands-on.</p>
+                                <p><strong>Conteúdo principal:</strong> Python, Pandas, Estatística, ML, Visualização</p>
+                                <div class="cert-links">
+                                    <a href="https://www.udemy.com/course/cientista-de-dados/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> Ver Curso
+                                    </a>
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/formacao-cientista-dados.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Python para Engenheiros e Cientistas</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Curso focado em aplicações científicas e de engenharia com Python, abordando NumPy, SciPy e técnicas numéricas avançadas.</p>
+                                <p><strong>Conteúdo principal:</strong> NumPy, SciPy, Análise Numérica</p>
+                                <div class="cert-links">
+                                    <a href="https://www.udemy.com.br/course/python-para-engenheiros-e-cientistas/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> Ver Curso
+                                    </a>
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/python-engenheiros-cientista-basico-avançado.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Git e GitHub do Básico ao Avançado</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Dominei os conceitos de versionamento de código, colaboração em equipe e boas práticas de documentação de projetos.</p>
+                                <p><strong>Conteúdo principal:</strong> Git, GitHub, Workflows Colaborativos</p>
+                                <div class="cert-links">
+                                    <a href="https://www.udemy.com/course/git-e-github-do-basico-ao-avancado-c-gist-e-github-pages/" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> Ver Curso
+                                    </a>
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/git-github-basico-avancado.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cert-content" id="modules-content">
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Programming and Communication</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Especialização focada em comunicação técnica e desenvolvimento de aplicações, incluindo Design Thinking e metodologias ágeis.</p>
+                                <p><strong>Componentes:</strong> Comunicação Empresarial, Design Thinking, Metodologias Ágeis</p>
+                                <div class="cert-links">
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/programming-and-communication.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Ver Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Math Computing Basics</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Fundamentos matemáticos para computação, com ênfase em aplicações práticas para ciência de dados e arquitetura de sistemas.</p>
+                                <p><strong>Componentes:</strong> Arquitetura de Computadores, Matemática Diferencial</p>
+                                <div class="cert-links">
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/math-computing-basics.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Ver Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-accordion">
+                        <div class="cert-accordion-header">
+                            <h3>Modelling Data Developer</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="cert-accordion-content">
+                            <div class="cert-accordion-content-inner">
+                                <p>Especialização em modelagem de dados, abordando desde coleta e tratamento até análise estatística e pensamento computacional.</p>
+                                <p><strong>Componentes:</strong> Tratamento de Dados, Probabilidade e Estatística</p>
+                                <div class="cert-links">
+                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/modelling-data-developer.pdf" target="_blank">
+                                        <i class="fas fa-certificate"></i> Ver Certificado
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <div class="contact-info">
+                <p>Estou aberto a oportunidades na área de Ciência de Dados e disponível para conversar sobre projetos colaborativos.</p>
+                <div class="contact-links">
+                    <a href="mailto:marlon.99henrique@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/Marlon99henrique" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Marlon Henrique. Desenvolvido por mim com ❤️</p>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Interatividade para as abas de certificações
+        document.querySelectorAll('.cert-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove classe active de todas as abas e conteúdos
+                document.querySelectorAll('.cert-tab, .cert-content').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Adiciona classe active à aba clicada
+                tab.classList.add('active');
+                
+                // Mostra o conteúdo correspondente
+                const contentId = tab.getAttribute('data-tab') + '-content';
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+        
+        // Accordion para os itens de certificação
+        document.querySelectorAll('.cert-accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                accordion.classList.toggle('active');
+            });
+        });
+        
+        // Botão de voltar ao topo
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
-
 </html>
