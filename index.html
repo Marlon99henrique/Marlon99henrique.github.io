@@ -372,7 +372,6 @@
         
         .cert-accordion-header:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-2px);
         }
         
         .cert-accordion-header h3 {
@@ -557,6 +556,20 @@
             overflow-y: auto;
         }
         
+        .mobile-nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            padding: clamp(0.4rem, 1.5vw, 0.5rem) 0;
+            border-bottom: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--primary);
+        }
+        
         .overlay {
             position: fixed;
             top: 0;
@@ -655,6 +668,7 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <nav>
@@ -673,6 +687,7 @@
         </div>
     </header>
 
+    <!-- Menu Mobile -->
     <div class="mobile-nav">
         <a href="#about">Sobre</a>
         <a href="#portfolio">Projetos</a>
@@ -682,11 +697,9 @@
     </div>
     <div class="overlay"></div>
 
-    <section class="hero" id="home">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Olá, sou Marlon Henrique 👋</h1>
-                <p>Cientista de Dados Júnior com foco em resolver problemas complexos através de análise de dados, machine learning e visualização. Minha paixão é transformar dados brutos em insights valiosos e ações estratégicas.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn">Entre em Contato</a>
-                    <a href="/seu-curriculo.pdf" target="_blank" class="btn btn-outline">Baix
+                <h1>Marlon Henrique</h1>
+            
