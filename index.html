@@ -479,14 +479,7 @@
             background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 2.5rem 0 1.5rem;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
+            padding: 2rem 0;
         }
         
         .footer-bottom {
@@ -495,39 +488,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray-400);
             font-size: 0.9rem;
-        }
-
-        .footer-column h3 {
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: var(--gray-300);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            color: white;
-            margin: 0 0.5rem;
-            font-size: 1.2rem;
         }
 
         /* Botão de voltar ao topo */
@@ -590,6 +550,7 @@
         
         .mobile-nav.active {
             right: 0;
+            overflow-y: auto;
         }
         
         .mobile-nav a {
@@ -687,10 +648,6 @@
             
             .skills-container {
                 grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
             }
             
             .mobile-menu-btn {
@@ -828,7 +785,7 @@
                 </div>
                 <div class="portfolio-card">
                     <h3>Jornada em Ciência de Dados</h3>
-                    <p>Repositório que documenta minha trajetória de aprendizado com anotações, notebooks e resumos.</p>
+                    <p>Repositório que documenta minha trajetória de aprendizado com anotações, notebooks và resumos.</p>
                     <p><strong>Tecnologias:</strong> Python, Markdown, Git</p>
                     <a href="https://github.com/Marlon99henrique/jornada-ciencia-dados" target="_blank">Ver Repositório</a>
                 </div>
@@ -932,7 +889,7 @@
                         </div>
                         <div class="cert-accordion-content">
                             <div class="cert-accordion-content-inner">
-                                <p>Curso focado em aplicações científicas e de engenharia com Python, abordando NumPy, SciPy e técnicas numéricas avançadas.</p>
+                                <p>Curso focado em aplicações científicas e de engenharia avec Python, abordando NumPy, SciPy e técnicas numéricas avançadas.</p>
                                 <p><strong>Conteúdo principal:</strong> NumPy, SciPy, Análise Numérica</p>
                                 <div class="cert-links">
                                     <a href="https://www.udemy.com.br/course/python-para-engenheiros-e-cientistas/" target="_blank">
@@ -1027,7 +984,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (Última seção antes do rodapé) -->
     <section id="contact" class="section">
         <div class="container">
             <div class="section-header">
@@ -1051,30 +1008,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (apenas com copyright) -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Marlon Henrique</h3>
-                    <p>Cientista de Dados Júnior em Formação</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>Navegação</h3>
-                    <ul class="footer-links">
-                        <li><a href="#about">Sobre</a></li>
-                        <li><a href="#portfolio">Projetos</a></li>
-                        <li><a href="#skills">Habilidades</a></li>
-                        <li><a href="#certifications">Certificações</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                    </ul>
-                </div>
-            </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Marlon Henrique. Desenvolvido por mim com ❤️</p>
             </div>
