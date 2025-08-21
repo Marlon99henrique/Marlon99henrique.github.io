@@ -47,10 +47,10 @@
         }
 
         .container {
-            width: 100%;
+            width: 92%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.5%;
         }
 
         /* Header e Navegação */
@@ -71,7 +71,7 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 4vw, 1.5rem);
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
@@ -80,7 +80,7 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: clamp(1rem, 3vw, 2rem);
         }
 
         .nav-links a {
@@ -88,6 +88,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .nav-links a:hover {
@@ -96,7 +97,7 @@
 
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
             background-color: var(--primary);
             color: white;
             border-radius: var(--radius);
@@ -105,6 +106,7 @@
             transition: var(--transition);
             border: none;
             cursor: pointer;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
 
         .btn:hover {
@@ -125,7 +127,7 @@
 
         /* Hero Section */
         .hero {
-            padding: 8rem 0 4rem;
+            padding: clamp(6rem, 15vw, 10rem) 0 clamp(3rem, 8vw, 5rem);
             background: linear-gradient(to bottom right, var(--gray-100), white);
             text-align: center;
         }
@@ -136,33 +138,33 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 8vw, 3.5rem);
             line-height: 1.2;
-            margin-bottom: 1.5rem;
+            margin-bottom: clamp(1rem, 3vw, 1.5rem);
             color: var(--dark);
         }
 
         .hero p {
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 3vw, 1.25rem);
             color: var(--secondary);
-            margin-bottom: 2rem;
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
         }
 
         .hero-buttons {
             display: flex;
-            gap: 1rem;
+            gap: clamp(0.8rem, 2vw, 1rem);
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .social-icons {
-            margin-top: 2rem;
+            margin-top: clamp(1.5rem, 4vw, 2rem);
         }
 
         .social-icons a {
             color: var(--primary);
-            margin: 0 0.8rem;
-            font-size: 1.5rem;
+            margin: 0 clamp(0.5rem, 2vw, 0.8rem);
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
             transition: var(--transition);
         }
 
@@ -172,24 +174,24 @@
 
         /* Sections */
         .section {
-            padding: 4rem 0;
+            padding: clamp(3rem, 8vw, 5rem) 0;
         }
 
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 3rem;
+            margin: 0 auto clamp(2rem, 6vw, 4rem);
         }
 
         .section-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            margin-bottom: clamp(0.8rem, 2vw, 1rem);
             color: var(--dark);
         }
 
         .section-subtitle {
             color: var(--secondary);
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.125rem);
         }
 
         /* About Section */
@@ -197,7 +199,7 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
         }
         
         .highlight {
@@ -209,12 +211,12 @@
         .portfolio-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
+            gap: clamp(1.2rem, 3vw, 2rem);
         }
         
         .portfolio-card {
             background: white;
-            padding: 1.5rem;
+            padding: clamp(1.2rem, 3vw, 2rem);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -225,26 +227,26 @@
         }
         
         .portfolio-card h3 {
-            font-size: 1.3rem;
+            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
         
         .portfolio-card p {
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         
         .portfolio-card a {
             display: inline-block;
             background-color: var(--primary);
             color: white;
-            padding: 0.5rem 1.2rem;
+            padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 2.5vw, 1.5rem);
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
         }
         
         .portfolio-card a:hover {
@@ -255,11 +257,11 @@
         .skills-container {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.2rem;
+            gap: clamp(1rem, 3vw, 1.5rem);
         }
         
         .skill-category {
-            padding: 1.2rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
             background-color: white;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
@@ -271,9 +273,9 @@
         }
         
         .skill-category h3 {
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 3vw, 1.2rem);
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: clamp(0.8rem, 2vw, 1rem);
             text-align: center;
             border-bottom: 2px solid var(--primary);
             padding-bottom: 0.5rem;
@@ -288,7 +290,7 @@
             margin-bottom: 0.5rem;
             position: relative;
             padding-left: 1.5rem;
-            font-size: 0.95rem;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         
         .skill-list li::before {
@@ -302,7 +304,7 @@
         .certifications-container {
             display: flex;
             flex-direction: column;
-            gap: 1.2rem;
+            gap: clamp(1rem, 3vw, 1.5rem);
             max-width: 800px;
             margin: 0 auto;
         }
@@ -310,20 +312,20 @@
         .cert-tabs {
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
+            gap: clamp(0.6rem, 2vw, 1rem);
+            margin-bottom: clamp(1.2rem, 3vw, 2rem);
             flex-wrap: wrap;
         }
         
         .cert-tab {
-            padding: 0.7rem 1.2rem;
+            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
             background-color: white;
             border: 2px solid var(--primary);
             border-radius: 50px;
             cursor: pointer;
             font-weight: 600;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: clamp(0.85rem, 2.5vw, 1rem);
         }
         
         .cert-tab.active {
@@ -358,7 +360,7 @@
         }
         
         .cert-accordion-header {
-            padding: 1rem;
+            padding: clamp(0.8rem, 2vw, 1.2rem);
             background-color: var(--primary);
             color: white;
             cursor: pointer;
@@ -370,10 +372,11 @@
         
         .cert-accordion-header:hover {
             background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
         
         .cert-accordion-header h3 {
-            font-size: 1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             margin: 0;
             padding-right: 1rem;
         }
@@ -395,17 +398,17 @@
         }
         
         .cert-accordion-content-inner {
-            padding: 1.2rem;
+            padding: clamp(1rem, 2.5vw, 1.5rem);
         }
         
         .cert-accordion.active .cert-accordion-content {
             max-height: 500px;
-            padding: 0 1.2rem 1.2rem;
+            padding: 0 clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.5rem);
         }
         
         .cert-links {
             display: flex;
-            gap: 0.8rem;
+            gap: clamp(0.6rem, 2vw, 1rem);
             margin-top: 1rem;
             flex-direction: column;
         }
@@ -417,11 +420,11 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.5rem 1rem;
+            padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
             border: 1px solid var(--primary);
             border-radius: 50px;
             transition: var(--transition);
-            font-size: 0.9rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
             justify-content: center;
             text-align: center;
         }
@@ -436,21 +439,21 @@
             max-width: 600px;
             margin: 0 auto;
             background-color: white;
-            padding: 1.5rem;
+            padding: clamp(1.2rem, 3vw, 2rem);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             text-align: center;
         }
         
         .contact-info p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            margin-bottom: clamp(1.2rem, 3vw, 1.5rem);
         }
         
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: clamp(0.8rem, 2vw, 1.5rem);
             flex-wrap: wrap;
             flex-direction: column;
         }
@@ -462,11 +465,12 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            padding: 0.8rem 1.2rem;
+            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
             border: 2px solid var(--primary);
             border-radius: 50px;
             transition: var(--transition);
             justify-content: center;
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
         }
         
         .contact-link:hover {
@@ -479,24 +483,24 @@
             background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
         }
         
         .footer-bottom {
             text-align: center;
-            padding-top: 1.5rem;
+            padding-top: clamp(1.2rem, 3vw, 2rem);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--gray-400);
-            font-size: 0.9rem;
+            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
         }
 
         /* Botão de voltar ao topo */
         .back-to-top {
             position: fixed;
-            bottom: 1.5rem;
-            right: 1.5rem;
-            width: 45px;
-            height: 45px;
+            bottom: clamp(1rem, 3vw, 2rem);
+            right: clamp(1rem, 3vw, 2rem);
+            width: clamp(40px, 10vw, 50px);
+            height: clamp(40px, 10vw, 50px);
             background-color: var(--primary);
             color: white;
             border-radius: 50%;
@@ -508,7 +512,7 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 100;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 3vw, 1.2rem);
         }
         
         .back-to-top.visible {
@@ -526,7 +530,7 @@
             display: none;
             background: none;
             border: none;
-            font-size: 1.5rem;
+            font-size: clamp(1.3rem, 4vw, 1.5rem);
             cursor: pointer;
             color: var(--dark);
             z-index: 1001;
@@ -536,16 +540,16 @@
             position: fixed;
             top: 0;
             right: -100%;
-            width: 70%;
+            width: 75%;
             height: 100vh;
             background-color: white;
             box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
             z-index: 999;
             transition: right 0.3s ease;
-            padding: 5rem 2rem 2rem;
+            padding: clamp(4rem, 12vw, 6rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: clamp(1.2rem, 3vw, 1.5rem);
         }
         
         .mobile-nav.active {
@@ -557,8 +561,8 @@
             color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
-            padding: 0.5rem 0;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            padding: clamp(0.4rem, 1.5vw, 0.5rem) 0;
             border-bottom: 1px solid var(--gray-200);
             transition: var(--transition);
         }
@@ -614,40 +618,8 @@
         }
 
         @media (min-width: 768px) {
-            .hero {
-                padding: 10rem 0 5rem;
-            }
-            
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .hero p {
-                font-size: 1.25rem;
-            }
-            
-            .section {
-                padding: 5rem 0;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.125rem;
-            }
-            
-            .about-content {
-                font-size: 1.1rem;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(4, 1fr);
+            .container {
+                padding: 0 1.5rem;
             }
             
             .mobile-menu-btn {
@@ -658,13 +630,13 @@
                 display: flex;
             }
             
-            .nav-btn {
-                display: block;
+            .mobile-nav {
+                width: 40%;
             }
         }
 
         @media (max-width: 767px) {
-            .nav-links, .nav-btn {
+            .nav-links {
                 display: none;
             }
             
@@ -680,15 +652,8 @@
 
         @media (max-width: 480px) {
             .container {
+                width: 95%;
                 padding: 0 1rem;
-            }
-            
-            .hero {
-                padding: 7rem 0 3rem;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
             }
             
             .cert-tabs {
@@ -716,7 +681,6 @@
                     <a href="#certifications">Certificações</a>
                     <a href="#contact">Contato</a>
                 </div>
-                <a href="#contact" class="btn nav-btn">Entrar em Contato</a>
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -731,7 +695,6 @@
         <a href="#skills">Habilidades</a>
         <a href="#certifications">Certificações</a>
         <a href="#contact">Contato</a>
-        <a href="#contact" class="btn">Entrar em Contato</a>
     </div>
     <div class="overlay"></div>
 
@@ -739,350 +702,4 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Marlon Henrique</h1>
-                <p>Cientista de Dados Júnior em Formação</p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn">Ver Projetos</a>
-                    <a href="#contact" class="btn btn-outline">Entrar em Contato</a>
-                </div>
-                <div class="social-icons">
-                    <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">Conheça minha trajetória e paixão por dados</p>
-            </div>
-            <div class="about-content">
-                <p>Sou um <span class="highlight">Cientista de Dados em formação</span> com experiência prática em <span class="highlight">Python, SQL e análise de dados</span>, adquirida por meio de projetos pessoais e cursos especializados.</p>
-                <p>Minha paixão é transformar dados em insights acionáveis. Busco aplicar minhas habilidades em <span class="highlight">Machine Learning, Estatística e soluções Data-Driven</span> para resolver problemas complexos e gerar valor para os negócios.</p>
-                <p>Atualmente, estou focado em aprofundar meus conhecimentos em <span class="highlight">modelos preditivos e engenharia de dados</span>, enquanto desenvolvo projetos que demonstrem minha capacidade de extrair conhecimento a partir de dados.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Meus Projetos</h2>
-                <p class="section-subtitle">Alguns dos meus trabalhos em ciência de dados</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>Índice de Projetos</h3>
-                    <p>Um guia centralizado para todos os meus projetos práticos, organizados por tema e complexidade.</p>
-                    <p><strong>Tecnologias:</strong> Python, Pandas, Jupyter Notebooks</p>
-                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados" target="_blank">Ver Repositório</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Jornada em Ciência de Dados</h3>
-                    <p>Repositório que documenta minha trajetória de aprendizado com anotações, notebooks và resumos.</p>
-                    <p><strong>Tecnologias:</strong> Python, Markdown, Git</p>
-                    <a href="https://github.com/Marlon99henrique/jornada-ciencia-dados" target="_blank">Ver Repositório</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Análise de Dados Públicos</h3>
-                    <p>Projetos de análise exploratória utilizando datasets públicos para prática de visualização e insights.</p>
-                    <p><strong>Tecnologias:</strong> Pandas, Matplotlib, Seaborn</p>
-                    <a href="https://github.com/Marlon99henrique/projetos-ciencia-dados" target="_blank">Ver Exemplos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Conhecimentos e ferramentas que utilizo</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Linguagens & Bancos</h3>
-                    <ul class="skill-list">
-                        <li>Python (Pandas, NumPy)</li>
-                        <li>SQL (Consultas básicas)</li>
-                        <li>R (Básico)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Análise & Visualização</h3>
-                    <ul class="skill-list">
-                        <li>Pandas/NumPy</li>
-                        <li>Matplotlib/Seaborn</li>
-                        <li>Estatística Descritiva</li>
-                        <li>Power BI (Básico)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <ul class="skill-list">
-                        <li>scikit-learn</li>
-                        <li>Modelos Supervisionados</li>
-                        <li>Pré-processamento</li>
-                        <li>Validação de Modelos</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Ferramentas & Métodos</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>Jupyter Notebooks</li>
-                        <li>Metodologias Ágeis</li>
-                        <li>Google Colab</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Formação e Certificações</h2>
-                <p class="section-subtitle">Minha jornada de aprendizado em ciência de dados</p>
-            </div>
             
-            <div class="certifications-container">
-                <div class="cert-tabs">
-                    <div class="cert-tab active" data-tab="courses">Cursos</div>
-                    <div class="cert-tab" data-tab="modules">Módulos</div>
-                </div>
-                
-                <div class="cert-content active" id="courses-content">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Formação Cientista de Dados</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Curso abrangente que cobre desde fundamentos de Python até aplicações práticas de Machine Learning e análise de dados, com diversos projetos hands-on.</p>
-                                <p><strong>Conteúdo principal:</strong> Python, Pandas, Estatística, ML, Visualização</p>
-                                <div class="cert-links">
-                                    <a href="https://www.udemy.com/course/cientista-de-dados/" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i> Ver Curso
-                                    </a>
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/formacao-cientista-dados.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Python para Engenheiros e Cientistas</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Curso focado em aplicações científicas e de engenharia avec Python, abordando NumPy, SciPy e técnicas numéricas avançadas.</p>
-                                <p><strong>Conteúdo principal:</strong> NumPy, SciPy, Análise Numérica</p>
-                                <div class="cert-links">
-                                    <a href="https://www.udemy.com.br/course/python-para-engenheiros-e-cientistas/" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i> Ver Curso
-                                    </a>
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/python-engenheiros-cientista-basico-avançado.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Git e GitHub do Básico ao Avançado</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Dominei os conceitos de versionamento de código, colaboração em equipe e boas práticas de documentação de projetos.</p>
-                                <p><strong>Conteúdo principal:</strong> Git, GitHub, Workflows Colaborativos</p>
-                                <div class="cert-links">
-                                    <a href="https://www.udemy.com/course/git-e-github-do-basico-ao-avancado-c-gist-e-github-pages/" target="_blank">
-                                        <i class="fas fa-external-link-alt"></i> Ver Curso
-                                    </a>
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/git-github-basico-avancado.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cert-content" id="modules-content">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Programming and Communication</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Especialização focada em comunicação técnica e desenvolvimento de aplicações, incluindo Design Thinking e metodologias ágeis.</p>
-                                <p><strong>Componentes:</strong> Comunicação Empresarial, Design Thinking, Metodologias Ágeis</p>
-                                <div class="cert-links">
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/programming-and-communication.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Math Computing Basics</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Fundamentos matemáticos para computação, avec ênfase em aplicações práticas para ciência de dados e arquitetura de sistemas.</p>
-                                <p><strong>Componentes:</strong> Arquitetura de Computadores, Matemática Diferencial</p>
-                                <div class="cert-links">
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/math-computing-basics.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Modelling Data Developer</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Especialização em modelagem de dados, abordando desde coleta e tratamento até análise estatística e pensamento computacional.</p>
-                                <p><strong>Componentes:</strong> Tratamento de Dados, Probabilidade e Estatística</p>
-                                <div class="cert-links">
-                                    <a href="https://raw.githubusercontent.com/Marlon99henrique/jornada-ciencia-dados/main/01_certificacoes/modelling-data-developer.pdf" target="_blank">
-                                        <i class="fas fa-certificate"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (Última seção antes do rodapé) -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contato</h2>
-                <p class="section-subtitle">Vamos conversar sobre ciência de dados!</p>
-            </div>
-            <div class="contact-info">
-                <p>Estou aberto a oportunidades na área de Ciência de Dados e disponível para conversar sobre projetos colaborativos.</p>
-                <div class="contact-links">
-                    <a href="mailto:marlon.99henrique@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/Marlon99henrique" target="_blank" class="contact-link">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer (apenas com copyright) -->
-    <footer>
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 Marlon Henrique. Desenvolvido por mim com ❤️</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script>
-        // Menu mobile
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const overlay = document.querySelector('.overlay');
-        
-        function toggleMenu() {
-            mobileNav.classList.toggle('active');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-        }
-        
-        mobileMenuBtn.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-        
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-
-        // Interatividade para as abas de certificações
-        document.querySelectorAll('.cert-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove classe active de todas as abas e conteúdos
-                document.querySelectorAll('.cert-tab, .cert-content').forEach(el => {
-                    el.classList.remove('active');
-                });
-                
-                // Adiciona classe active à aba clicada
-                tab.classList.add('active');
-                
-                // Mostra o conteúdo correspondente
-                const contentId = tab.getAttribute('data-tab') + '-content';
-                document.getElementById(contentId).classList.add('active');
-            });
-        });
-        
-        // Accordion para os itens de certificação
-        document.querySelectorAll('.cert-accordion-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const accordion = header.parentElement;
-                accordion.classList.toggle('active');
-            });
-        });
-        
-        // Botão de voltar ao topo
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
-</body>
-</html>
