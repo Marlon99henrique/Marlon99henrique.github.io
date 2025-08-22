@@ -400,6 +400,7 @@
             padding: clamp(1rem, 2.5vw, 1.5rem);
         }
         
+        /* Correção: Adicionar a propriedade de altura máxima para o acordeão ativo */
         .cert-accordion.active .cert-accordion-content {
             max-height: 500px;
             padding: 0 clamp(1rem, 2.5vw, 1.5rem) clamp(1rem, 2.5vw, 1.5rem);
@@ -671,7 +672,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Marlon Henrique</a>
+                <a href="#hero" class="logo">Marlon Henrique</a>
                 <div class="nav-links">
                     <a href="#about">Sobre</a>
                     <a href="#portfolio">Projetos</a>
@@ -695,8 +696,7 @@
     </div>
     <div class="overlay"></div>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Marlon Henrique</h1>
-                <p>Cientista de Dados Júnior com foco em resolver problemas complex
+                <h1>Mar
