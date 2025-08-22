@@ -358,7 +358,7 @@
 
         @keyframes blink-caret {
             from, to { border-color: transparent }
-            50% { border-color: var(--primary); }
+           50% { border-color: var(--primary); }
         }
 
         /* Ajuste para ícones nos botões */
@@ -391,12 +391,17 @@
             transition: color 0.5s ease;
         }
 
-        /* About Section */
+        /* About Section - NOVA VERSÃO */
         .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
             font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+            text-align: left;
         }
         
         .highlight {
@@ -404,7 +409,91 @@
             font-weight: 600;
             transition: color 0.5s ease;
         }
-
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(1rem, 2vw, 1.5rem);
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: clamp(1rem, 2vw, 1.5rem);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        body.dark-mode .stat-card {
+            background: var(--gray-100);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: clamp(0.85rem, 2vw, 0.9rem);
+        }
+        
+        .about-image {
+            position: relative;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 600;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--gray-100);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .about-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+        
         /* Portfolio Section */
         .portfolio-grid {
             display: grid;
@@ -418,6 +507,10 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
+        }
+        
+        body.dark-mode .portfolio-card {
+            background: var(--gray-100);
         }
         
         .portfolio-card:hover {
@@ -459,6 +552,10 @@
             box-shadow: var(--shadow);
             margin-bottom: clamp(2rem, 5vw, 4rem);
             transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+        }
+
+        body.dark-mode .project-details {
+            background: var(--gray-100);
         }
 
         .project-details h3 {
@@ -595,879 +692,4 @@
         
         .notebook-card {
             background-color: var(--gray-100);
-            padding: 1rem;
-            border-radius: var(--radius);
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-            margin-top: 0.5rem;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .notebook-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .notebook-card strong {
-            color: var(--dark);
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(1rem, 3vw, 1.5rem);
-        }
-        
-        .skill-category {
-            padding: clamp(1rem, 3vw, 1.5rem);
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .skill-category:hover {
-            transform: scale(1.02);
-        }
-        
-        .skill-category h3 {
-            font-size: clamp(1.1rem, 3vw, 1.2rem);
-            color: var(--primary);
-            margin-bottom: clamp(0.8rem, 2vw, 1rem);
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-            transition: border-color 0.5s ease, color 0.5s ease;
-        }
-        
-        .skill-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .skill-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        
-        .skill-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            transition: color 0.5s ease;
-        }
-
-        /* Certifications Section */
-        .certifications-container {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1rem, 3vw, 1.5rem);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cert-tabs {
-            display: flex;
-            justify-content: center;
-            gap: clamp(0.6rem, 2vw, 1rem);
-            margin-bottom: clamp(1.2rem, 3vw, 2rem);
-            flex-wrap: wrap;
-        }
-        
-        .cert-tab {
-            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
-            background-color: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: clamp(0.85rem, 2.5vw, 1rem);
-        }
-        
-        .cert-tab.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .cert-tab:hover:not(.active) {
-            background-color: rgba(37, 99, 235, 0.1);
-        }
-        
-        .cert-content {
-            display: none;
-        }
-        
-        .cert-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .cert-accordion {
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .cert-accordion-header {
-            padding: clamp(0.8rem, 2vw, 1.2rem);
-            background-color: var(--primary);
-            color: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-        
-        .cert-accordion-header:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .cert-accordion-header h3 {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            margin: 0;
-            padding-right: 1rem;
-        }
-        
-        .cert-accordion-header i {
-            transition: transform 0.4s ease-in-out;
-            flex-shrink: 0;
-        }
-        
-        .cert-accordion-header.active i {
-            transform: rotate(180deg);
-        }
-        
-        .cert-accordion-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
-        }
-        
-        .cert-accordion-content-inner {
-            padding: clamp(1rem, 2.5vw, 1.5rem);
-        }
-        
-        .cert-links {
-            display: flex;
-            gap: clamp(0.6rem, 2vw, 1rem);
-            margin-top: 1rem;
-            flex-direction: column;
-        }
-        
-        .cert-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
-            border: 1px solid var(--primary);
-            border-radius: 50px;
-            transition: var(--transition);
-            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .cert-links a:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: clamp(1.2rem, 3vw, 2rem);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .contact-info p {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            margin-bottom: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: clamp(0.8rem, 2vw, 1.5rem);
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-        
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
-            border: 2px solid var(--primary);
-            border-radius: 50px;
-            transition: var(--transition);
-            justify-content: center;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        
-        .contact-link:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
-            transition: background-color 0.5s ease;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: clamp(1.2rem, 3vw, 2rem);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray-400);
-            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-        }
-        
-        /* Botão de voltar ao topo */
-        .back-to-top {
-            position: fixed;
-            bottom: clamp(1rem, 3vw, 2rem);
-            right: clamp(1rem, 3vw, 2rem);
-            width: clamp(40px, 10vw, 50px);
-            height: clamp(40px, 10vw, 50px);
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 100;
-            font-size: clamp(1rem, 3vw, 1.2rem);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Menu Mobile */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: clamp(1.3rem, 4vw, 1.5rem);
-            cursor: pointer;
-            color: var(--dark);
-            z-index: 1001;
-        }
-        
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            transition: right 0.3s ease, background-color 0.5s ease;
-            padding: clamp(4rem, 12vw, 6rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .mobile-nav.active {
-            right: 0;
-            overflow-y: auto;
-        }
-        
-        .mobile-nav a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: clamp(1rem, 3vw, 1.1rem);
-            padding: clamp(0.4rem, 1.5vw, 0.5rem) 0;
-            border-bottom: 1px solid var(--gray-200);
-            transition: var(--transition);
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--primary);
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Utilitários */
-        .text-center {
-            text-align: center;
-        }
-
-        .bg-gray {
-            background-color: var(--gray-100);
-            transition: background-color 0.5s ease;
-        }
-
-        /* Media Queries para responsividade */
-        @media (min-width: 576px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .cert-links {
-                flex-direction: row;
-            }
-            
-            .contact-links {
-                flex-direction: row;
-            }
-
-            .list-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .mobile-menu-btn {
-                display: none;
-            }
-            
-            .nav-links {
-                display: flex;
-            }
-            
-            .mobile-nav {
-                width: 40%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-buttons .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 1rem;
-            }
-            
-            .cert-tabs {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .cert-tab {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#hero" class="logo">Marlon Henrique</a>
-                <div class="nav-items">
-                    <div class="nav-links">
-                        <a href="#about">Sobre</a>
-                        <a href="#portfolio">Projetos</a>
-                        <a href="#skills">Habilidades</a>
-                        <a href="#certifications">Certificações</a>
-                        <a href="#contact">Contato</a>
-                    </div>
-                    <button id="theme-toggle" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
-                        <i class="fas fa-moon"></i> Tema Escuro
-                    </button>
-                    <button class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <div class="mobile-nav">
-        <a href="#about">Sobre</a>
-        <a href="#portfolio">Projetos</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#certifications">Certificações</a>
-        <a href="#contact">Contato</a>
-        <button id="theme-toggle-mobile" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
-            <i class="fas fa-moon"></i> Tema Escuro
-        </button>
-    </div>
-    <div class="overlay"></div>
-
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Marlon Henrique</h1>
-                <p><span id="typewriter-text" class="typewriter">Cientista de Dados | Analista de Dados | Python & SQL</span></p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn">
-                        <i class="fas fa-code-branch"></i> Ver Projetos
-                    </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-paper-plane"></i> Entrar em Contato
-                    </a>
-                </div>
-                <div class="social-icons">
-                    <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">Conheça minha trajetória e paixão por dados</p>
-            </div>
-            <div class="about-content">
-                <p>Sou um <span class="highlight">Cientista de Dados em formação</span> com experiência prática em <span class="highlight">Python, SQL e análise de dados</span>, adquirida por meio de projetos pessoais e cursos especializados.</p>
-                <p>Minha paixão é transformar dados em insights acionáveis. Busco aplicar minhas habilidades em <span class="highlight">Machine Learning, Estatística e soluções Data-Driven</span> para resolver problemas complexos e gerar valor para os negócios.</p>
-                <p>Atualmente, estou focado em aprofundar meus conhecimentos...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projetos</h2>
-                <p class="section-subtitle">Apresentando alguns dos meus trabalhos mais relevantes</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>Análise de Vendas de Videogames</h3>
-                    <p>Análise de dados de vendas globais de videogames e tendências de mercado. Utilizado para identificar os jogos, plataformas e gêneros mais lucrativos.</p>
-                    <a href="https://github.com/Marlon99henrique/analise-vendas-videogames" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Análise de Sentimento com Machine Learning</h3>
-                    <p>Criação de um modelo de Machine Learning para prever o sentimento (positivo, negativo, neutro) de avaliações de filmes a partir de textos.</p>
-                    <a href="https://github.com/Marlon99henrique/analise-sentimento-ml" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Painel Interativo de Indicadores Financeiros</h3>
-                    <p>Desenvolvimento de um dashboard interativo no Power BI para monitorar e visualizar KPIs financeiros essenciais.</p>
-                    <a href="https://github.com/Marlon99henrique/dashboard-financeiro" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Previsão de Preços de Imóveis</h3>
-                    <p>Aplicação de algoritmos de regressão para construir um modelo preditivo que estima o preço de imóveis com base em suas características.</p>
-                    <a href="https://github.com/Marlon99henrique/previsao-precos-imoveis" target="_blank">Ver Projeto</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Minhas competências e tecnologias que utilizo</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Linguagens de Programação</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Bibliotecas e Frameworks</h3>
-                    <ul class="skill-list">
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow</li>
-                        <li>Seaborn/Matplotlib</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Ferramentas e Plataformas</h3>
-                    <ul class="skill-list">
-                        <li>Jupyter Notebook</li>
-                        <li>Power BI</li>
-                        <li>Tableau</li>
-                        <li>Git/GitHub</li>
-                        <li>Google Cloud Platform</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Conceitos e Metodologias</h3>
-                    <ul class="skill-list">
-                        <li>Machine Learning</li>
-                        <li>Análise Estatística</li>
-                        <li>Data Storytelling</li>
-                        <li>ETL</li>
-                        <li>Limpeza e Pré-processamento de Dados</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Certificações</h2>
-                <p class="section-subtitle">Meus diplomas e cursos concluídos</p>
-            </div>
-            <div class="certifications-container">
-                <div class="cert-tabs">
-                    <div class="cert-tab active" data-tab="google">Google</div>
-                    <div class="cert-tab" data-tab="aluratab">Alura</div>
-                    <div class="cert-tab" data-tab="udemy">Udemy</div>
-                </div>
-                <div class="cert-content active" id="google">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header active">
-                            <h3>Certificado Profissional de Análise de Dados Google</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content active">
-                            <div class="cert-accordion-content-inner">
-                                <p>Este curso me deu uma base sólida para a análise de dados, incluindo a utilização de planilhas, SQL, R e Tableau.</p>
-                                <div class="cert-links">
-                                    <a href="https://coursera.org/verify/professional-cert/S9X5X9M7H3E4" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cert-content" id="aluratab">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Formação em Ciência de Dados</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Conhecimentos aprofundados em Machine Learning, Python e manipulação de dados.</p>
-                                <div class="cert-links">
-                                    <a href="#" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cert-content" id="udemy">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Python para Análise de Dados</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Curso prático sobre as principais bibliotecas de Python para análise de dados, incluindo Pandas e NumPy.</p>
-                                <div class="cert-links">
-                                    <a href="#" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contato</h2>
-                <p class="section-subtitle">Vamos conectar? Sinta-se à vontade para me enviar uma mensagem!</p>
-            </div>
-            <div class="contact-info">
-                <p>Estou disponível para novas oportunidades, projetos e colaborações. Abaixo estão as melhores formas de me contatar.</p>
-                <div class="contact-links">
-                    <a href="mailto:marlon.99henrique@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> marlon.99henrique@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <footer>
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2024 Marlon Henrique. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Lógica do botão de menu mobile
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const overlay = document.querySelector('.overlay');
-        const body = document.body;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            body.style.overflow = 'hidden';
-        });
-
-        overlay.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = 'auto';
-        });
-
-        // Lógica para fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
-        });
-
-        // Lógica dos Tabs de Certificações
-        const certTabs = document.querySelectorAll('.cert-tab');
-        const certContents = document.querySelectorAll('.cert-content');
-
-        certTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
-                
-                certTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                certContents.forEach(content => {
-                    if (content.id === targetTab) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
-        });
-
-        // Lógica do Accordion de Certificações
-        const accordionHeaders = document.querySelectorAll('.cert-accordion-header');
-
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const activeHeader = document.querySelector('.cert-accordion-header.active');
-
-                // Fechar o header ativo, se houver, e não for o clicado
-                if (activeHeader && activeHeader !== header) {
-                    activeHeader.classList.remove('active');
-                    activeHeader.nextElementSibling.style.maxHeight = 0;
-                }
-
-                // Alternar o estado do header clicado
-                header.classList.toggle('active');
-                if (header.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.style.maxHeight = 0;
-                }
-            });
-        });
-
-        // Lógica do botão de voltar ao topo
-        const backToTopBtn = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Lógica para o efeito de máquina de escrever
-        const textElement = document.getElementById('typewriter-text');
-        const texts = ["Cientista de Dados", "Analista de Dados", "Python & SQL", "Data-Driven Solutions"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentText = texts[textIndex];
-            if (isDeleting) {
-                textElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                textElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-
-            const typingSpeed = isDeleting ? 50 : 100;
-            setTimeout(type, typingSpeed);
-        }
-
-        document.addEventListener('DOMContentLoaded', type);
-        
-        // Lógica de alternância de tema (Dark Mode)
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const themeToggleMobileButton = document.getElementById('theme-toggle-mobile');
-
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggleButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-            if (themeToggleMobileButton) {
-                themeToggleMobileButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-            }
-        }
-
-        const handleThemeToggle = () => {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            
-            if (isDarkMode) {
-                localStorage.setItem('theme', 'dark');
-                themeToggleButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-                if (themeToggleMobileButton) {
-                    themeToggleMobileButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-                }
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeToggleButton.innerHTML = '<i class="fas fa-moon"></i> Tema Escuro';
-                if (themeToggleMobileButton) {
-                    themeToggleMobileButton.innerHTML = '<i class="fas fa-moon"></i> Tema Escuro';
-                }
-            }
-            
-            // Remove a classe de alto contraste se o tema escuro for ativado
-            if (document.body.classList.contains('high-contrast-mode')) {
-                document.body.classList.remove('high-contrast-mode');
-            }
-        };
-
-        if (themeToggleButton) {
-            themeToggleButton.addEventListener('click', handleThemeToggle);
-        }
-        if (themeToggleMobileButton) {
-            themeToggleMobileButton.addEventListener('click', handleThemeToggle);
-        }
-
-        // Lógica do botão de alto contraste (opcional, pode ser removido)
-        const contrastToggleButton = document.getElementById('contrast-toggle');
-        if (contrastToggleButton) {
-            contrastToggleButton.addEventListener('click', () => {
-                document.body.classList.toggle('high-contrast-mode');
-                // Remove a classe de tema escuro para evitar conflitos
-                if (document.body.classList.contains('dark-mode')) {
-                    document.body.classList.remove('dark-mode');
-                    localStorage.removeItem('theme');
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+            padding: 1
