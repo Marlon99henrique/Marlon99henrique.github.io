@@ -10,1039 +10,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Variáveis e reset */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #64748b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --accent: #f97316;
-            --gray-100: #f1f5f9;
-            --gray-200: #e2e8f0;
-            --gray-300: #cbd5e1;
-            --gray-400: #94a3b8;
-            --radius: 8px;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --transition: all 0.3s ease;
-        }
-
-        /* Tema Escuro - Dark Mode */
-        body.dark-mode {
-            --light: #121212;
-            --dark: #e0e0e0;
-            --secondary: #b0b0b0;
-            --primary: #8ab4f8;
-            --primary-dark: #6a9de9;
-            --gray-100: #1a1a1a;
-            --gray-200: #222222;
-            --gray-300: #333333;
-            --gray-400: #666666;
-            --shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05), 0 2px 4px -1px rgba(255, 255, 255, 0.03);
-        }
-
-        body.dark-mode header {
-            background-color: rgba(18, 18, 18, 0.95);
-            box-shadow: var(--shadow);
-        }
-        
-        body.dark-mode .hero {
-            background: linear-gradient(to bottom right, #1a1a1a, #121212);
-        }
-
-        body.dark-mode .portfolio-card,
-        body.dark-mode .skill-category,
-        body.dark-mode .cert-accordion,
-        body.dark-mode .contact-info {
-            background: #1e1e1e;
-        }
-        
-        body.dark-mode .project-details,
-        body.dark-mode .cert-accordion-content-inner,
-        body.dark-mode .contact-info {
-            background-color: var(--gray-100);
-        }
-
-        body.dark-mode .cert-links a,
-        body.dark-mode .contact-link {
-            background-color: transparent;
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        body.dark-mode .cert-links a:hover,
-        body.dark-mode .contact-link:hover {
-            background-color: var(--primary);
-            color: var(--dark);
-        }
-
-        body.dark-mode .cert-tab {
-            background-color: var(--gray-100);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        body.dark-mode .cert-tab.active {
-            background-color: var(--primary);
-            color: var(--dark);
-        }
-        
-        body.dark-mode .cert-accordion-header {
-            background-color: var(--gray-300);
-            color: var(--dark);
-        }
-        
-        body.dark-mode .cert-accordion-header:hover {
-            background-color: var(--gray-400);
-        }
-        
-        body.dark-mode .footer-bottom {
-            border-top-color: var(--gray-400);
-        }
-
-        /* Tema de Alto Contraste (mantido por acessibilidade) */
-        body.high-contrast-mode {
-            --light: #000000;
-            --dark: #ffffff;
-            --primary: #ffff00;
-            --primary-dark: #ccff00;
-            --secondary: #cccccc;
-            --gray-100: #222222;
-            --gray-200: #333333;
-            --gray-300: #444444;
-            --gray-400: #aaaaaa;
-            --shadow: 0 0 0 transparent;
-        }
-        
-        body.high-contrast-mode header {
-            background-color: var(--gray-100);
-            box-shadow: none;
-        }
-        
-        body.high-contrast-mode .hero {
-            background: var(--light);
-        }
-        
-        body.high-contrast-mode .project-details,
-        body.high-contrast-mode .skill-category,
-        body.high-contrast-mode .cert-accordion,
-        body.high-contrast-mode .contact-info {
-            background-color: var(--gray-100);
-            box-shadow: none;
-            border: 2px solid var(--primary);
-        }
-        
-        body.high-contrast-mode .badge {
-            color: var(--dark);
-            border: 2px solid var(--primary);
-            background-color: transparent !important;
-        }
-        
-        body.high-contrast-mode .cert-tab {
-            background-color: var(--gray-100);
-            color: var(--primary);
-            border-color: var(--primary);
-        }
-        
-        body.high-contrast-mode .cert-tab.active {
-            background-color: var(--primary);
-            color: black;
-        }
-
-        body.high-contrast-mode .cert-accordion-header {
-            background-color: var(--gray-300);
-            color: var(--dark);
-        }
-
-        body.high-contrast-mode footer {
-            background-color: var(--gray-300);
-            border-top: 2px solid var(--primary);
-        }
-        
-        /* Estilos Globais */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5%;
-        }
-
-        /* Header e Navegação */
-        header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            box-shadow: var(--shadow);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .nav-items {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        .logo {
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            z-index: 1001;
-            transition: color 0.5s ease;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: clamp(1rem, 3vw, 2rem);
-        }
-
-        .nav-links a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Botão de Contraste */
-        .contrast-btn, .theme-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.4rem;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.5rem 0.8rem;
-            border-radius: var(--radius);
-            cursor: pointer;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .contrast-btn:hover, .theme-btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: clamp(0.6rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
-            background-color: var(--primary);
-            color: white;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: clamp(6rem, 15vw, 10rem) 0 clamp(3rem, 8vw, 5rem);
-            background: linear-gradient(to bottom right, var(--gray-100), white);
-            text-align: center;
-            transition: background 0.5s ease;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            line-height: 1.2;
-            margin-bottom: clamp(1rem, 3vw, 1.5rem);
-            color: var(--dark);
-            transition: color 0.5s ease;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            color: var(--secondary);
-            margin-bottom: clamp(1.5rem, 4vw, 2rem);
-            transition: color 0.5s ease;
-            min-height: 2.5rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: clamp(0.8rem, 2vw, 1rem);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .social-icons {
-            margin-top: clamp(1.5rem, 4vw, 2rem);
-        }
-
-        .social-icons a {
-            color: var(--primary);
-            margin: 0 clamp(0.5rem, 2vw, 0.8rem);
-            font-size: clamp(1.3rem, 4vw, 1.6rem);
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            color: var(--accent);
-        }
-
-        /* Efeito máquina de escrever */
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid var(--primary);
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .05em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary); }
-        }
-
-        /* Ajuste para ícones nos botões */
-        .hero-buttons .btn i {
-            margin-right: 0.5rem;
-        }
-
-        /* Sections */
-        .section {
-            padding: clamp(3rem, 8vw, 5rem) 0;
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
-        
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto clamp(2rem, 6vw, 4rem);
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 6vw, 2.5rem);
-            margin-bottom: clamp(0.8rem, 2vw, 1rem);
-            color: var(--dark);
-            transition: color 0.5s ease;
-        }
-
-        .section-subtitle {
-            color: var(--secondary);
-            font-size: clamp(0.95rem, 2.5vw, 1.125rem);
-            transition: color 0.5s ease;
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-        }
-        
-        .highlight {
-            color: var(--primary);
-            font-weight: 600;
-            transition: color 0.5s ease;
-        }
-
-        /* Portfolio Section */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(1.2rem, 3vw, 2rem);
-        }
-        
-        .portfolio-card {
-            background: white;
-            padding: clamp(1.2rem, 3vw, 2rem);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .portfolio-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .portfolio-card h3 {
-            font-size: clamp(1.2rem, 3.5vw, 1.4rem);
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .portfolio-card p {
-            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        
-        .portfolio-card a {
-            display: inline-block;
-            background-color: var(--primary);
-            color: white;
-            padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(1rem, 2.5vw, 1.5rem);
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-        }
-        
-        .portfolio-card a:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Project Detail Section */
-        .project-details {
-            background: white;
-            padding: clamp(2rem, 5vw, 3rem);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: clamp(2rem, 5vw, 4rem);
-            transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
-        }
-
-        .project-details h3 {
-            font-size: clamp(1.5rem, 4vw, 2rem);
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-        }
-
-        .project-details p {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            margin-bottom: 1rem;
-        }
-
-        .project-details hr {
-            border: none;
-            border-top: 1px solid var(--gray-300);
-            margin: 2rem 0;
-            transition: border-color 0.5s ease;
-        }
-
-        .badges {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-bottom: 1.5rem;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.3rem 0.6rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: white;
-            border-radius: 4px;
-        }
-        
-        .badge-blue { background-color: #007ACC; }
-        .badge-orange { background-color: #E68A00; }
-        .badge-green { background-color: #28a745; }
-        
-        .list-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .list-container h4 {
-            font-size: 1.2rem;
-            color: var(--dark);
-            margin-bottom: 0.8rem;
-        }
-
-        .list-container ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .list-container li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .list-container li::before {
-            content: '✅';
-            position: absolute;
-            left: 0;
-            color: #28a745;
-        }
-        
-        .list-container.results li::before {
-            content: none;
-        }
-
-        .list-container.results li strong {
-            display: block;
-            margin-bottom: 0.2rem;
-        }
-
-        .list-container.results .before::before,
-        .list-container.results .after::before {
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-        .list-container.results .before li::before {
-            content: '\f057'; /* Círculo vermelho (fa-circle-xmark) */
-            color: #dc3545;
-        }
-
-        .list-container.results .after li::before {
-            content: '\f058'; /* Círculo verde (fa-circle-check) */
-            color: #28a745;
-        }
-
-        .code-block {
-            background-color: var(--gray-100);
-            border-left: 4px solid var(--primary);
-            padding: 1rem;
-            font-family: monospace;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            margin-top: 1.5rem;
-            border-radius: var(--radius);
-            transition: background-color 0.5s ease, border-color 0.5s ease;
-        }
-        
-        /* Notebooks Section */
-        .notebooks-list li {
-            margin-bottom: 1rem;
-        }
-
-        .notebooks-list a {
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .notebooks-list a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        .notebooks-list i {
-            margin-right: 0.5rem;
-        }
-        
-        .notebook-card {
-            background-color: var(--gray-100);
-            padding: 1rem;
-            border-radius: var(--radius);
-            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
-            margin-top: 0.5rem;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .notebook-card p {
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .notebook-card strong {
-            color: var(--dark);
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: clamp(1rem, 3vw, 1.5rem);
-        }
-        
-        .skill-category {
-            padding: clamp(1rem, 3vw, 1.5rem);
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .skill-category:hover {
-            transform: scale(1.02);
-        }
-        
-        .skill-category h3 {
-            font-size: clamp(1.1rem, 3vw, 1.2rem);
-            color: var(--primary);
-            margin-bottom: clamp(0.8rem, 2vw, 1rem);
-            text-align: center;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-            transition: border-color 0.5s ease, color 0.5s ease;
-        }
-        
-        .skill-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .skill-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        
-        .skill-list li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            transition: color 0.5s ease;
-        }
-
-        /* Certifications Section */
-        .certifications-container {
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1rem, 3vw, 1.5rem);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cert-tabs {
-            display: flex;
-            justify-content: center;
-            gap: clamp(0.6rem, 2vw, 1rem);
-            margin-bottom: clamp(1.2rem, 3vw, 2rem);
-            flex-wrap: wrap;
-        }
-        
-        .cert-tab {
-            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
-            background-color: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            font-size: clamp(0.85rem, 2.5vw, 1rem);
-        }
-        
-        .cert-tab.active {
-            background-color: var(--primary);
-            color: white;
-        }
-        
-        .cert-tab:hover:not(.active) {
-            background-color: rgba(37, 99, 235, 0.1);
-        }
-        
-        .cert-content {
-            display: none;
-        }
-        
-        .cert-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .cert-accordion {
-            background-color: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 1rem;
-            overflow: hidden;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .cert-accordion-header {
-            padding: clamp(0.8rem, 2vw, 1.2rem);
-            background-color: var(--primary);
-            color: white;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-        }
-        
-        .cert-accordion-header:hover {
-            background-color: var(--primary-dark);
-        }
-        
-        .cert-accordion-header h3 {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            margin: 0;
-            padding-right: 1rem;
-        }
-        
-        .cert-accordion-header i {
-            transition: transform 0.4s ease-in-out;
-            flex-shrink: 0;
-        }
-        
-        .cert-accordion-header.active i {
-            transform: rotate(180deg);
-        }
-        
-        .cert-accordion-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
-        }
-        
-        .cert-accordion-content-inner {
-            padding: clamp(1rem, 2.5vw, 1.5rem);
-        }
-        
-        .cert-links {
-            display: flex;
-            gap: clamp(0.6rem, 2vw, 1rem);
-            margin-top: 1rem;
-            flex-direction: column;
-        }
-        
-        .cert-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            padding: clamp(0.5rem, 1.5vw, 0.6rem) clamp(0.8rem, 2vw, 1rem);
-            border: 1px solid var(--primary);
-            border-radius: 50px;
-            transition: var(--transition);
-            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .cert-links a:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: clamp(1.2rem, 3vw, 2rem);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            text-align: center;
-            transition: background-color 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .contact-info p {
-            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-            margin-bottom: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: clamp(0.8rem, 2vw, 1.5rem);
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
-        
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1rem, 2.5vw, 1.5rem);
-            border: 2px solid var(--primary);
-            border-radius: 50px;
-            transition: var(--transition);
-            justify-content: center;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
-        }
-        
-        .contact-link:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            text-align: center;
-            padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
-            transition: background-color 0.5s ease;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: clamp(1.2rem, 3vw, 2rem);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray-400);
-            font-size: clamp(0.85rem, 2.5vw, 0.9rem);
-        }
-        
-        /* Botão de voltar ao topo */
-        .back-to-top {
-            position: fixed;
-            bottom: clamp(1rem, 3vw, 2rem);
-            right: clamp(1rem, 3vw, 2rem);
-            width: clamp(40px, 10vw, 50px);
-            height: clamp(40px, 10vw, 50px);
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            z-index: 100;
-            font-size: clamp(1rem, 3vw, 1.2rem);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .back-to-top:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-5px);
-        }
-
-        /* Menu Mobile */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: clamp(1.3rem, 4vw, 1.5rem);
-            cursor: pointer;
-            color: var(--dark);
-            z-index: 1001;
-        }
-        
-        .mobile-nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 75%;
-            height: 100vh;
-            background-color: white;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            transition: right 0.3s ease, background-color 0.5s ease;
-            padding: clamp(4rem, 12vw, 6rem) clamp(1.5rem, 4vw, 2rem) clamp(1.5rem, 4vw, 2rem);
-            display: flex;
-            flex-direction: column;
-            gap: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .mobile-nav.active {
-            right: 0;
-            overflow-y: auto;
-        }
-        
-        .mobile-nav a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: clamp(1rem, 3vw, 1.1rem);
-            padding: clamp(0.4rem, 1.5vw, 0.5rem) 0;
-            border-bottom: 1px solid var(--gray-200);
-            transition: var(--transition);
-        }
-        
-        .mobile-nav a:hover {
-            color: var(--primary);
-        }
-        
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Utilitários */
-        .text-center {
-            text-align: center;
-        }
-
-        .bg-gray {
-            background-color: var(--gray-100);
-            transition: background-color 0.5s ease;
-        }
-
-        /* Media Queries para responsividade */
-        @media (min-width: 576px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .cert-links {
-                flex-direction: row;
-            }
-            
-            .contact-links {
-                flex-direction: row;
-            }
-
-            .list-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .mobile-menu-btn {
-                display: none;
-            }
-            
-            .nav-links {
-                display: flex;
-            }
-            
-            .mobile-nav {
-                width: 40%;
-            }
-        }
-
-        @media (max-width: 767px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-buttons .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                width: 95%;
-                padding: 0 1rem;
-            }
-            
-            .cert-tabs {
-                flex-direction: column;
-                width: 100%;
-            }
-            
-            .cert-tab {
-                width: 100%;
-                text-align: center;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- SEÇÃO: CABEÇALHO/NAVEGAÇÃO -->
     <header>
         <div class="container">
             <nav>
-                <a href="#hero" class="logo">Marlon Henrique</a>
+                <a href="#home" class="logo">Marlon Henrique</a>
                 <div class="nav-items">
                     <div class="nav-links">
-                        <a href="#about">Sobre</a>
-                        <a href="#portfolio">Projetos</a>
-                        <a href="#skills">Habilidades</a>
-                        <a href="#certifications">Certificações</a>
-                        <a href="#contact">Contato</a>
+                        <a href="#home" class="nav-link active">Home</a>
+                        <a href="#sobre" class="nav-link">Sobre</a>
+                        <a href="#projetos" class="nav-link">Projetos</a>
+                        <a href="#habilidades" class="nav-link">Habilidades</a>
+                        <a href="#certificacoes" class="nav-link">Certificações</a>
+                        <a href="#contato" class="nav-link">Contato</a>
                     </div>
                     <button id="theme-toggle" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
                         <i class="fas fa-moon"></i> Tema Escuro
@@ -1055,419 +38,510 @@
         </div>
     </header>
 
+    <!-- SEÇÃO: MENU MÓVEL -->
     <div class="mobile-nav">
-        <a href="#about">Sobre</a>
-        <a href="#portfolio">Projetos</a>
-        <a href="#skills">Habilidades</a>
-        <a href="#certifications">Certificações</a>
-        <a href="#contact">Contato</a>
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#projetos" class="nav-link">Projetos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#certificacoes" class="nav-link">Certificações</a>
+        <a href="#contato" class="nav-link">Contato</a>
         <button id="theme-toggle-mobile" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
             <i class="fas fa-moon"></i> Tema Escuro
         </button>
     </div>
     <div class="overlay"></div>
 
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Marlon Henrique</h1>
-                <p><span id="typewriter-text" class="typewriter">Cientista de Dados | Analista de Dados | Python & SQL</span></p>
-                <div class="hero-buttons">
-                    <a href="#portfolio" class="btn">
+    <!-- PÁGINAS DE ROLAGEM -->
+    <main class="page-container">
+        <!-- PÁGINA 1: HOME -->
+        <section id="home" class="page active">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Marlon Henrique</h1>
+                    <p><span id="typewriter-text" class="typewriter">Cientista de Dados | Analista de Dados | Python & SQL</span></p>
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="btn">
+                            <i class="fas fa-code-branch"></i> Ver Projetos
+                        </a>
+                        <a href="#contato" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Entrar em Contato
+                        </a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 2: SOBRE -->
+        <section id="sobre" class="page">
+            <div class="container">
+                <!-- Título centralizado -->
+                <div class="section-header text-center">
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p class="section-subtitle">
+                        Minha jornada na ciência de dados: disciplina, curiosidade e paixão por transformar informações em valor.
+                    </p>
+                </div>
+                
+                <!-- Imagem ao lado do texto -->
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="imagens/IMG_20191025_193822678.jpg" alt="Foto de Marlon Henrique">
+                    </div>
+
+                    <div class="about-text">
+                        <p>Sou um <span class="highlight">Cientista de Dados em formação</span>, com uma paixão inabalável por transformar dados em soluções práticas. Minha jornada começou na faculdade, onde cursei dois semestres da área antes de precisar pausar. Essa pausa, no entanto, não interrompeu minha dedicação. Pelo contrário, ela me motivou a buscar conhecimento por conta própria.</p>
+
+                        <p>Foi através de <span class="highlight">cursos online</span> que entendi a importância de aplicar a teoria em <span class="highlight">projetos reais</span>, usando as melhoras práticas do mercado, como <span class="highlight">Git e GitHub</span>. Um exemplo dessa dedicação é o projeto de Análise e Limpeza de Dados, onde usei <span class="highlight">Pandas</span> para preparar um conjunto de dados complexo, tornando-o útil para análises mais profundas e gerando <span class="highlight">insights acionáveis</span>.</p>
+
+                        <p>Tenho experiência sólida com <span class="highlight">Python</span>, <span class="highlight">SQL</span> e bibliotecas de análise, como <span class="highlight">Pandas</span>, <span class="highlight">Numpy</span> e <span class="highlight">Scikit-learn</span>. Estuo em constante evolução, aprofundando meus conhecimentos em <span class="highlight">Machine Learning</span>, <span class="highlight">Engenharia de Atributos</span> e <span class="highlight">Visualização de Dados</span> para gerar <span class="highlight">soluções estratégicas e inovadoras</span>.</p>
+
+                        <p>Acredito que a combinação de <span class="highlight">paixão e disciplina</span> é a chave para transformar dados em decisões que fazem a diferença. Estou pronto para o próximo desafio.</p>
+                    </div>
+                </div>
+
+                <!-- Stats centralizados -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="2">0</div>
+                        <div class="stat-label">Projetos Concluídos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="8">0</div>
+                        <div class="stat-label">Certificações</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Comprometimento</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="∞">∞</div>
+                        <div class="stat-label">Curiosidade</div>
+                    </div>
+                </div>
+                
+                <!-- Skills centralizados -->
+                <div class="skill-tags">
+                    <span class="skill-tag python">Python</span>
+                    <span class="skill-tag pandas">Pandas</span>
+                    <span class="skill-tag sql">SQL</span>
+                    <span class="skill-tag ml">Machine Learning</span>
+                    <span class="skill-tag viz">Visualização de Dados</span>
+                    <span class="skill-tag data">Estatística</span>
+                    <span class="skill-tag fe">Análise Preditiva</span>
+                </div>
+                
+                <!-- Botões centralizados -->
+                <div class="about-cta-buttons">
+                    <a href="#projetos" class="btn">
                         <i class="fas fa-code-branch"></i> Ver Projetos
                     </a>
-                    <a href="#contact" class="btn btn-outline">
+                    <a href="#contato" class="btn btn-outline">
                         <i class="fas fa-paper-plane"></i> Entrar em Contato
                     </a>
                 </div>
-                <div class="social-icons">
-                    <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">Conheça minha trajetória e paixão por dados</p>
-            </div>
-            <div class="about-content">
-                <p>Sou um <span class="highlight">Cientista de Dados em formação</span> com experiência prática em <span class="highlight">Python, SQL e análise de dados</span>, adquirida por meio de projetos pessoais e cursos especializados.</p>
-                <p>Minha paixão é transformar dados em insights acionáveis. Busco aplicar minhas habilidades em <span class="highlight">Machine Learning, Estatística e soluções Data-Driven</span> para resolver problemas complexos e gerar valor para os negócios.</p>
-                <p>Atualmente, estou focado em aprofundar meus conhecimentos...</p>
-            </div>
-        </div>
-    </section>
+        <!-- PÁGINA 3: PROJETOS -->
+        <section id="projetos" class="page">
+            <div class="portfolio-container">
+                <div class="section-header">
+                    <h2 class="section-title">Projetos</h2>
+                    <p class="section-subtitle">Confira alguns dos meus projetos concluídos e em desenvolvimento.</p>
+                </div>
 
-    <section id="portfolio" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Projetos</h2>
-                <p class="section-subtitle">Apresentando alguns dos meus trabalhos mais relevantes</p>
-            </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>Análise de Vendas de Videogames</h3>
-                    <p>Análise de dados de vendas globais de videogames e tendências de mercado. Utilizado para identificar os jogos, plataformas e gêneros mais lucrativos.</p>
-                    <a href="https://github.com/Marlon99henrique/analise-vendas-videogames" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Análise de Sentimento com Machine Learning</h3>
-                    <p>Criação de um modelo de Machine Learning para prever o sentimento (positivo, negativo, neutro) de avaliações de filmes a partir de textos.</p>
-                    <a href="https://github.com/Marlon99henrique/analise-sentimento-ml" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Painel Interativo de Indicadores Financeiros</h3>
-                    <p>Desenvolvimento de um dashboard interativo no Power BI para monitorar e visualizar KPIs financeiros essenciais.</p>
-                    <a href="https://github.com/Marlon99henrique/dashboard-financeiro" target="_blank">Ver Projeto</a>
-                </div>
-                <div class="portfolio-card">
-                    <h3>Previsão de Preços de Imóveis</h3>
-                    <p>Aplicação de algoritmos de regressão para construir um modelo preditivo que estima o preço de imóveis com base em suas características.</p>
-                    <a href="https://github.com/Marlon99henrique/previsao-precos-imoveis" target="_blank">Ver Projeto</a>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="portfolio-grid">
+                    <!-- Card 1 - Jornada Ciência de Dados -->
+                    <div class="portfolio-card animate-on-scroll completed">
+                        <h3>Jornada Ciência de Dados</h3>
+                        <p>Portfólio central com minhas certificações, conhecimentos e habilidades em Ciência de Dados. Reúne projetos práticos, anotações e evidências do meu aprendizado contínuo.</p>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Habilidades Técnicas</h2>
-                <p class="section-subtitle">Minhas competências e tecnologias que utilizo</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Linguagens de Programação</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>SQL</li>
-                        <li>R</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Bibliotecas e Frameworks</h3>
-                    <ul class="skill-list">
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow</li>
-                        <li>Seaborn/Matplotlib</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Ferramentas e Plataformas</h3>
-                    <ul class="skill-list">
-                        <li>Jupyter Notebook</li>
-                        <li>Power BI</li>
-                        <li>Tableau</li>
-                        <li>Git/GitHub</li>
-                        <li>Google Cloud Platform</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Conceitos e Metodologias</h3>
-                    <ul class="skill-list">
-                        <li>Machine Learning</li>
-                        <li>Análise Estatística</li>
-                        <li>Data Storytelling</li>
-                        <li>ETL</li>
-                        <li>Limpeza e Pré-processamento de Dados</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="section bg-gray">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Certificações</h2>
-                <p class="section-subtitle">Meus diplomas e cursos concluídos</p>
-            </div>
-            <div class="certifications-container">
-                <div class="cert-tabs">
-                    <div class="cert-tab active" data-tab="google">Google</div>
-                    <div class="cert-tab" data-tab="aluratab">Alura</div>
-                    <div class="cert-tab" data-tab="udemy">Udemy</div>
-                </div>
-                <div class="cert-content active" id="google">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header active">
-                            <h3>Certificado Profissional de Análise de Dados Google</h3>
-                            <i class="fas fa-chevron-down"></i>
+                        <div class="project-tags">
+                            <span class="tag python">Python</span>                                  
+                            <span class="tag pandas">Pandas</span>
+                            <span class="tag limpeza">Limpeza de Dados</span>
+                            <span class="tag series">Séries Temporais</span>
+                            <span class="tag eda">Análise de Dados</span>
+                            <span class="tag eda">Análise Exploratória</span>                    
+                            <span class="tag stats">Estatística</span>
+                            <span class="tag ml">Machine Learning</span>
+                            <span class="tag viz">Visualização de Dados</span>
+                            <span class="tag git">Git & GitHub</span>
+                            <span class="tag mql5">MQL5</span>
+                            <span class="tag fe">Feature Engineering</span>
+                            <span class="tag certificacoes">Certificações</span>
                         </div>
-                        <div class="cert-accordion-content active">
-                            <div class="cert-accordion-content-inner">
-                                <p>Este curso me deu uma base sólida para a análise de dados, incluindo a utilização de planilhas, SQL, R e Tableau.</p>
-                                <div class="cert-links">
-                                    <a href="https://coursera.org/verify/professional-cert/S9X5X9M7H3E4" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
+
+                        <a href="https://github.com/Marlon99henrique/jornada-ciencia-dados" target="_blank" class="btn">Ver Projeto</a>
+                    </div>
+
+                    <!-- Card 2 - Pandas: EDA e Limpeza de Dados -->
+                    <div class="portfolio-card animate-on-scroll completed">
+                        <h3>Domínio do Pandas: EDA e Limpeza de Dados</h3>
+                        <p>Projeto completo e estruturado para demonstrar domínio da biblioteca Pandas. Inclui boas práticas em análise exploratória e limpeza de dados, organização modular do código, notebooks bem documentados e testes unitários. Este é o primeiro de uma série de projetos voltados para aprofundar o uso profissional do Pandas.</p>
+                        <div class="project-tags">
+                            <span class="tag python">Python</span>
+                            <span class="tag pandas">Pandas</span>
+                            <span class="tag data">Limpeza de Dados</span>
+                            <span class="tag eda">Análise Exploratória</span>
+                            
+                            <span class="tag testes">Testes Unitários</span>
+                            <span class="tag docs">Documentação</span>
+                        </div>
+                        <a href="https://github.com/Marlon99henrique/pandas-eda-limpeza-dados" target="_blank" class="btn">Ver Projeto</a>
+                    </div>
+
+                    <!-- Card 3 - Em Desenvolvimento -->
+                    <div class="portfolio-card animate-on-scroll in-progress">
+                        <h3>🔜 Análise de Séries Temporais com Pandas</h3>
+                        <p>Projeto em desenvolvimento para explorar séries temporais utilizando Pandas. O foco será na preparação, transformação, visualização e análise de dados temporais aplicados a cenários reais.</p>
+                        <div class="project-tags">
+                            <span class="tag python">Python</span>
+                            <span class="tag pandas">Pandas</span>
+                            <span class="tag series">Séries Temporais</span>
+                            <span class="tag eda">Análise de Dados</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn disabled">Em Desenvolvimento</a>
+                    </div>
+
+                    <!-- Card 4 - Feature Engineering para Machine Learning -->
+                    <div class="portfolio-card animate-on-scroll in-progress">
+                        <h3>🔜 Feature Engineering para Machine Learning</h3>
+                        <p>Projeto em desenvolvimento focado em técnicas de Feature Engineering para melhorar a performance de modelos de Machine Learning. Inclui transformação de variáveis, criação de novas features e seleção das mais relevantes para os algoritmos.</p>
+                        <div class="project-tags">
+                            <span class="tag python">Python</span>
+                            <span class="tag ml">Machine Learning</span>
+                            <span class="tag stats">Estatística</span>
+                            <span class="tag fe">Feature Engineering</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn disabled">Em Desenvolvimento</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 4: HABILIDADES -->
+        <section id="habilidades" class="page">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                    <p class="section-subtitle">Minhas competências e tecnologias que utilizo</p>
+                </div>
+
+                <div class="skills-container">
+                    <!-- Categoria: Linguagens -->
+                    <div class="skill-category">
+                        <h3>Linguagens de Programação</h3>
+                        <p class="skill-description">
+                            Linguagens que utilizo para análise de dados, automação de processos e desenvolvimento de scripts e ferramentas. Python e SQL são minhas principais competências, com experiência em mql5 e JavaScript para aplicações específicas.
+                        </p>
+                        <div class="skill-tags">
+                            <span class="tag python">Python</span>
+                            <span class="tag sql">SQL</span>
+                            <span class="tag r">mql5</span>
+                            <span class="tag javascript">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <!-- Categoria: Bibliotecas e Frameworks -->
+                    <div class="skill-category">
+                        <h3>Bibliotecas</h3>
+                        <p class="skill-description">
+                            Gosto de usar Pandas e NumPy para organizar e explorar meus dados de forma eficiente. Com Scikit-learn e TensorFlow, consigo criar modelos de Machine Learning e testar minhas ideias na prática. Para apresentar resultados, recorro ao Seaborn e Matplotlib, que me ajudam a transformar dados em visualizações claras e impactantes.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span class="tag pandas">Pandas</span>
+                            <span class="tag numpy">NumPy</span>
+                            <span class="tag sklearn">Scikit-learn</span>
+                            <span class="tag tensorflow">TensorFlow</span>
+                            <span class="tag seaborn">Seaborn/Matplotlib</span>
+                        </div>
+                    </div>
+
+                    <!-- Categoria: Ferramentas e Plataformas -->
+                    <div class="skill-category">
+                        <h3>Ferramentas e Plataformas</h3>
+                        <p class="skill-description">
+                            Uso Jupyter Notebook para explorar dados e testar rapidamente ideias de análise. No VS Code e PyCharm, consigo desenvolver projetos mais estruturados e complexos, mantendo meu código organizado. Também trabalho com Git/GitHub para versionamento e colaboração, Power BI para criar dashboards claros e interativos, e estou me aprofundando em Google Cloud Platform para levar meus projetos para a nube.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span class="tag jupyter">Jupyter Notebook</span>
+                            <span class="tag vscode">VS Code</span>
+                            <span class="tag pycharm">PyCharm</span>
+                            <span class="tag powerbi">Power BI</span>
+                            <span class="tag git">Git/GitHub</span>                  
+                        </div>
+                    </div>
+
+                    <!-- Categoria: Conceitos e Metodologias -->
+                    <div class="skill-category">
+                        <h3>Conceitos e Metodologias</h3>
+                        <p class="skill-description">
+                            Gosto de aplicar Machine Learning para transformar dados em insights práticos, sempre apoiado por uma análise estatística sólida. Valorizo a clareza na apresentação dos resultados, usando Data Storytelling para contar a história dos dados. Também trabalho com ETL e limpeza de dados, faço Feature Engineering para melhorar os modelos, realizo Análise Exploratória para entender padrões e estou confortável lidando com Séries Temporais quando o projeto exige.
+                        </p>
+
+                        <div class="skill-tags">
+                            <span class="tag ml">Machine Learning</span>
+                            <span class="tag stats">Análise Estatística</span>
+                            <span class="tag storytelling">Data Storytelling</span>
+                            <span class="tag etl">ETL</span>
+                            <span class="tag preprocessing">Limpeza e Pré-processamento de Dados</span>
+                            <span class="tag fe">Feature Engineering</span>
+                            <span class="tag eda">Análise Exploratória</span>
+                            <span class="tag series">Séries Temporais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 5: CERTIFICAÇÕES -->
+        <section id="certificacoes" class="page">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Certificações</h2>
+                    <p class="section-subtitle">Meus diplomas e cursos concluídos</p>
+                </div>
+                <div class="certifications-container">
+                    <div class="cert-tabs">
+                        <div class="cert-tab" data-tab="udemy">Udemy</div>
+                        <div class="cert-tab active" data-tab="graduacao">Graduação</div>
+                    </div>
+                    <div class="cert-content" id="udemy">
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Cientista de Dados</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Abordagem completa que cobre fundamentos de Python, Estatística, Machine Learning e projetos práticos.</p>
+                                    <div class="cert-links">
+                                        <a href="https://www.udemy.com/course/cientista-de-dados/?kw=for&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">
+                                            <i class="fas fa-link"></i> Ver Curso
+                                        </a>
+                                        <a href="certificados/formacao-cientista-dados.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Python para Engenheiros e Cientistas</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Curso focado em aplicações práticas de Python para análise científica e engenharia.</p>
+                                    <div class="cert-links">
+                                        <a href="https://www.udemy.com/share/103bnL3@2QZfOzHfASKzXBTKLbTIYQsr7llU1SMUve1jhESDVelkSE2uLfaWKztBU8jIVjjvYA==/" target="_blank">
+                                            <i class="fas fa-link"></i> Ver Curso
+                                        </a>
+                                        <a href="certificados/python-engenheiros-cientista-basico-avançado.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Programação em Python: Básico ao Avançado</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Formação completa em Python, abordando desde a lógica inicial até tópicos avançados da linguagem.</p>
+                                    <div class="cert-links">
+                                        <a href="https://www.udemy.com/course/programacao-python-do-basico-ao-avancado/?kw=python&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">
+                                            <i class="fas fa-link"></i> Ver Curso
+                                        </a>
+                                        <a href="certificados/python-basico-avancado.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Git e GitHub do Básico ao Avançado</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Curso prático que aborda desde os conceitos básicos de versionamento até o uso de Gists e GitHub Pages.</p>
+                                    <div class="cert-links">
+                                        <a href="https://www.udemy.com/course/git-e-github-do-basico-ao-avancado-c-gist-e-github-pages/?kw=gi&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">
+                                            <i class="fas fa-link"></i> Ver Curso
+                                        </a>
+                                        <a href="certificados/git-github-basico-avancado.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cert-content active" id="graduacao">
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header active">
+                                <h3>Programming and Communication</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content active">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Este módulo abrange disciplinas como Comunicação Empresarial, Criação de Aplicações e Sistemas e Design Thinking e Metodologias Ágeis.</p>
+                                    <p>Carga horária: 240h.</p>
+                                    <div class="cert-links">
+                                        <a href="certificados/programming-and-communication.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Math Computing Basics</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Este módulo abrange disciplinas como Arquitetura de Computadores do Século XXI e Matemática Diferencial Aplicada.</p>
+                                    <p>Carga horária: 160h.</p>
+                                    <div class="cert-links">
+                                        <a href="certificados/math-computing-basics.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Modelling Data Developer</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Este módulo abrange disciplinas como Coleta e Tratamento de Dados Inteligentes, Pensamento Computacional Aplicado e Probabilidade e Estatística.</p>
+                                    <p>Carga horária: 240h.</p>
+                                    <div class="cert-links">
+                                        <a href="certificados/modelling-data-developer.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-accordion">
+                            <div class="cert-accordion-header">
+                                <h3>Developer Thinking</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="cert-accordion-content">
+                                <div class="cert-accordion-content-inner">
+                                    <p>Este módulo abrange disciplinas como Coaching e Planejamento de Carreira e Prática Integradora para Dados Inteligentes.</p>
+                                    <p>Carga horária: 160h.</p>
+                                    <div class="cert-links">
+                                        <a href="certificados/developer-thinking.pdf" target="_blank">
+                                            <i class="fas fa-file-pdf"></i> Ver Certificado
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="cert-content" id="aluratab">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Formação em Ciência de Dados</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Conhecimentos aprofundados em Machine Learning, Python e manipulação de dados.</p>
-                                <div class="cert-links">
-                                    <a href="#" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </section>
+
+        <!-- PÁGINA 6: CONTATO -->
+        <section id="contato" class="page">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Pronto para Mudar o Jogo?</h2>
+                    <p class="section-subtitle">Dados são mais do que números. Me diga seu desafio, e vamos encontrar a solução.</p>
                 </div>
-                <div class="cert-content" id="udemy">
-                    <div class="cert-accordion">
-                        <div class="cert-accordion-header">
-                            <h3>Python para Análise de Dados</h3>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="cert-accordion-content">
-                            <div class="cert-accordion-content-inner">
-                                <p>Curso prático sobre as principais bibliotecas de Python para análise de dados, incluindo Pandas e NumPy.</p>
-                                <div class="cert-links">
-                                    <a href="#" target="_blank">
-                                        <i class="fas fa-link"></i> Ver Certificado
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contato</h2>
-                <p class="section-subtitle">Vamos conectar? Sinta-se à vontade para me enviar uma mensagem!</p>
-            </div>
-            <div class="contact-info">
-                <p>Estou disponível para novas oportunidades, projetos e colaborações. Abaixo estão as melhores formas de me contatar.</p>
-                <div class="contact-links">
-                    <a href="mailto:marlon.99henrique@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i> marlon.99henrique@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <a href="#" class="back-to-top" aria-label="Voltar ao topo">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <footer>
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2024 Marlon Henrique. Todos os direitos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Lógica do botão de menu mobile
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const overlay = document.querySelector('.overlay');
-        const body = document.body;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            overlay.classList.add('active');
-            body.style.overflow = 'hidden';
-        });
-
-        overlay.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            overlay.classList.remove('active');
-            body.style.overflow = 'auto';
-        });
-
-        // Lógica para fechar o menu ao clicar em um link
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                overlay.classList.remove('active');
-                body.style.overflow = 'auto';
-            });
-        });
-
-        // Lógica dos Tabs de Certificações
-        const certTabs = document.querySelectorAll('.cert-tab');
-        const certContents = document.querySelectorAll('.cert-content');
-
-        certTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const targetTab = tab.dataset.tab;
                 
-                certTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Fale comigo</h3>
+                        <p>Transformar dados em insights é o que me move. Se você tem um projeto que precisa de uma mente analítica e focada em resultados, vamos conversar. Preencha o formulário ao lado ou me encontre nas redes sociais abaixo.</p>
+                        <div class="contact-links">
+                            <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/Marlon99henrique" target="_blank" class="contact-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
 
-                certContents.forEach(content => {
-                    if (content.id === targetTab) {
-                        content.classList.add('active');
-                    } else {
-                        content.classList.remove('active');
-                    }
-                });
-            });
-        });
+                    <div class="contact-form">
+                        <h3>Envie uma mensagem</h3>
+                        <form action="seu-script-de-backend.php" method="post">
+                            <div class="form-group">
+                                <label for="name">Nome:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem:</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        // Lógica do Accordion de Certificações
-        const accordionHeaders = document.querySelectorAll('.cert-accordion-header');
 
-        accordionHeaders.forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                const activeHeader = document.querySelector('.cert-accordion-header.active');
 
-                // Fechar o header ativo, se houver, e não for o clicado
-                if (activeHeader && activeHeader !== header) {
-                    activeHeader.classList.remove('active');
-                    activeHeader.nextElementSibling.style.maxHeight = 0;
-                }
+<!-- Botões de navegação vertical -->
+<div class="page-nav-buttons">
+  <!-- Página anterior -->
+  <a href="#" class="nav-button prev" aria-label="Página anterior">
+    <i class="fas fa-arrow-up"></i>
+  </a>
 
-                // Alternar o estado do header clicado
-                header.classList.toggle('active');
-                if (header.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.style.maxHeight = 0;
-                }
-            });
-        });
+  <!-- Próxima página -->
+  <a href="#" class="nav-button next" aria-label="Próxima página">
+    <i class="fas fa-arrow-down"></i>
+  </a>
+</div>
 
-        // Lógica do botão de voltar ao topo
-        const backToTopBtn = document.querySelector('.back-to-top');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
+    <!-- RODAPÉ -->
+<footer>
+    <div class="container">
+        <div class="social-icons">
+            <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Marlon Henrique. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
 
-        backToTopBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Lógica para o efeito de máquina de escrever
-        const textElement = document.getElementById('typewriter-text');
-        const texts = ["Cientista de Dados", "Analista de Dados", "Python & SQL", "Data-Driven Solutions"];
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function type() {
-            const currentText = texts[textIndex];
-            if (isDeleting) {
-                textElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                textElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (!isDeleting && charIndex === currentText.length) {
-                setTimeout(() => isDeleting = true, 2000);
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-            }
-
-            const typingSpeed = isDeleting ? 50 : 100;
-            setTimeout(type, typingSpeed);
-        }
-
-        document.addEventListener('DOMContentLoaded', type);
-        
-        // Lógica de alternância de tema (Dark Mode)
-        const themeToggleButton = document.getElementById('theme-toggle');
-        const themeToggleMobileButton = document.getElementById('theme-toggle-mobile');
-
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggleButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-            if (themeToggleMobileButton) {
-                themeToggleMobileButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-            }
-        }
-
-        const handleThemeToggle = () => {
-            const isDarkMode = document.body.classList.toggle('dark-mode');
-            
-            if (isDarkMode) {
-                localStorage.setItem('theme', 'dark');
-                themeToggleButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-                if (themeToggleMobileButton) {
-                    themeToggleMobileButton.innerHTML = '<i class="fas fa-sun"></i> Tema Claro';
-                }
-            } else {
-                localStorage.setItem('theme', 'light');
-                themeToggleButton.innerHTML = '<i class="fas fa-moon"></i> Tema Escuro';
-                if (themeToggleMobileButton) {
-                    themeToggleMobileButton.innerHTML = '<i class="fas fa-moon"></i> Tema Escuro';
-                }
-            }
-            
-            // Remove a classe de alto contraste se o tema escuro for ativado
-            if (document.body.classList.contains('high-contrast-mode')) {
-                document.body.classList.remove('high-contrast-mode');
-            }
-        };
-
-        if (themeToggleButton) {
-            themeToggleButton.addEventListener('click', handleThemeToggle);
-        }
-        if (themeToggleMobileButton) {
-            themeToggleMobileButton.addEventListener('click', handleThemeToggle);
-        }
-
-        // Lógica do botão de alto contraste (opcional, pode ser removido)
-        const contrastToggleButton = document.getElementById('contrast-toggle');
-        if (contrastToggleButton) {
-            contrastToggleButton.addEventListener('click', () => {
-                document.body.classList.toggle('high-contrast-mode');
-                // Remove a classe de tema escuro para evitar conflitos
-                if (document.body.classList.contains('dark-mode')) {
-                    document.body.classList.remove('dark-mode');
-                    localStorage.removeItem('theme');
-                }
-            });
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
