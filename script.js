@@ -131,27 +131,37 @@ function initPageNavigation() {
     }
 
     // Função para atualizar a navegação ativa
-    function updateActiveNav() {
-        const scrollPosition = pageContainer.scrollTop;
-        const pageHeight = window.innerHeight;
-        const currentPageIndex = Math.floor((scrollPosition + (pageHeight / 2)) / pageHeight);
-        
-        // Garante que o índice está dentro dos limites
-        const safeIndex = Math.max(0, Math.min(currentPageIndex, pages.length - 1));
-        
-        // Atualiza classes ativas
-        pages.forEach((page, index) => {
-            page.classList.toggle('active', index === safeIndex);
-        });
-        
-        // Atualiza links de navegação
-        const allLinks = [...navLinks, ...mobileNavLinks];
-        allLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            const targetId = href ? href.substring(1) : '';
-            link.classList.toggle('active', targetId === pages[safeIndex]?.id);
-        });
-    }
+ function updateActiveNav() {
+    const scrollPosition = pageContainer.scrollTop;
+    const viewportHeight = window.innerHeight;
+
+    let currentPageIndex = 0;
+    let minDistance = Infinity;
+
+    pages.forEach((page, index) => {
+        const pageTop = page.offsetTop;
+        const distance = Math.abs(scrollPosition - pageTop);
+
+        if (distance < minDistance) {
+            minDistance = distance;
+            currentPageIndex = index;
+        }
+    });
+
+    // Atualiza classes ativas
+    pages.forEach((page, index) => {
+        page.classList.toggle('active', index === currentPageIndex);
+    });
+
+    // Atualiza links de navegação
+    const allLinks = [...navLinks, ...mobileNavLinks];
+    allLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        const targetId = href ? href.substring(1) : '';
+        link.classList.toggle('active', targetId === pages[currentPageIndex]?.id);
+    });
+}
+
 
     // Configura o scroll com debounce
     pageContainer.addEventListener('scroll', () => {
