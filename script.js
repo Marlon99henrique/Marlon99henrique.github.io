@@ -20,7 +20,7 @@ function initMobileMenu() {
     function closeMenu() {
         mobileNav.classList.remove('active');
         overlay.classList.remove('active');
-        body.style.overflow = 'auto';
+        body.style.overflow = '';
     }
 
     // Adiciona eventos
@@ -28,8 +28,10 @@ function initMobileMenu() {
     overlay.addEventListener('click', closeMenu);
 
     // Fecha o menu ao clicar em um link (delegação de evento melhorada)
-    document.querySelectorAll('.mobile-nav a').forEach(link => {
-        link.addEventListener('click', closeMenu);
+    mobileNav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            closeMenu();
+        }
     });
 
     // Fecha o menu com a tecla ESC
@@ -297,7 +299,7 @@ function initTypewriter() {
         }
 
         type();
-    }, 3500); // Reduzido de 3500ms para 1000ms para melhor experiência
+    }, 1000);
 
     // Limpa o timeout quando a página fica oculta
     document.addEventListener('visibilitychange', () => {
@@ -418,7 +420,7 @@ function initContrastToggle() {
 }
 
 // =============================================
-// CONTROLE DE TEMA CLARO/ESCURO (FUNÇÃO FALTANDO)
+// CONTROLE DE TEMA CLARO/ESCURO
 // =============================================
 
 function initThemeToggle() {
@@ -457,15 +459,16 @@ function setupProjectTags() {
         });
 
         card.addEventListener('mouseleave', () => {
-            const tags = card.querySelector('.project-tags');
+            const tags = car.querySelector('.project-tags');
             if (tags) tags.classList.remove('show');
         });
 
         // Para dispositivos touch
-        card.addEventListener('touchstart', () => {
+        card.addEventListener('touchstart', (e) => {
+            e.preventDefault(); // Prevenir comportamento padrão
             const tags = card.querySelector('.project-tags');
             if (tags) tags.classList.toggle('show');
-        });
+        }, { passive: false });
     });
 }
 
@@ -479,7 +482,7 @@ function initializeAllFeatures() {
     initPageNavigation();
     initNavigationButtons();
     initTypewriter();
-    initThemeToggle(); // Adicionada a função que estava faltando
+    initThemeToggle();
     animateStatsTogether();
     setupScrollAnimations();
     initContrastToggle();
