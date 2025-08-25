@@ -111,92 +111,85 @@ function initCertifications() {
     });
 }
 
+
+
+
 // =============================================
-// NAVEGAÇÃO ENTRE PÁGINAS (SCROLL SNAP)
+// NAVEGAÇÃO ENTRE PÁGINAS (SCROLL SNAP COM INTERSECTION OBSERVER)
 // =============================================
 
+
 function initPageNavigation() {
-    const pageContainer = document.querySelector('.page-container');
     const pages = document.querySelectorAll('.page');
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-    
-    if (!pageContainer || pages.length === 0) return;
 
-    // Debounce para melhor performance no scroll
-    let scrollTimeout;
-    function debounce(callback, wait) {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(callback, wait);
+    let currentVisiblePage = null;
+
+    // Atualiza navegação ativa com base na seção visível
+    function updateActiveNav(currentPageId) {
+        pages.forEach(page => {
+            page.classList.toggle('active', page.id === currentPageId);
+        });
+
+        const allLinks = [...navLinks, ...mobileNavLinks];
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            const targetId = href ? href.substring(1) : '';
+            link.classList.toggle('active', targetId === currentPageId);
+        });
     }
 
-    // Função para atualizar a navegação ativa
- function updateActiveNav() {
-    const scrollPosition = pageContainer.scrollTop;
-    const viewportHeight = window.innerHeight;
+    // IntersectionObserver observando a janela inteira
+    const observer = new IntersectionObserver((entries) => {
+        let mostVisiblePage = null;
+        let maxRatio = 0;
 
-    let currentPageIndex = 0;
-    let minDistance = Infinity;
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.4) {
+                if (entry.intersectionRatio > maxRatio) {
+                    maxRatio = entry.intersectionRatio;
+                    mostVisiblePage = entry.target;
+                }
+            }
+        });
 
-    pages.forEach((page, index) => {
-        const pageTop = page.offsetTop;
-        const distance = Math.abs(scrollPosition - pageTop);
-
-        if (distance < minDistance) {
-            minDistance = distance;
-            currentPageIndex = index;
+        if (mostVisiblePage && mostVisiblePage.id !== currentVisiblePage) {
+            currentVisiblePage = mostVisiblePage.id;
+            updateActiveNav(currentVisiblePage);
         }
+    }, {
+        root: null, // ← observa a rolagem da janela, não de um container
+        threshold: Array.from({ length: 11 }, (_, i) => i / 10)
     });
 
-    // Atualiza classes ativas
-    pages.forEach((page, index) => {
-        page.classList.toggle('active', index === currentPageIndex);
-    });
+    pages.forEach(page => observer.observe(page));
 
-    // Atualiza links de navegação
-    const allLinks = [...navLinks, ...mobileNavLinks];
-    allLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        const targetId = href ? href.substring(1) : '';
-        link.classList.toggle('active', targetId === pages[currentPageIndex]?.id);
-    });
-}
-
-
-    // Configura o scroll com debounce
-    pageContainer.addEventListener('scroll', () => {
-        debounce(updateActiveNav, 100);
-    });
-    
-    // Configura os links de navegação
+    // Navegação por clique nos links
     const allLinks = [...navLinks, ...mobileNavLinks];
     allLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const href = link.getAttribute('href');
             if (!href || !href.startsWith('#')) return;
-            
+
             const targetId = href.substring(1);
             const targetPage = document.getElementById(targetId);
-            
+
             if (targetPage) {
-                const pageIndex = Array.from(pages).indexOf(targetPage);
-                if (pageIndex !== -1) {
-                    pageContainer.scrollTo({
-                        top: pageIndex * window.innerHeight,
-                        behavior: 'smooth'
-                    });
-                }
+                targetPage.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 
-    // Atualização inicial
-    updateActiveNav();
-
     // Recalcula ao redimensionar a janela
-    window.addEventListener('resize', updateActiveNav);
+    window.addEventListener('resize', () => {
+        pages.forEach(page => observer.unobserve(page));
+        pages.forEach(page => observer.observe(page));
+    });
 }
+
+
 
 // =============================================
 // NAVEGAÇÃO ENTRE TELAS COM BOTÕES DE ROLAGEM
