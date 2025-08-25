@@ -302,7 +302,7 @@ function initTypewriter() {
         }
 
         type();
-    }, 1000);
+    }, 4000);
 
     // Limpa o timeout quando a página fica oculta
     document.addEventListener('visibilitychange', () => {
@@ -311,6 +311,13 @@ function initTypewriter() {
         }
     });
 }
+
+
+
+
+
+
+
 
 // =============================================
 // ANIMAÇÃO DE ESTATÍSTICAS
