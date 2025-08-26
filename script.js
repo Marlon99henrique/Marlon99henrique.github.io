@@ -1,5 +1,5 @@
 // ===============================
-//  CERTIFICAÇÕES - ABAS E CARDS VISÍVEIS AO CLICAR
+//  CERTIFICAÇÕES - ABAS E CARDS VISÍVEIS AO PASSAR O MOUSE
 // ===============================
 const tabs = document.querySelectorAll('.cert-tab');
 const contents = document.querySelectorAll('.cert-content');
@@ -14,9 +14,9 @@ function showTab(tabEl) {
   if (target) target.classList.add('active');
 }
 
-// --- Clique para todas as telas ---
+// --- Hover para todas as telas ---
 tabs.forEach(tab => {
-  tab.addEventListener('click', () => showTab(tab));
+  tab.addEventListener('mouseenter', () => showTab(tab));
 });
 
 // --- Inicialização ---

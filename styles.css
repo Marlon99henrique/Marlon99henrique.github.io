@@ -1056,135 +1056,156 @@ img, video {
 /* =============================================
    SEÇÃO PROJETOS - NEON CLEAN
 ============================================= */
+
 #projetos {
-    width: 100%;
-    padding: clamp(3rem, 8vw, 5rem) 0;
-    background: var(--dark-bg);
-    box-sizing: border-box;
+  width: 100%;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  background: var(--dark-bg);
+  box-sizing: border-box;
 }
 
 .portfolio-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
-/* Grid de projetos */
+/* =============================================
+   GRID PROJETOS - NEON CLEAN
+============================================= */
+
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 2.5rem;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  width: 100%;
 }
 
-/* Card */
+/* =============================================
+   CARDS PROJETOS - NEON CLEAN
+============================================= */
+
 .portfolio-card {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 2rem 1.5rem;
-    border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px rgba(0, 180, 255, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 0 25px rgba(0, 180, 255, 0.5);
-    border-color: var(--primary-color);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.5);
+  border-color: var(--primary-color);
 }
 
 .portfolio-card h3 {
-    font-size: clamp(1.1rem, 2vw, 1.35rem);
-    margin-bottom: 0.8rem;
-    color: #fff;
-    font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  margin-bottom: 0.8rem;
+  color: #fff;
+  font-weight: 600;
 }
 
 .portfolio-card p {
-    flex-grow: 1;
-    margin-bottom: 1.2rem;
-    color: var(--secondary-color);
-    font-size: clamp(0.9rem, 1.5vw, 1rem);
-    line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 1.2rem;
+  color: var(--secondary-color);
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
 }
 
-/* Tags (tecnologias usadas) */
+/* =============================================
+   TAGS PROJETOS - NEON CLEAN
+============================================= */
+
 .project-tags {
-    margin: 1rem 0 1.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+  margin: 1rem 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .tag {
-    font-size: clamp(0.75rem, 1.4vw, 0.85rem);
-    padding: 0.4rem 0.9rem;
-    border-radius: 30px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, rgba(0, 180, 255, 0.35), rgba(255, 0, 214, 0.35));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+  padding: 0.4rem 0.9rem;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.35), rgba(255, 0, 214, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .tag:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 15px rgba(0, 180, 255, 0.6);
-    filter: brightness(1.15);
+  transform: scale(1.08);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.6);
+  filter: brightness(1.15);
 }
 
-/* Botão dentro do card */
+/* =============================================
+   BOTÃO PROJETOS - NEON CLEAN
+============================================= */
+
 .portfolio-card .btn {
-    margin-top: auto;
-    align-self: flex-start;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    padding: 0.8rem 1.8rem;
-    border-radius: 50px;
-    font-weight: 600;
-    border: 2px solid var(--primary-color);
-    background: rgba(0, 180, 255, 0.15);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.35);
-    transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  background: rgba(0, 180, 255, 0.15);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.35);
+  transition: all 0.3s ease;
 }
 
 .portfolio-card .btn:hover {
-    background: var(--primary-color);
-    color: #000;
-    box-shadow: 0 0 18px rgba(0, 180, 255, 0.8);
-    transform: translateY(-3px) scale(1.05);
+  background: var(--primary-color);
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.8);
+  transform: translateY(-3px) scale(1.05);
 }
 
-/* Animação de entrada */
+/* =============================================
+   ANIMAÇÃO PROJETOS - NEON CLEAN
+============================================= */
+
 .animate-on-scroll {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
 }
 
 .animate-on-scroll.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Responsividade */
+/* =============================================
+   RESPONSIVIDADE PROJETOS - NEON CLEAN
+============================================= */
+
 @media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .portfolio-card {
-        padding: 1.5rem 1.2rem;
-    }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .portfolio-card {
+    padding: 1.5rem 1.2rem;
+  }
 }
+
+
 
 
 
@@ -1196,85 +1217,89 @@ img, video {
 /* =============================================
    SEÇÃO HABILIDADES - NEON CLEAN
 ============================================= */
+
 .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1rem, 3vw, 1.5rem);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 
-/* Card de cada categoria */
+/* =============================================
+   CARDS HABILIDADES - NEON CLEAN
+============================================= */
+
 .skill-category {
-    padding: clamp(1rem, 3vw, 1.5rem);
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px rgba(0, 180, 255, 0.15);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    width: 100%;
-    box-sizing: border-box;
-    backdrop-filter: blur(6px);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
 }
 
 .skill-category:hover {
-    transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 0 28px rgba(0, 180, 255, 0.6);
-    border-color: var(--primary-color);
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 0 28px rgba(0, 180, 255, 0.6);
+  border-color: var(--primary-color);
 }
 
-/* Título das categorias */
 .skill-category h3 {
-    font-size: clamp(1.1rem, 3vw, 1.25rem);
-    color: #fff;
-    margin-bottom: clamp(0.8rem, 2vw, 1rem);
-    text-align: center;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.6rem;
-    transition: border-color 0.4s ease, color 0.4s ease;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  color: #fff;
+  margin-bottom: clamp(0.8rem, 2vw, 1rem);
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.6rem;
+  transition: border-color 0.4s ease, color 0.4s ease;
 }
 
-/* Descrição curta */
 .skill-description {
-    font-size: 0.95rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
-    text-align: center;
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
-/* Tags */
 .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
 }
 
-/* Estilo neon para tags */
+/* =============================================
+   TAGS HABILIDADES - NEON CLEAN
+============================================= */
+
 .tag {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.9rem;
-    border-radius: 0.6rem;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, rgba(0, 180, 255, 0.35), rgba(255, 0, 214, 0.35));
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-    white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(0, 180, 255, 0.35), rgba(255, 0, 214, 0.35));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  white-space: nowrap;
 }
 
 .tag:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 18px rgba(0, 180, 255, 0.7);
-    filter: brightness(1.2);
+  transform: scale(1.08);
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.7);
+  filter: brightness(1.2);
 }
 
-/* Ícones */
+/* Ícones nas tags */
 .tag.python::before { content: "🐍 "; }
 .tag.sql::before { content: "🗄️ "; }
 .tag.r::before { content: "📉 "; }
@@ -1298,18 +1323,10 @@ img, video {
 .tag.eda::before { content: "🔍 "; }
 .tag.series::before { content: "⏱️ "; }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .skills-container {
-        padding: 0 1rem;
-    }
-    .skill-category h3 {
-        font-size: clamp(1rem, 4vw, 1.1rem);
-    }
-    .skill-description {
-        font-size: 0.9rem;
-    }
-}
+
+
+
+
 
 
 
@@ -1320,150 +1337,144 @@ img, video {
 
 
 /* =============================================
-   SEÇÃO CERTIFICAÇÕES - CARDS VISÍVEIS NEON
+   SEÇÃO CERTIFICAÇÕES - NEON CLEAN
 ============================================= */
-
-:root {
-    --primary-color: #00b4ff;
-    --secondary-color: #cce7ff;
-    --radius: 12px;
+#certificacoes {
+  width: 100%;
+  padding: clamp(3rem, 8vw, 5rem) 0;
+  background: var(--dark-bg);
+  box-sizing: border-box;
 }
 
-/* ==============================
-   SEÇÃO CERTIFICAÇÕES
-============================== */
+.certificacoes-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
 
-/* Container de abas */
+/* =============================================
+   TABS CERTIFICAÇÕES
+============================================= */
 .cert-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .cert-tab {
-    padding: 0.6rem 1.5rem;
-    font-weight: 600;
-    border-radius: var(--radius);
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0,180,255,0.2);
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  border: 2px solid var(--primary-color);
+  background: rgba(0, 180, 255, 0.15);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.35);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.cert-tab.active,
-.cert-tab:hover {
-    background: rgba(0,180,255,0.2);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 20px rgba(0,180,255,0.6);
+.cert-tab:hover,
+.cert-tab.active {
+  background: var(--primary-color);
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.8);
+  transform: translateY(-3px) scale(1.05);
 }
 
-/* Container dos cards */
 .cert-content {
-    display: none;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: clamp(1rem, 3vw, 1.5rem);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .cert-content.active {
-    display: grid;
+  display: block;
+  opacity: 1;
 }
 
-/* Cards */
-.neon-card {
-    padding: clamp(1rem, 3vw, 1.5rem);
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 15px rgba(0, 180, 255, 0.15);
-    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    width: 100%;
-    box-sizing: border-box;
-    backdrop-filter: blur(6px);
+/* =============================================
+   GRID CERTIFICAÇÕES
+============================================= */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+  width: 100%;
 }
 
-.neon-card:hover {
-    transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 0 28px rgba(0, 180, 255, 0.6);
-    border-color: var(--primary-color);
+/* =============================================
+   CARDS CERTIFICAÇÕES
+============================================= */
+#certificacoes .skill-card,
+#certificacoes .skill-category {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* Título do card */
-.cert-card-title {
-    font-size: clamp(1.1rem, 3vw, 1.25rem);
-    color: #fff;
-    margin-bottom: clamp(0.8rem, 2vw, 1rem);
-    text-align: center;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.6rem;
+/* =============================================
+   BOTÕES DENTRO DOS CARDS - PADRÃO "VER PROJETO"
+============================================= */
+#certificacoes .skill-card a,
+#certificacoes .skill-category a {
+  display: inline-block;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  color: #fff;
+  background: rgba(0, 180, 255, 0.15);
+  box-shadow: 0 0 10px rgba(0, 180, 255, 0.4);
+  transition: all 0.3s ease;
+  margin-top: auto;
+  align-self: flex-start;
+  text-align: center;
 }
 
-/* Descrição do card */
-.cert-card-description {
-    font-size: 0.95rem;
-    color: var(--secondary-color);
-    margin-bottom: 0.8rem;
-    line-height: 1.5;
-    text-align: center;
+#certificacoes .skill-card a:hover,
+#certificacoes .skill-category a:hover {
+  background: var(--primary-color);
+  color: #000;
+  box-shadow: 0 0 18px rgba(0, 180, 255, 0.8);
+  transform: translateY(-3px);
 }
 
-/* Links do card */
-.cert-links {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
+/* =============================================
+   ANIMAÇÃO CERTIFICAÇÕES
+============================================= */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
 }
 
-.cert-links a {
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius);
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    background: linear-gradient(135deg, rgba(0, 180, 255, 0.3), rgba(0, 180, 255, 0.15));
-    box-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.cert-links a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(0, 180, 255, 0.6);
-    filter: brightness(1.3);
-}
-
-/* Responsividade */
+/* =============================================
+   RESPONSIVIDADE
+============================================= */
 @media (max-width: 768px) {
-    .cert-tabs {
-        flex-direction: column;
-        align-items: center;
-    }
-    .cert-content {
-        padding: 0 1rem;
-    }
-    .cert-card-title {
-        font-size: clamp(1rem, 4vw, 1.1rem);
-    }
-    .cert-card-description {
-        font-size: 0.9rem;
-    }
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem 1.2rem;
+  }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1472,28 +1483,33 @@ img, video {
 
 
 /* ============================================= 
-   SEÇÃO CONTATO - NEON CLEAN
+   SEÇÃO CONTATO - NEON CLEAN UPGRADE
 ============================================= */
 #contato {
     padding: clamp(4rem, 10vw, 8rem) 20px;
-    background: #000;
+    background: radial-gradient(circle at top left, rgba(0,180,255,0.08), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(0,180,255,0.05), transparent 60%),
+                #000;
     color: #fff;
     position: relative;
     overflow-x: hidden;
 }
 
+/* Cabeçalho */
 #contato .section-header {
     text-align: center;
     margin-bottom: clamp(2rem, 5vw, 3rem);
 }
 
+/* Remover linha do título da seção Contato */
 #contato .section-title {
     font-size: clamp(1.8rem, 4vw, 2.5rem);
     color: #fff;
     margin-bottom: 0.8rem;
-    border-bottom: 2px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 0.5rem;
+    text-shadow: 0 0 8px rgba(0,180,255,0.6);
+    border-bottom: none; /* Linha removida */
 }
 
 #contato .section-subtitle {
@@ -1503,16 +1519,34 @@ img, video {
     margin: 0 auto;
 }
 
-/* Container do contato */
+/* Container */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: clamp(2rem, 5vw, 3rem);
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Informações de contato */
+/* Blocos com efeito vidro */
+.contact-info,
+.contact-form {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(0,180,255,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(0,180,255,0.15);
+}
+
+/* Títulos internos */
 .contact-info h3,
 .contact-form h3 {
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
@@ -1521,8 +1555,10 @@ img, video {
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 0.4rem;
     text-align: center;
+    text-shadow: 0 0 6px rgba(0,180,255,0.5);
 }
 
+/* Texto */
 .contact-info p {
     color: var(--secondary-color);
     line-height: 1.6;
@@ -1530,6 +1566,7 @@ img, video {
     text-align: center;
 }
 
+/* Links de contato */
 .contact-links {
     display: flex;
     justify-content: center;
@@ -1538,6 +1575,9 @@ img, video {
 }
 
 .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     color: #fff;
     text-decoration: none;
@@ -1569,6 +1609,7 @@ img, video {
     margin-bottom: 0.3rem;
 }
 
+/* Inputs com borda neon no foco */
 .contact-form .form-group input,
 .contact-form .form-group textarea {
     width: 100%;
@@ -1585,11 +1626,11 @@ img, video {
 .contact-form .form-group input:focus,
 .contact-form .form-group textarea:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 8px rgba(0, 180, 255, 0.5);
+    box-shadow: 0 0 12px rgba(0, 180, 255, 0.6);
     outline: none;
 }
 
-/* Botão enviar seguindo padrão de ação */
+/* Botão enviar com efeito pulso */
 .contact-form .btn-submit {
     font-size: clamp(0.9rem, 1.5vw, 1rem);
     padding: 0.9rem 2rem;
@@ -1608,8 +1649,16 @@ img, video {
 .contact-form .btn-submit:hover {
     background: var(--primary-color);
     color: #000;
-    box-shadow: 0 0 18px rgba(0, 180, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.9);
     transform: translateY(-3px);
+    animation: pulse 1s infinite;
+}
+
+/* Animação de pulso */
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(0, 180, 255, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(0, 180, 255, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(0, 180, 255, 0.4); }
 }
 
 /* Responsividade */
@@ -1627,6 +1676,17 @@ img, video {
         text-align: center;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
