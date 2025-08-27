@@ -1,0 +1,226 @@
+/* =============================================
+   20-HOME — HERO FULLSCREEN + TYPEWRITER
+   - Seção fullscreen com overlay e (opcional) partículas
+   - Título em estilo neon + cursor piscando
+   - Subtítulo com typewriter (via js/home.js)
+   - Botões de ação e ícones sociais
+   - Responsividade e acessibilidade (reduce-motion)
+============================================= */
+
+/* ---------- seção base (camada e layout) ---------- */
+#home {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;            /* ocupa a altura útil da viewport */
+  padding: clamp(3rem, 6vw, 5rem) 20px;  /* respiro (inclui espaço pro header fixo) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--dark-bg, #000);
+  overflow: hidden;              /* esconde brilhos nas bordas */
+  color: #fff;
+}
+
+/* ---------- overlay sutil por cima do fundo ---------- */
+#home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80rem 40rem at 20% -10%, rgba(0,180,255,0.12), transparent 60%),
+    radial-gradient(60rem 30rem at 100% 120%, rgba(255,0,214,0.06), transparent 60%),
+    var(--bg-overlay-color, rgba(0,0,0,.55));
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- camada opcional de partículas (se usar) ---------- */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  z-index: 0;   /* fica atrás do overlay e do conteúdo */
+}
+
+/* ---------- container central do herói ---------- */
+#home .hero-content {
+  position: relative;
+  z-index: 2;                 /* acima do overlay/particles */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: clamp(0.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   TÍTULO — NEON + TYPEWRITER
+   - o JS envolve o texto em .tw-title e injeta .tw-cursor
+============================================= */
+
+/* ---------- estilo do H1 (neon limpo) ---------- */
+#home .hero-content h1 {
+  font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: clamp(0.04em, 0.6vw, 0.12em);
+  line-height: 1.05;
+  margin: 0 0 clamp(1.1rem, 3vh, 2rem) 0;
+  font-size: clamp(1.8rem, 6.8vw, 4.8rem);
+  color: rgba(0,180,255,0.18);                    /* interior clarinho */
+  -webkit-text-stroke: clamp(1px, 0.25vw, 2px) var(--primary-color, #00b4ff);
+  text-shadow:
+    0 0 8px rgba(0,180,255,.35),
+    0 0 18px rgba(0,180,255,.35);
+  white-space: nowrap;       /* evita quebra feia enquanto digita; mobile ajusta abaixo */
+}
+
+/* ---------- cursor piscando (injetado via JS) ---------- */
+.tw-cursor{
+  display:inline-block;
+  width:.6ch;
+  height:1em;
+  margin-left:.15ch;
+  background: var(--primary-color, #00b4ff);
+  vertical-align: -0.1em;
+  animation: tw-blink 900ms steps(1) infinite;
+  box-shadow: 0 0 8px rgba(0,180,255,.6);
+}
+@keyframes tw-blink { 50% { opacity: 0; } }
+
+/* =============================================
+   SUBTÍTULO (texto digitado via JS)
+============================================= */
+#home .hero-content p {
+  margin: 0;
+}
+#home #typewriter-text {
+  display: inline-block;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--secondary-color, #cce7ff);
+  max-width: 900px;
+  line-height: 1.6;
+  padding-inline: .5rem;
+  text-wrap: balance;
+  text-shadow: 0 0 8px rgba(0,180,255,.25);
+}
+
+/* =============================================
+   BOTÕES DE AÇÃO
+============================================= */
+#home .hero-buttons-wrapper {
+  margin-top: clamp(.9rem, 2.2vh, 1.6rem);
+}
+#home .hero-buttons{
+  display:flex;
+  flex-wrap: wrap;
+  gap: clamp(.7rem, 2vw, 1rem);
+  justify-content:center;
+}
+
+#home .hero-buttons .btn{
+  font-weight: 700;
+  font-size: clamp(.9rem, 1.3vw, 1.05rem);
+  padding: clamp(.85rem, 1.2vw, 1rem) clamp(1.25rem, 2.2vw, 2rem);
+  border-radius: 999px;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid var(--primary-color, #00b4ff);
+  background: rgba(0,180,255,.16);
+  box-shadow: 0 0 10px rgba(0,180,255,.32);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+  backdrop-filter: blur(5px);
+}
+#home .hero-buttons .btn:hover{
+  transform: translateY(-3px) scale(1.03);
+  background: var(--btn-hover-color, rgba(0,180,255,.9));
+  color: #000;
+  box-shadow: 0 0 20px rgba(0,180,255,.7);
+}
+
+/* variante “outline” (se usar .btn.btn-outline) */
+#home .hero-buttons .btn.btn-outline{
+  background: transparent;
+  border-color: rgba(255,255,255,.5);
+}
+#home .hero-buttons .btn.btn-outline:hover{
+  border-color: var(--primary-color, #00b4ff);
+  background: rgba(0,180,255,.12);
+  color: #fff;
+}
+
+/* =============================================
+   ÍCONES SOCIAIS
+============================================= */
+#home .social-icons{
+  margin-top: clamp(.8rem, 2.2vh, 1.4rem);
+  display:flex;
+  flex-wrap: wrap;
+  gap: clamp(.6rem, 1.2vw, 1rem);
+  justify-content:center;
+}
+#home .social-icons a{
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  color:#fff;
+  text-decoration:none;
+  transition: transform .25s ease, color .25s ease, text-shadow .25s ease;
+  text-shadow: 0 0 8px rgba(0,180,255,.5);
+}
+#home .social-icons a:hover{
+  transform: translateY(-4px);
+  color: var(--primary-color, #00b4ff);
+  text-shadow: 0 0 16px rgba(0,180,255,.85);
+}
+
+/* =============================================
+   SETA PARA BAIXO (opcional se usar .scroll-down)
+============================================= */
+#home .scroll-down{
+  position:absolute;
+  left:50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index:2;
+  font-size: 1.8rem;
+  color:#fff;
+  cursor:pointer;
+  animation: home-bounce 2s infinite;
+  text-shadow: 0 0 12px rgba(0,180,255,.7);
+}
+@keyframes home-bounce {
+  0%,20%,50%,80%,100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -14px); }
+  60% { transform: translate(-50%, -8px); }
+}
+
+/* =============================================
+   RESPONSIVIDADE
+============================================= */
+@media (max-width: 992px){
+  /* deixa o título poder quebrar no mobile */
+  #home .hero-content h1 { white-space: normal; }
+  /* reduz o stroke pra não ficar pesado em telas pequenas */
+  #home .hero-content h1 { -webkit-text-stroke-width: 1px; }
+}
+
+@media (max-width: 640px){
+  #home { padding-top: clamp(2.5rem, 8vw, 3.5rem); }
+  #home .hero-buttons .btn{
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* =============================================
+   ACESSIBILIDADE — REDUÇÃO DE MOVIMENTO
+   - remove animações/pulsos para quem prefere
+============================================= */
+@media (prefers-reduced-motion: reduce){
+  #home .scroll-down,
+  .tw-cursor {
+    animation: none !important;
+  }
+}

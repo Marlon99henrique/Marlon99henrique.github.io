@@ -1,517 +1,591 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Marlon Henrique - Cientista de Dados com habilidades em Python, Machine Learning e Análise de Dados">
-    <meta name="keywords" content="Ciência de Dados, Python, Machine Learning, Portfólio, Análise de Dados">
-    <title>Portfólio | Marlon Henrique - Cientista de Dados</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfólio de Marlon Henrique - Cientista de Dados com habilidades em Python, Machine Learning e Análise de Dados" />
+  <meta name="keywords" content="Ciência de Dados, Python, Machine Learning, Portfólio, Análise de Dados" />
+  <title>Portfólio | Marlon Henrique - Cientista de Dados</title>
+
+  <!-- Ícones e fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- =============================================
+       IMPORTS DE CSS (ordem importa: base → tema → seções)
+       ============================================= -->
+  <link rel="stylesheet" href="css/00-base.css" />
+  <link rel="stylesheet" href="css/01-theme.css" />
+  <link rel="stylesheet" href="css/10-header.css" />
+  <link rel="stylesheet" href="css/20-home.css" />
+  <link rel="stylesheet" href="css/30-sobre.css" />
+  <link rel="stylesheet" href="css/40-projetos.css" />
+  <link rel="stylesheet" href="css/50-habilidades.css" />
+  <link rel="stylesheet" href="css/60-certificacoes.css" />
+  <link rel="stylesheet" href="css/70-contato.css" />
+  <link rel="stylesheet" href="css/90-footer.css" />
 </head>
+
 <body>
-    <!-- SEÇÃO: CABEÇALHO/NAVEGAÇÃO -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#home" class="logo">Marlon Henrique</a>
-                <div class="nav-items">
-                    <div class="nav-links">
-                        <a href="#home" class="nav-link active">Home</a>
-                        <a href="#sobre" class="nav-link">Sobre</a>
-                        <a href="#projetos" class="nav-link">Projetos</a>
-                        <a href="#habilidades" class="nav-link">Habilidades</a>
-                        <a href="#certificacoes" class="nav-link">Certificações</a>
-                        <a href="#contato" class="nav-link">Contato</a>
-                    </div>
-                    <button id="theme-toggle" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
-                        <i class="fas fa-moon"></i> Tema Escuro
-                    </button>
-                    <button class="mobile-menu-btn">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- SEÇÃO: MENU MÓVEL -->
-    <div class="mobile-nav">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#sobre" class="nav-link">Sobre</a>
-        <a href="#projetos" class="nav-link">Projetos</a>
-        <a href="#habilidades" class="nav-link">Habilidades</a>
-        <a href="#certificacoes" class="nav-link">Certificações</a>
-        <a href="#contato" class="nav-link">Contato</a>
-        <button id="theme-toggle-mobile" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
-            <i class="fas fa-moon"></i> Tema Escuro
-        </button>
-    </div>
-    <div class="overlay"></div>
-
-
-
-
-    <!-- PÁGINAS DE ROLAGEM -->
-     
-<main class="page-container">
-  <!-- PÁGINA 1: HOME  -->
-  <section id="home" class="page active">
+  <!-- =============================================
+       CABEÇALHO / NAVEGAÇÃO
+       ============================================= -->
+  <header>
     <div class="container">
-      <div class="hero-content">
+      <nav>
+        <a href="#home" class="logo">Marlon Henrique</a>
 
-        <!-- Título principal -->
-        <h1>MARLON HENRIQUE</h1>
+        <div class="nav-items">
+          <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#sobre" class="nav-link">Sobre</a>
+            <a href="#projetos" class="nav-link">Projetos</a>
+            <a href="#habilidades" class="nav-link">Habilidades</a>
+            <a href="#certificacoes" class="nav-link">Certificações</a>
+            <a href="#contato" class="nav-link">Contato</a>
+          </div>
 
-        <!-- Subtítulo com efeito typewriter -->
-        <p>
-          <span id="typewriter-text" class="typewriter" aria-live="polite"></span>
-        </p>
+          <!-- Botão de tema (desktop) -->
+          <button id="theme-toggle" class="theme-btn" aria-label="Ativar/Desativar tema escuro">
+            <i class="fas fa-moon"></i> Tema Escuro
+          </button>
 
-        <!-- Botões de ação principais -->
-        <div class="hero-buttons-wrapper">
-          <div class="hero-buttons">
-            <a href="#projetos" class="btn">
-              <i class="fas fa-code-branch"></i> Ver Projetos
-            </a>''
-            <a href="#contato" class="btn btn-outline">
-              <i class="fas fa-paper-plane"></i> Entrar em Contato
+          <!-- Botão hambúrguer (mobile) -->
+          <button class="mobile-menu-btn" aria-label="Abrir menu móvel">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =============================================
+       MENU MÓVEL + OVERLAY
+       ============================================= -->
+  <aside class="mobile-nav" aria-hidden="true">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#sobre" class="nav-link">Sobre</a>
+    <a href="#projetos" class="nav-link">Projetos</a>
+    <a href="#habilidades" class="nav-link">Habilidades</a>
+    <a href="#certificacoes" class="nav-link">Certificações</a>
+    <a href="#contato" class="nav-link">Contato</a>
+    <button id="theme-toggle-mobile" class="theme-btn" aria-label="Ativar/Desativar tema escuro (mobile)">
+      <i class="fas fa-moon"></i> Tema Escuro
+    </button>
+  </aside>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <!-- =============================================
+       CONTEÚDO PRINCIPAL
+       ============================================= -->
+  <main class="page-container">
+
+    <!-- PÁGINA 1: HOME -->
+    <section id="home" class="page active">
+      <div class="container">
+        <div class="hero-content">
+          <h1>MARLON HENRIQUE</h1>
+
+          <!-- Subtítulo com efeito (texto será preenchido por JS, se desejar) -->
+          <p><span id="typewriter-text" class="typewriter" aria-live="polite"></span></p>
+
+          <!-- Botões principais -->
+          <div class="hero-buttons-wrapper">
+            <div class="hero-buttons">
+              <a href="#projetos" class="btn">
+                <i class="fas fa-code-branch"></i> Ver Projetos
+              </a>
+              <a href="#contato" class="btn btn-outline">
+                <i class="fas fa-paper-plane"></i> Entrar em Contato
+              </a>
+            </div>
+          </div>
+
+          <!-- Ícones sociais -->
+          <div class="social-icons">
+            <a href="https://github.com/Marlon99henrique" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
             </a>
           </div>
         </div>
-
-        <!-- Ícones de redes sociais -->
-        <div class="social-icons">
-          <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-
-
-   <!-- PÁGINA 2: SOBRE -->
-<section id="sobre" class="page">
-    <div class="container">
-
-        <!-- Header com imagem antes do título e subtítulo -->
+    <!-- PÁGINA 2: SOBRE -->
+    <section id="sobre" class="page">
+      <div class="container">
+        <!-- Header com imagem + título -->
         <div class="section-header">
-
-            <!-- Imagem primeiro -->
-            <img src="imagens/minha-imagem.jpg" 
-                 alt="Foto de Marlon Henrique" 
-                 class="profile-photo">
-
-            <!-- Texto do header -->
-            <div class="section-header-text">
-                <h2 class="section-title">Sobre Mim</h2>
-                <p class="section-subtitle">
-                    Transformo dados em decisões estratégicas — unindo disciplina, curiosidade e inovação.
-                </p>
-            </div>
-
+          <img src="imagens/minha-imagem.jpg" alt="Foto de Marlon Henrique" class="profile-photo" />
+          <div class="section-header-text">
+            <h2 class="section-title">Sobre Mim</h2>
+            <p class="section-subtitle">
+              Transformo dados em decisões estratégicas — unindo disciplina, curiosidade e inovação.
+            </p>
+          </div>
         </div>
 
-   <!-- Conteúdo principal -->
-<div class="about-text">
+        <!-- Texto principal (animado quando entra na tela) -->
+        <div class="about-text">
+          <p>Sou um <span class="highlight">Cientista de Dados em formação</span>, movido por curiosidade, disciplina e paixão por transformar informações em valor real. Iniciei minha jornada acadêmica na faculdade, mas precisei pausar temporariamente — pretendo retomar no próximo ano. <span class="highlight">Essa pausa não me desmotivou; decidi não parar de estudar</span>. Comecei a me aprofundar em cursos online e, ao fazer o curso de Git e GitHub, percebi que precisava de mais prática, o que me trouxe até onde estou hoje: <span class="highlight">construindo meu portfólio e colocando a mão na massa</span>.</p>
 
-    <p>Sou um <span class="highlight">Cientista de Dados em formação</span>, movido por curiosidade, disciplina e paixão por transformar informações em valor real. Iniciei minha jornada acadêmica na faculdade, mas precisei pausar temporariamente — pretendo retomar no próximo ano. <span class="highlight">Essa pausa não me desmotivou; decidi não parar de estudar</span>. Comecei a me aprofundar em cursos online e, ao fazer o curso de Git e GitHub, percebi que precisava de mais prática, o que me trouxe até onde estou hoje: <span class="highlight">construindo meu portfólio e colocando a mão na massa</span>.</p>
+          <p>Atualmente, estou focado em dominar os pilares da Ciência de Dados — de <span class="highlight">Python</span> e <span class="highlight">SQL</span> a <span class="highlight">análise estatística</span>, <span class="highlight">visualização de dados</span> e <span class="highlight">Machine Learning</span>. Meu objetivo é aplicar esse conhecimento em projetos reais, especialmente onde finanças e negócios se cruzam.</p>
 
-    <p>Atualmente, estou focado em dominar os pilares da Ciência de Dados — de <span class="highlight">Python</span> e <span class="highlight">SQL</span> a <span class="highlight">análise estatística</span>, <span class="highlight">visualização de dados</span> e <span class="highlight">Machine Learning</span>. Meu objetivo é aplicar esse conhecimento em projetos reais, especialmente onde finanças e negócios se cruzam.</p>
+          <p>Tenho um compromisso total: trabalho à noite e madrugada para manter meus dias livres, dedicando-os integralmente aos estudos e projetos. <span class="highlight">Minha experiência prática, disciplina e paixão me permitem enfrentar desafios de frente</span> e gerar impacto real com soluções em Ciência de Dados.</p>
+        </div>
 
-    <p>Tenho um compromisso total: trabalho à noite e madrugada para manter meus dias livres, dedicando-os integralmente aos estudos e projetos. <span class="highlight">Minha experiência prática, disciplina e paixão me permitem enfrentar desafios de frente</span> e gerar impacto real com soluções em Ciência de Dados.</p>
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-        <!-- Estatísticas -->
+        <!-- Estatísticas (contadores) -->
         <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" data-target="2">0</div>
-                <div class="stat-label">Projetos Concluídos</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="8">0</div>
-                <div class="stat-label">Certificações</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="100">0</div>
-                <div class="stat-label">Comprometimento</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="∞">∞</div>
-                <div class="stat-label">Curiosidade</div>
-            </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">Projetos Concluídos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="8">0</div>
+            <div class="stat-label">Certificações</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-label">Comprometimento</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="∞">∞</div>
+            <div class="stat-label">Curiosidade</div>
+          </div>
         </div>
 
-        <!-- Botões -->
+        <!-- CTAs -->
         <div class="about-cta-buttons">
-            <a href="#projetos" class="btn btn-primary">
-                <i class="fas fa-code-branch"></i> Ver Projetos
-            </a>
-            <a href="#contato" class="btn btn-outline">
-                <i class="fas fa-paper-plane"></i> Entrar em Contato
-            </a>
+          <a href="#projetos" class="btn btn-primary"><i class="fas fa-code-branch"></i> Ver Projetos</a>
+          <a href="#contato" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Entrar em Contato</a>
         </div>
+      </div>
+    </section>
 
-    </div>
-</section>
-
-
-
-
-
-
-<!-- PÁGINA 3: PROJETOS -->
+   <!-- =============================================
+     40-PROJETOS — Seção de Portfólio
+     - Grid de cards
+     - Preview no hover/foco
+     - Botões: GitHub + Resumo completo (modal imagem)
+     - Mantém <template> textual como fallback
+============================================= -->
 <section id="projetos" class="page">
   <div class="portfolio-container">
+
+    <!-- Cabeçalho da seção -->
     <div class="section-header">
       <h2 class="section-title">Projetos</h2>
       <p class="section-subtitle">Confira alguns dos meus projetos concluídos e em desenvolvimento.</p>
     </div>
 
+    <!-- Grid de cards -->
     <div class="portfolio-grid">
 
-      <!-- Card 1 -->
-      <div class="portfolio-card completed">
-        <h3>Jornada Ciência de Dados</h3>
-        <p>Portfólio central com minhas certificações, conhecimentos e habilidades em Ciência de Dados. Reúne projetos práticos, anotações e evidências do meu aprendizado contínuo.</p>
-        <div class="project-tags">
-          <span class="tag python">Python</span>
-          <span class="tag pandas">Pandas</span>
-          <span class="tag limpeza">Limpeza de Dados</span>
-          <span class="tag series">Séries Temporais</span>
-          <span class="tag eda">Análise de Dados</span>
-          <span class="tag eda">Análise Exploratória</span>
-          <span class="tag stats">Estatística</span>
-          <span class="tag ml">Machine Learning</span>
-          <span class="tag viz">Visualização de Dados</span>
-          <span class="tag git">Git & GitHub</span>
-          <span class="tag mql5">MQL5</span>
-          <span class="tag fe">Feature Engineering</span>
-          <span class="tag certificacoes">Certificações</span>
-        </div>
-        <a href="https://github.com/Marlon99henrique/jornada-ciencia-dados" target="_blank" class="btn">Ver Projeto</a>
-      </div>
+      <!-- ================================
+           CARD — Pandas: EDA & Limpeza
+           - Hover mostra preview
+           - Botões: GitHub + Resumo (modal imagem)
+           - Template textual fica como fallback
+      ================================= -->
+      <article class="project-card" data-project>
 
-      <!-- Card 2 -->
-      <div class="portfolio-card completed">
-        <h3>Domínio do Pandas: EDA e Limpeza de Dados</h3>
-        <p>Projeto completo e estruturado para demonstrar domínio da biblioteca Pandas. Inclui boas práticas em análise exploratória e limpeza de dados, organização modular do código, notebooks bem documentados e testes unitários.</p>
-        <div class="project-tags">
-          <span class="tag python">Python</span>
-          <span class="tag pandas">Pandas</span>
-          <span class="tag data">Limpeza de Dados</span>
-          <span class="tag eda">Análise Exploratória</span>
-          <span class="tag testes">Testes Unitários</span>
-          <span class="tag docs">Documentação</span>
+        <!-- Thumb 16:9 -->
+        <div class="project-thumb">
+          <img
+            src="imagens/thumbs/pandas-eda.jpg"
+            alt="Thumb do projeto: Pandas — EDA &amp; Limpeza de Dados"
+            loading="lazy">
         </div>
-        <a href="https://github.com/Marlon99henrique/pandas-eda-limpeza-dados" target="_blank" class="btn">Ver Projeto</a>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="portfolio-card in-progress">
-        <h3>🔜 Análise de Séries Temporais com Pandas</h3>
-        <p>Projeto em desenvolvimento para explorar séries temporais utilizando Pandas. O foco será na preparação, transformação, visualização e análise de dados temporais aplicados a cenários reais.</p>
+        <!-- Cabeçalho do card -->
+        <header class="project-head">
+          <h3 class="project-title">Pandas — EDA &amp; Limpeza de Dados</h3>
+          <span class="status-badge done" aria-label="Projeto concluído">Concluído</span>
+        </header>
+
+        <!-- Tags do projeto -->
         <div class="project-tags">
-          <span class="tag python">Python</span>
-          <span class="tag pandas">Pandas</span>
-          <span class="tag series">Séries Temporais</span>
-          <span class="tag eda">Análise de Dados</span>
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">EDA</span>
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">Telco Churn</span>
         </div>
-        <a href="#" class="btn disabled">Em Desenvolvimento</a>
-      </div>
 
-      <!-- Card 4 -->
-      <div class="portfolio-card in-progress">
-        <h3>🔜 Feature Engineering para Machine Learning</h3>
-        <p>Projeto em desenvolvimento focado em técnicas de Feature Engineering para melhorar a performance de modelos de Machine Learning.</p>
-        <div class="project-tags">
-          <span class="tag python">Python</span>
-          <span class="tag ml">Machine Learning</span>
-          <span class="tag stats">Estatística</span>
-          <span class="tag fe">Feature Engineering</span>
+        <!-- Preview (aparece no hover/foco; no mobile o JS alterna) -->
+        <div class="project-preview" aria-hidden="true">
+          <div class="preview-content">
+            <h4>Resumo do projeto</h4>
+            <p>
+              Pipeline prático de <strong>preparação</strong> e <strong>exploração</strong> de dados com Pandas
+              usando o dataset <em>Telco Customer Churn</em>. Foco em padronização de tipos,
+              tratamento de nulos/duplicatas, normalização de categorias, criação de colunas
+              derivadas e <strong>EDA</strong> orientada ao churn.
+            </p>
+
+            <div class="preview-actions">
+              <!-- Link para o repositório -->
+              <a class="btn"
+                 href="https://github.com/Marlon99henrique/pandas-eda-limpeza-dados"
+                 target="_blank" rel="noopener noreferrer">
+                Ver repositório no GitHub
+              </a>
+
+              <!-- Abre modal de IMAGEM; mantém referência ao <template> como fallback -->
+              <button
+                class="btn btn-secondary"
+                type="button"
+                data-open-resumo
+                data-resumo-img="imagens/resumos/pandas-eda-resumo.png"
+                data-resumo-alt="Resumo completo — Pandas: EDA &amp; Limpeza de Dados"
+                data-template="#tmpl-resumo-pandas">
+                Ver resumo completo
+              </button>
+            </div>
+          </div>
         </div>
-        <a href="#" class="btn disabled">Em Desenvolvimento</a>
-      </div>
 
+        <!-- Template textual (fallback) — NÃO REMOVER -->
+        <template id="tmpl-resumo-pandas">
+          <h3>Resumo completo</h3>
+          <p>
+            <strong>Objetivo:</strong> transformar dados brutos em um conjunto limpo e consistente, pronto
+            para modelagem de churn.
+          </p>
+          <ul>
+            <li><strong>Inspeção inicial:</strong> dimensões, tipos e estatísticas descritivas.</li>
+            <li><strong>Limpeza:</strong> nulos, duplicatas, normalização de categorias, conversões de tipo.</li>
+            <li><strong>Engenharia de atributos:</strong> colunas derivadas relevantes ao churn.</li>
+            <li><strong>EDA direcionada:</strong> distribuições e relações com a variável alvo.</li>
+            <li><strong>Saída:</strong> dataset padronizado + insights que guiam a etapa de modelagem.</li>
+          </ul>
+          <p>Stack: Python • Pandas • NumPy • (opcional) Seaborn/Matplotlib.</p>
+          <p>
+            <a class="btn"
+               href="https://github.com/Marlon99henrique/pandas-eda-limpeza-dados"
+               target="_blank" rel="noopener noreferrer">
+              Abrir README completo no GitHub
+            </a>
+          </p>
+        </template>
+
+      </article>
+      <!-- /CARD -->
+
+      <!-- DICA: adicione os próximos <article class="project-card"> aqui seguindo o mesmo padrão. -->
+
+    </div><!-- /portfolio-grid -->
+  </div><!-- /portfolio-container -->
+</section>
+<!-- /#projetos -->
+
+
+<!-- =============================================
+     MODAIS (colocar uma vez no fim do <body>)
+     - #resumoModal: modal de IMAGEM (prioritário)
+     - #project-modal: modal TEXTUAL (fallback herdado)
+============================================= -->
+
+<!-- Modal de IMAGEM (prioritário para “Ver resumo completo”) -->
+<div class="resumo-modal" id="resumoModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="resumo-backdrop" data-close-resumo></div>
+
+  <div class="resumo-dialog" role="document">
+    <button class="resumo-close" type="button" aria-label="Fechar" data-close-resumo>&times;</button>
+
+    <figure class="resumo-figure">
+      <img id="resumoImg" alt="">
+      <figcaption id="resumoCaption" class="resumo-caption"></figcaption>
+    </figure>
+
+    <div class="resumo-actions">
+      <a id="resumoOpenReadme"
+         class="btn"
+         target="_blank" rel="noopener"
+         href="https://github.com/Marlon99henrique/pandas-eda-limpeza-dados">
+        Abrir README completo
+      </a>
+      <a id="resumoDownload" class="btn btn-outline" download>Baixar imagem</a>
     </div>
   </div>
-</section>
+</div>
 
-
-
-        <!-- PÁGINA 4: HABILIDADES -->
-        <section id="habilidades" class="page">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h2 class="section-title">Habilidades Técnicas</h2>
-                    <p class="section-subtitle">Minhas competências e tecnologias que utilizo</p>
-                </div>
-
-                <div class="skills-container">
-                    <!-- Categoria: Linguagens -->
-                    <div class="skill-category">
-                        <h3>Linguagens de Programação</h3>
-                        <p class="skill-description">
-                            Linguagens que utilizo para análise de dados, automação de processos e desenvolvimento de scripts e ferramentas. Python e SQL são minhas principais competências, com experiência em mql5 e JavaScript para aplicações específicas.
-                        </p>
-                        <div class="skill-tags">
-                            <span class="tag python">Python</span>
-                            <span class="tag sql">SQL</span>
-                            <span class="tag r">mql5</span>
-                            <span class="tag javascript">JavaScript</span>
-                        </div>
-                    </div>
-
-                    <!-- Categoria: Bibliotecas e Frameworks -->
-                    <div class="skill-category">
-                        <h3>Bibliotecas</h3>
-                        <p class="skill-description">
-                            Gosto de usar Pandas e NumPy para organizar e explorar meus dados de forma eficiente. Com Scikit-learn e TensorFlow, consigo criar modelos de Machine Learning e testar minhas ideias na prática. Para apresentar resultados, recorro ao Seaborn e Matplotlib, que me ajudam a transformar dados em visualizações claras e impactantes.
-                        </p>
-
-                        <div class="skill-tags">
-                            <span class="tag pandas">Pandas</span>
-                            <span class="tag numpy">NumPy</span>
-                            <span class="tag sklearn">Scikit-learn</span>
-                            <span class="tag tensorflow">TensorFlow</span>
-                            <span class="tag seaborn">Seaborn/Matplotlib</span>
-                        </div>
-                    </div>
-
-                    <!-- Categoria: Ferramentas e Plataformas -->
-                    <div class="skill-category">
-                        <h3>Ferramentas e Plataformas</h3>
-                        <p class="skill-description">
-                            Uso Jupyter Notebook para explorar dados e testar rapidamente ideias de análise. No VS Code e PyCharm, consigo desenvolver projetos mais estruturados e complexos, mantendo meu código organizado. Também trabalho com Git/GitHub para versionamento e colaboração, Power BI para criar dashboards claros e interativos, e estou me aprofundando em Google Cloud Platform para levar meus projetos para a nuvem.
-                        </p>
-
-                        <div class="skill-tags">
-                            <span class="tag jupyter">Jupyter Notebook</span>
-                            <span class="tag vscode">VS Code</span>
-                            <span class="tag pycharm">PyCharm</span>
-                            <span class="tag powerbi">Power BI</span>
-                            <span class="tag git">Git/GitHub</span>                  
-                        </div>
-                    </div>
-
-                    <!-- Categoria: Conceitos e Metodologias -->
-                    <div class="skill-category">
-                        <h3>Conceitos e Metodologias</h3>
-                        <p class="skill-description">
-                            Gosto de aplicar Machine Learning para transformar dados em insights práticos, sempre apoiado por uma análise estatística sólida. Valorizo a clareza na apresentação dos resultados, usando Data Storytelling para contar a história dos dados. Também trabalho com ETL e limpeza de dados, faço Feature Engineering para melhorar os modelos, realizo Análise Exploratória para entender padrões e estou confortável lidando com Séries Temporais quando o projeto exige.
-                        </p>
-
-                        <div class="skill-tags">
-                            <span class="tag ml">Machine Learning</span>
-                            <span class="tag stats">Análise Estatística</span>
-                            <span class="tag storytelling">Data Storytelling</span>
-                            <span class="tag etl">ETL</span>
-                            <span class="tag preprocessing">Limpeza e Pré-processamento de Dados</span>
-                            <span class="tag fe">Feature Engineering</span>
-                            <span class="tag eda">Análise Exploratória</span>
-                            <span class="tag series">Séries Temporais</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- PÁGINA 5: CERTIFICAÇÕES -->
-<section id="certificacoes" class="page">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Certificações</h2>
-      <p class="section-subtitle">Meus diplomas e cursos concluídos</p>
+<!-- Modal TEXTUAL herdado (mantido como fallback) -->
+<div class="project-modal" id="project-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close-modal></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+    <header class="modal-header">
+      <h4 id="project-modal-title">Resumo completo</h4>
+      <button class="modal-close" type="button" aria-label="Fechar" data-close-modal>&times;</button>
+    </header>
+    <div class="modal-body">
+      <!-- o JS pode injetar aqui o conteúdo do <template> como fallback -->
     </div>
-
-    <!-- Botões de navegação -->
-    <div class="cert-tabs">
-      <button class="cert-tab active" data-tab="udemy">Udemy</button>
-      <button class="cert-tab" data-tab="graduacao">Graduação</button>
-    </div>
-
-    <!-- Conteúdo Udemy -->
-    <div class="cert-content active" id="udemy">
-      <div class="skills-container">
-        <!-- Seus cursos Udemy -->
-        <!-- Cientista de Dados -->
-        <div class="skill-category">
-          <h3>Cientista de Dados</h3>
-          <p class="skill-description">Fundamentos de Python, Estatística, Machine Learning e projetos práticos.</p>
-          <div class="skill-tags">
-            <a class="tag python" href="https://www.udemy.com/course/cientista-de-dados/?kw=for&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">Ver Curso</a>
-            <a class="tag stats" href="certificados/formacao-cientista-dados.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Python para Engenheiros e Cientistas -->
-        <div class="skill-category">
-          <h3>Python para Engenheiros e Cientistas</h3>
-          <p class="skill-description">Aplicações práticas de Python para análise científica e engenharia.</p>
-          <div class="skill-tags">
-            <a class="tag python" href="https://www.udemy.com/share/103bnL3@2QZfOzHfASKzXBTKLbTIYQsr7llU1SMUve1jhESDVelkSE2uLfaWKztBU8jIVjjvYA==/" target="_blank">Ver Curso</a>
-            <a class="tag stats" href="certificados/python-engenheiros-cientista-basico-avançado.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Programação em Python -->
-        <div class="skill-category">
-          <h3>Programação em Python: Básico ao Avançado</h3>
-          <p class="skill-description">Formação completa em Python, da lógica inicial aos tópicos avançados.</p>
-          <div class="skill-tags">
-            <a class="tag python" href="https://www.udemy.com/course/programacao-python-do-basico-ao-avancado/?kw=python&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">Ver Curso</a>
-            <a class="tag stats" href="certificados/python-basico-avancado.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Git e GitHub -->
-        <div class="skill-category">
-          <h3>Git e GitHub do Básico ao Avançado</h3>
-          <p class="skill-description">Versionamento com Git, Gists e GitHub Pages na prática.</p>
-          <div class="skill-tags">
-            <a class="tag git" href="https://www.udemy.com/course/git-e-github-do-basico-ao-avancado-c-gist-e-github-pages/?kw=gi&src=sac&couponCode=KEEPLEARNINGBR" target="_blank">Ver Curso</a>
-            <a class="tag git" href="certificados/git-github-basico-avancado.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Conteúdo Graduação -->
-    <div class="cert-content" id="graduacao">
-      <div class="skills-container">
-        <!-- Programming and Communication -->
-        <div class="skill-category">
-          <h3>Programming and Communication</h3>
-          <p class="skill-description">Comunicação Empresarial, Criação de Aplicações e Design Thinking com Metodologias Ágeis.</p>
-          <p class="skill-description">Carga horária: 240h</p>
-          <div class="skill-tags">
-            <a class="tag storytelling" href="certificados/programming-and-communication.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Math Computing Basics -->
-        <div class="skill-category">
-          <h3>Math Computing Basics</h3>
-          <p class="skill-description">Arquitetura de Computadores do Século XXI e Matemática Diferencial Aplicada.</p>
-          <p class="skill-description">Carga horária: 160h</p>
-          <div class="skill-tags">
-            <a class="tag stats" href="certificados/math-computing-basics.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Modelling Data Developer -->
-        <div class="skill-category">
-          <h3>Modelling Data Developer</h3>
-          <p class="skill-description">Coleta e Tratamento de Dados Inteligentes, Pensamento Computacional e Estatística.</p>
-          <p class="skill-description">Carga horária: 240h</p>
-          <div class="skill-tags">
-            <a class="tag eda" href="certificados/modelling-data-developer.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-
-        <!-- Developer Thinking -->
-        <div class="skill-category">
-          <h3>Developer Thinking</h3>
-          <p class="skill-description">Coaching, Planejamento de Carreira e Prática Integradora para Dados Inteligentes.</p>
-          <p class="skill-description">Carga horária: 160h</p>
-          <div class="skill-tags">
-            <a class="tag ml" href="certificados/developer-thinking.pdf" target="_blank">Ver Certificado</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-        </section>
-
-        <!-- PÁGINA 6: CONTATO -->
-        <section id="contato" class="page">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Pronto para Mudar o Jogo?</h2>
-                    <p class="section-subtitle">Dados são mais do que números. Me diga seu desafio, e vamos encontrar a solução.</p>
-                </div>
-                
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Fale comigo</h3>
-                        <p>Transformar dados em insights é o que me move. Se você tem um projeto que precisa de uma mente analítica e focada em resultados, vamos conversar. Preencha o formulário ao lado ou me encontre nas redes sociais abaixo.</p>
-                        <div class="contact-links">
-                            <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" class="contact-link">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                            <a href="https://github.com/Marlon99henrique" target="_blank" class="contact-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="contact-form">
-                        <h3>Envie uma mensagem</h3>
-                        <form action="seu-script-de-backend.php" method="post">
-                            <div class="form-group">
-                                <label for="name">Nome:</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Mensagem:</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-submit">Enviar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-              </section>
-              
-            <!-- RODAPÉ -->
-    <footer>
-        <div class="container">
-            <div class="social-icons">
-                <a href="https://github.com/Marlon99henrique" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 Marlon Henrique. Todos os direitos reservados.
-            </div>
-        </div>
+    <footer class="modal-footer">
+      <button class="btn btn-secondary" type="button" data-close-modal>Fechar</button>
     </footer>
+  </div>
+</div>
 
-        </section>
-    </main>
+    <!-- PÁGINA 4: HABILIDADES -->
+    <section id="habilidades" class="page">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title">Habilidades Técnicas</h2>
+          <p class="section-subtitle">Minhas competências e tecnologias que utilizo</p>
+        </div>
 
-    
-    <script src="script.js"></script>
+        <div class="skills-container">
+          <!-- Categoria: Linguagens -->
+          <div class="skill-category">
+            <h3>Linguagens de Programação</h3>
+            <p class="skill-description">
+              Linguagens que utilizo para análise de dados, automação de processos e desenvolvimento de scripts e ferramentas. Python e SQL são minhas principais competências, com experiência em mql5 e JavaScript para aplicações específicas.
+            </p>
+            <div class="skill-tags">
+              <span class="tag python">Python</span>
+              <span class="tag sql">SQL</span>
+              <span class="tag r">mql5</span>
+              <span class="tag javascript">JavaScript</span>
+            </div>
+          </div>
+
+          <!-- Categoria: Bibliotecas -->
+          <div class="skill-category">
+            <h3>Bibliotecas</h3>
+            <p class="skill-description">
+              Gosto de usar Pandas e NumPy para organizar e explorar meus dados de forma eficiente. Com Scikit-learn e TensorFlow, consigo criar modelos de Machine Learning e testar minhas ideias na prática. Para apresentar resultados, recorro ao Seaborn e Matplotlib, que me ajudam a transformar dados em visualizações claras e impactantes.
+            </p>
+            <div class="skill-tags">
+              <span class="tag pandas">Pandas</span>
+              <span class="tag numpy">NumPy</span>
+              <span class="tag sklearn">Scikit-learn</span>
+              <span class="tag tensorflow">TensorFlow</span>
+              <span class="tag seaborn">Seaborn/Matplotlib</span>
+            </div>
+          </div>
+
+          <!-- Categoria: Ferramentas -->
+          <div class="skill-category">
+            <h3>Ferramentas e Plataformas</h3>
+            <p class="skill-description">
+              Uso Jupyter Notebook para explorar dados e testar rapidamente ideias de análise. No VS Code e PyCharm, consigo desenvolver projetos mais estruturados e complexos, mantendo meu código organizado. Também trabalho com Git/GitHub para versionamento e colaboração, Power BI para criar dashboards claros e interativos, e estou me aprofundando em Google Cloud Platform para levar meus projetos para a nuvem.
+            </p>
+            <div class="skill-tags">
+              <span class="tag jupyter">Jupyter Notebook</span>
+              <span class="tag vscode">VS Code</span>
+              <span class="tag pycharm">PyCharm</span>
+              <span class="tag powerbi">Power BI</span>
+              <span class="tag git">Git/GitHub</span>
+            </div>
+          </div>
+
+          <!-- Categoria: Conceitos -->
+          <div class="skill-category">
+            <h3>Conceitos e Metodologias</h3>
+            <p class="skill-description">
+              Gosto de aplicar Machine Learning para transformar dados em insights práticos, sempre apoiado por uma análise estatística sólida. Valorizo a clareza na apresentação dos resultados, usando Data Storytelling para contar a história dos dados. Também trabalho com ETL e limpeza de dados, faço Feature Engineering para melhorar os modelos, realizo Análise Exploratória para entender padrões e estou confortável lidando com Séries Temporais quando o projeto exige.
+            </p>
+            <div class="skill-tags">
+              <span class="tag ml">Machine Learning</span>
+              <span class="tag stats">Análise Estatística</span>
+              <span class="tag storytelling">Data Storytelling</span>
+              <span class="tag etl">ETL</span>
+              <span class="tag preprocessing">Limpeza e Pré-processamento de Dados</span>
+              <span class="tag fe">Feature Engineering</span>
+              <span class="tag eda">Análise Exploratória</span>
+              <span class="tag series">Séries Temporais</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 5: CERTIFICAÇÕES -->
+    <section id="certificacoes" class="page">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Certificações</h2>
+          <p class="section-subtitle">Meus diplomas e cursos concluídos</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="cert-tabs">
+          <button class="cert-tab active" data-tab="udemy">Udemy</button>
+          <button class="cert-tab" data-tab="graduacao">Graduação</button>
+        </div>
+
+        <!-- Conteúdo Udemy -->
+        <div class="cert-content active" id="udemy">
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Cientista de Dados</h3>
+              <p class="skill-description">Fundamentos de Python, Estatística, Machine Learning e projetos práticos.</p>
+              <div class="skill-tags">
+                <a class="tag python" href="https://www.udemy.com/course/cientista-de-dados/?kw=for&src=sac&couponCode=KEEPLEARNINGBR" target="_blank" rel="noopener noreferrer">Ver Curso</a>
+                <a class="tag stats" href="certificados/formacao-cientista-dados.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Python para Engenheiros e Cientistas</h3>
+              <p class="skill-description">Aplicações práticas de Python para análise científica e engenharia.</p>
+              <div class="skill-tags">
+                <a class="tag python" href="https://www.udemy.com/share/103bnL3@2QZfOzHfASKzXBTKLbTIYQsr7llU1SMUve1jhESDVelkSE2uLfaWKztBU8jIVjjvYA==/" target="_blank" rel="noopener noreferrer">Ver Curso</a>
+                <a class="tag stats" href="certificados/python-engenheiros-cientista-basico-avançado.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Programação em Python: Básico ao Avançado</h3>
+              <p class="skill-description">Formação completa em Python, da lógica inicial aos tópicos avançados.</p>
+              <div class="skill-tags">
+                <a class="tag python" href="https://www.udemy.com/course/programacao-python-do-basico-ao-avancado/?kw=python&src=sac&couponCode=KEEPLEARNINGBR" target="_blank" rel="noopener noreferrer">Ver Curso</a>
+                <a class="tag stats" href="certificados/python-basico-avancado.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Git e GitHub do Básico ao Avançado</h3>
+              <p class="skill-description">Versionamento com Git, Gists e GitHub Pages na prática.</p>
+              <div class="skill-tags">
+                <a class="tag git" href="https://www.udemy.com/course/git-e-github-do-basico-ao-avancado-c-gist-e-github-pages/?kw=gi&src=sac&couponCode=KEEPLEARNINGBR" target="_blank" rel="noopener noreferrer">Ver Curso</a>
+                <a class="tag git" href="certificados/git-github-basico-avancado.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteúdo Graduação -->
+        <div class="cert-content" id="graduacao">
+          <div class="skills-container">
+            <div class="skill-category">
+              <h3>Programming and Communication</h3>
+              <p class="skill-description">Comunicação Empresarial, Criação de Aplicações e Design Thinking com Metodologias Ágeis.</p>
+              <p class="skill-description">Carga horária: 240h</p>
+              <div class="skill-tags">
+                <a class="tag storytelling" href="certificados/programming-and-communication.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Math Computing Basics</h3>
+              <p class="skill-description">Arquitetura de Computadores do Século XXI e Matemática Diferencial Aplicada.</p>
+              <p class="skill-description">Carga horária: 160h</p>
+              <div class="skill-tags">
+                <a class="tag stats" href="certificados/math-computing-basics.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Modelling Data Developer</h3>
+              <p class="skill-description">Coleta e Tratamento de Dados Inteligentes, Pensamento Computacional e Estatística.</p>
+              <p class="skill-description">Carga horária: 240h</p>
+              <div class="skill-tags">
+                <a class="tag eda" href="certificados/modelling-data-developer.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Developer Thinking</h3>
+              <p class="skill-description">Coaching, Planejamento de Carreira e Prática Integradora para Dados Inteligentes.</p>
+              <p class="skill-description">Carga horária: 160h</p>
+              <div class="skill-tags">
+                <a class="tag ml" href="certificados/developer-thinking.pdf" target="_blank" rel="noopener noreferrer">Ver Certificado</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PÁGINA 6: CONTATO -->
+    <section id="contato" class="page">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Pronto para Mudar o Jogo?</h2>
+          <p class="section-subtitle">Dados são mais do que números. Me diga seu desafio, e vamos encontrar a solução.</p>
+        </div>
+
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Fale comigo</h3>
+            <p>Transformar dados em insights é o que me move. Se você tem um projeto que precisa de uma mente analítica e focada em resultados, vamos conversar. Preencha o formulário ao lado ou me encontre nas redes sociais abaixo.</p>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+              </a>
+              <a href="https://github.com/Marlon99henrique" target="_blank" rel="noopener noreferrer" class="contact-link">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h3>Envie uma mensagem</h3>
+            <form action="seu-script-de-backend.php" method="post">
+              <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============================================
+       RODAPÉ
+       ============================================= -->
+  <footer>
+    <div class="container">
+      <div class="social-icons">
+        <a href="https://github.com/Marlon99henrique" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/marlon-henrique-abdon-silva-8704a8217/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:marlon.99henrique@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Marlon Henrique. Todos os direitos reservados.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+     IMPORTS DE JS por seção (ordem importa)
+================================================= -->
+<script src="js/00-utils.js" defer></script>
+<script src="js/01-theme.js" defer></script>
+<script src="js/10-header.js" defer></script>
+<script src="js/20-home.js" defer></script>
+<script src="js/30-sobre.js" defer></script>
+<script src="js/40-projetos.js" defer></script>
+<script src="js/50-habilidades.js" defer></script>
+<script src="js/60-certificacoes.js" defer></script>
+<script src="js/70-contato.js" defer></script>
+<script src="js/90-boot.js" defer></script>
+<script src="js/home.js" defer></script>
+
+<script src="js/main.js" defer></script>
+
 </body>
 </html>

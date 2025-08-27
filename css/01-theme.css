@@ -1,0 +1,99 @@
+/* =============================================
+   01-THEME — MODOS DE TEMA
+   - Dark mode (já é o padrão visual)
+   - Alto contraste
+   - Ajustes específicos de componentes nesses modos
+============================================= */
+
+/* -- Dark mode (mantido por compatibilidade, caso queira togglar) -- */
+body.dark-mode {
+  --light: #121212;
+  --dark: #e0e0e0;
+  --secondary: #b0b0b0;
+  --primary: #8ab4f8;
+  --primary-dark: #6a9de9;
+  --gray-100: #1a1a1a;
+  --gray-200: #222222;
+  --gray-300: #333333;
+  --gray-400: #666666;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #b0b0b0;
+  --shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05), 0 2px 4px -1px rgba(255, 255, 255, 0.03);
+}
+
+body.dark-mode header { background-color: rgba(18, 18, 18, 0.95); box-shadow: var(--shadow); }
+body.dark-mode .hero { background: linear-gradient(to bottom right, #1a1a1a, #121212); }
+
+body.dark-mode .portfolio-card,
+body.dark-mode .skill-category,
+body.dark-mode .cert-accordion,
+body.dark-mode .contact-info,
+body.dark-mode .contact-form { background: #1e1e1e; }
+
+body.dark-mode .project-details,
+body.dark-mode .cert-accordion-content-inner { background-color: var(--gray-100); }
+
+body.dark-mode .cert-links a,
+body.dark-mode .contact-link {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+body.dark-mode .cert-links a:hover,
+body.dark-mode .contact-link:hover { background: var(--primary); color: var(--dark); }
+
+body.dark-mode .cert-tab {
+  background-color: var(--gray-100);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+body.dark-mode .cert-tab.active { background: var(--primary); color: var(--dark); }
+
+body.dark-mode .cert-accordion-header { background-color: var(--gray-300); color: var(--dark); }
+body.dark-mode .cert-accordion-header:hover { background-color: var(--gray-400); }
+body.dark-mode .footer-bottom { border-top-color: var(--gray-400); }
+
+/* -- Alto contraste (acessibilidade) -- */
+body.high-contrast-mode {
+  --light: #000000;
+  --dark: #ffffff;
+  --primary: #ffff00;
+  --primary-dark: #ccff00;
+  --secondary: #cccccc;
+  --gray-100: #222222;
+  --gray-200: #333333;
+  --gray-300: #444444;
+  --gray-400: #aaaaaa;
+  --text-color: #ffffff;
+  --text-color-secondary: #cccccc;
+  --shadow: 0 0 0 transparent;
+}
+
+body.high-contrast-mode header { background-color: var(--gray-100); box-shadow: none; }
+body.high-contrast-mode .hero { background: var(--light); }
+
+body.high-contrast-mode .project-details,
+body.high-contrast-mode .skill-category,
+body.high-contrast-mode .cert-accordion,
+body.high-contrast-mode .contact-info,
+body.high-contrast-mode .contact-form {
+  background-color: var(--gray-100);
+  box-shadow: none;
+  border: 2px solid var(--primary);
+}
+
+body.high-contrast-mode .badge {
+  color: var(--dark);
+  border: 2px solid var(--primary);
+  background-color: transparent !important;
+}
+
+body.high-contrast-mode .cert-tab {
+  background-color: var(--gray-100);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+body.high-contrast-mode .cert-tab.active { background-color: var(--primary); color: black; }
+
+body.high-contrast-mode .cert-accordion-header { background-color: var(--gray-300); color: var(--dark); }
+body.high-contrast-mode footer { background-color: var(--gray-300); border-top: 2px solid var(--primary); }

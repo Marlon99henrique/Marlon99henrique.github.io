@@ -1,0 +1,75 @@
+/* =============================================
+   60-CERTIFICAÇÕES — TABS + CARDS DE CURSOS
+   - Tabs (Udemy/Graduação)
+   - Conteúdo com grid e cards (reuso do visual)
+============================================= */
+
+/* -- Seção e container -- */
+#certificacoes { width: 100%; padding: clamp(3rem, 8vw, 5rem) 0; background: var(--dark-bg); }
+.certificacoes-container, #certificacoes .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* -- Tabs de categoria -- */
+.cert-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; }
+.cert-tab {
+  font-size: clamp(.85rem, 1.5vw, .95rem); padding: .8rem 1.8rem; border-radius: 50px; font-weight: 700; cursor: pointer;
+  border: 2px solid var(--primary-color); background: rgba(0,180,255,.15); color: #fff;
+  box-shadow: 0 0 10px rgba(0,180,255,.35);
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
+  backdrop-filter: blur(6px);
+}
+.cert-tab:hover, .cert-tab.active { background: var(--primary-color); color: #000; box-shadow: 0 0 18px rgba(0,180,255,.8); transform: translateY(-3px) scale(1.05); border-color: var(--primary-color); }
+.cert-tab:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(0,180,255,.45), 0 0 16px rgba(0,180,255,.7); }
+
+/* -- Painéis de conteúdo -- */
+.cert-content { display: none; opacity: 0; transition: opacity .4s ease; }
+.cert-content.active { display: block; opacity: 1; }
+
+/* -- Grid interno (reuso dos cards de skill) -- */
+#certificacoes .skills-grid,
+#certificacoes .skills-container {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1rem, 3vw, 1.5rem); margin-top: clamp(1.5rem, 3vw, 2.5rem); width: 100%;
+}
+
+/* -- Card do curso/certificado -- */
+#certificacoes .skill-card, #certificacoes .skill-category {
+  padding: clamp(1rem, 3vw, 1.5rem); background: rgba(255,255,255,.04);
+  border-radius: var(--radius, 1rem); border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 0 15px rgba(0,180,255,.15);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease, background .35s ease;
+  display: flex; flex-direction: column; height: 100%; backdrop-filter: blur(6px);
+}
+#certificacoes .skill-card:hover, #certificacoes .skill-category:hover {
+  transform: translateY(-5px) scale(1.04); box-shadow: 0 0 28px rgba(0,180,255,.6); border-color: var(--primary-color); background: rgba(255,255,255,.06);
+}
+#certificacoes .skill-card h3, #certificacoes .skill-category h3 {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem); color: #fff; margin-bottom: clamp(.8rem, 2vw, 1rem);
+  text-align: center; border-bottom: 2px solid var(--primary-color); padding-bottom: .6rem;
+}
+#certificacoes .skill-card p, #certificacoes .skill-category p {
+  font-size: clamp(.9rem, 1.6vw, 1rem); color: var(--secondary-color); line-height: 1.6; text-align: center; margin-bottom: 1rem; flex-grow: 1;
+}
+
+/* -- Meta/Badge extra -- */
+#certificacoes .cert-meta { display: flex; align-items: center; justify-content: center; gap: .6rem; margin: .6rem 0 1rem; color: var(--secondary-color); font-size: .9rem; opacity: .9; }
+#certificacoes .cert-badge { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .7rem; border-radius: .6rem; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); box-shadow: 0 0 10px rgba(0,180,255,.15) inset; }
+
+/* -- Botões nos cards (links de curso/certificado) -- */
+#certificacoes .skill-card a, #certificacoes .skill-category a {
+  display: inline-block; font-size: clamp(.85rem, 1.5vw, .95rem); padding: .8rem 1.8rem; border-radius: 50px; font-weight: 700; text-decoration: none;
+  border: 2px solid var(--primary-color); color: #fff; background: rgba(0,180,255,.15); box-shadow: 0 0 10px rgba(0,180,255,.35);
+  transition: transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease, border-color .3s ease;
+  margin-top: auto; align-self: center; backdrop-filter: blur(6px);
+}
+#certificacoes .skill-card a:hover, #certificacoes .skill-category a:hover {
+  background: var(--primary-color); color: #000; box-shadow: 0 0 18px rgba(0,180,255,.8); transform: translateY(-3px) scale(1.05); border-color: var(--primary-color);
+}
+
+/* -- Animação escopada -- */
+#certificacoes .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity .6s ease-out, transform .6s ease-out; }
+#certificacoes .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+/* -- Responsividade -- */
+@media (max-width: 768px){
+  #certificacoes .skills-grid, #certificacoes .skills-container { grid-template-columns: 1fr; gap: 1.5rem; }
+}
