@@ -1,0 +1,223 @@
+/******************************************************************
+ * ================================================================
+ * STYLESHEET: SEÇÃO SOBRE MIM (50-about.css) — Revisado
+ * ================================================================
+ * Mantém identidade (cores por variáveis globais) e melhora:
+ * - Tipografia e espaçamento
+ * - Responsividade
+ * - Acessibilidade (focus/contrast)
+ * - Grid das estatísticas (opcional)
+ ******************************************************************/
+
+/* ===== Base da Seção ===== */
+.about {
+  /* layout */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 40px);
+
+  /* alinhamento */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+
+  /* aparência */
+  background: transparent; /* a seção herda o fundo do site */
+  color: var(--text);
+}
+
+/* ===== Cabeçalho (foto + título + tagline) ===== */
+.about__header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* aproxima melhor os elementos do header */
+}
+
+.about__photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--brand);
+  box-shadow: 0 0 24px var(--brand-glow-medium);
+  margin-bottom: 0.5rem;
+  background-color: transparent;
+}
+
+/* Título */
+.about h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  text-shadow: 0 0 12px var(--brand-glow-subtle);
+  line-height: 1.15;
+}
+
+/* Linha neon abaixo do título */
+.about h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--brand);
+  margin: 0.75rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* Tagline */
+.about__lead {
+  margin: 0.6rem 0 0 0;
+  font-size: 1.075rem;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ===== Texto (narrativa) ===== */
+.about__text {
+  text-align: center;
+  line-height: 1.75;
+  color: var(--text);
+  max-width: 75ch;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about__text p {
+  margin: 0; /* gap cuida do espaçamento vertical */
+}
+
+.about__text strong {
+  color: var(--brand-light);
+  font-weight: 600;
+}
+
+/* ===== Grid de Estatísticas (OPCIONAL) ===== */
+/* Mantém a grid, mas com melhor responsividade e foco/hover */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 720px;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.stat-card {
+  padding: 1.15rem 1rem;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand);
+  box-shadow: 0 0 16px var(--brand-glow-subtle);
+}
+
+/* Acessibilidade: foco visível ao navegar por teclado */
+.stat-card:focus-within,
+.stat-card:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand) 35%, transparent);
+}
+
+/* Valores e rótulos */
+.stat-number {
+  font-size: clamp(1.9rem, 5.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--brand-light);
+  margin-bottom: 0.25rem;
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ===== Botões (REMOVIDOS) =====
+   Você retirou os CTAs; se decidir reativar algum dia, descomente.
+
+.about__cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.about .cta {
+  padding: 0.8rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid var(--brand);
+  transition: all 0.25s ease;
+  background: var(--brand);
+  color: var(--bg);
+  box-shadow: 0 0 20px var(--brand-glow-medium);
+}
+.about .cta:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+}
+.about .cta--ghost {
+  background: transparent;
+  color: var(--brand-light);
+  box-shadow: none;
+}
+.about .cta--ghost:hover {
+  background: var(--brand-glow-subtle);
+  color: var(--text);
+}
+*/
+
+/* ===== Preferências do usuário ===== */
+/* Reduz animações se o usuário preferir menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .about__photo {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+/***************************************************
+ * 5. EFEITOS INTERATIVOS DA SEÇÃO
+ ***************************************************/
+
+/*
+ * Estilo base para as palavras destacadas no texto.
+ * Elas já têm a cor de destaque vinda da regra .about__text strong.
+*/
+.about__text strong {
+  transition: all 0.25s ease-in-out;
+  cursor: default; /* Mantém o cursor padrão, pois não é um link */
+}
+
+/*
+ * EFEITO HOVER: Faz as palavras-chave brilharem e se elevarem
+ * ao passar o mouse, tornando a leitura mais interativa.
+*/
+.about__text strong:hover {
+  color: var(--brand); /* Deixa a cor ainda mais vibrante */
+  text-shadow: 0 0 16px var(--brand-glow-medium);
+  transform: translateY(-2px) scale(1.05); /* Efeito de elevação sutil */
+}

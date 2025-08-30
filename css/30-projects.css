@@ -1,0 +1,255 @@
+/******************************************************************
+ * ================================================================
+ * STYLESHEET: SEÇÃO DE PROJETOS
+ * ================================================================
+ * Autor: Marlon Henrique
+ * Descrição: Estilos para a galeria de projetos, incluindo
+ * cabeçalho, filtros e cards com efeito neon.
+ ******************************************************************/
+
+
+/***************************************************
+ * 1. ESTRUTURA GERAL DA SEÇÃO
+ ***************************************************/
+
+.projects {
+  /* Remove o fundo e borda do container principal para um visual integrado */
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  
+  /* Layout e espaçamento */
+  max-width: 1200px;
+  margin: 0 auto; /* Centraliza a seção */
+  padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 60px);
+  display: grid;
+  gap: 2rem; /* Espaço entre cabeçalho, chips e grid */
+}
+
+
+/***************************************************
+ * 2. CABEÇALHO E CONTROLES (TÍTULO, BUSCA, FILTROS)
+ ***************************************************/
+
+/* Título da seção, agora centralizado */
+.projects h2 {
+  margin: 0 0 2rem 0; /* Adiciona margem inferior para separar dos controles */
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  text-align: center; /* Centraliza o título */
+  color: var(--text);
+  text-shadow: 0 0 12px var(--brand-glow-subtle);
+}
+
+/* Novo container para a busca e os filtros */
+.projects__controls {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem a linha */
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Barra de busca */
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 280px;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: 1.5px solid color-mix(in oklab, var(--brand) 35%, var(--border));
+  border-radius: 999px; /* Formato de pílula */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search:focus-within {
+  border-color: color-mix(in oklab, var(--brand) 70%, var(--border));
+  box-shadow: 0 0 18px var(--brand-glow-subtle);
+}
+
+.search input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search svg {
+  color: var(--brand-light);
+  opacity: 0.8;
+}
+
+/* Filtros (Chips) */
+.chipgroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chip {
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1.5px solid color-mix(in oklab, var(--brand) 35%, var(--border));
+  border-radius: 999px; /* Formato de pílula */
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand);
+  color: var(--brand-light);
+  box-shadow: 0 0 16px var(--brand-glow-subtle);
+}
+
+.chip.is-active {
+  border-color: var(--brand);
+  color: var(--brand-light);
+  box-shadow: 0 0 20px var(--brand-glow-medium);
+  background: var(--brand-glow-subtle);
+}
+
+/***************************************************
+ * 3. GRID E CARD DE PROJETO
+ ***************************************************/
+
+.projects__grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  grid-template-columns: 1fr;
+}
+
+/* Layout de 2 colunas para telas maiores */
+@media (min-width: 900px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card de projeto individual */
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: transparent;
+  border: 1.5px solid color-mix(in oklab, var(--brand) 28%, var(--border));
+  border-radius: var(--radius); /* Usa a variável global para consistência */
+  box-shadow: 0 0 24px rgba(0,0,0,0.4);
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-8px);
+  border-color: var(--brand);
+  box-shadow: 0 0 32px var(--brand-glow-medium);
+}
+
+/* Imagem de capa do projeto */
+.card__cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.card:hover .card__cover img {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Corpo de texto do card */
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.card__desc {
+  margin: 0 0 auto;
+  color: var(--muted);
+  line-height: 1.6;
+  min-height: 52px;
+}
+
+/* Link "Saiba mais" */
+.link-more {
+  align-self: flex-start;
+  color: var(--brand-light);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link-more:hover {
+  color: var(--brand);
+  transform: translateX(4px);
+}
+
+
+
+/* Barra de busca com label integrado */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 320px;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  border: 1.5px solid color-mix(in oklab, var(--brand) 35%, var(--border));
+  border-radius: 999px; /* Formato de pílula */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito de brilho quando o input está focado */
+.search-bar:focus-within {
+  border-color: color-mix(in oklab, var(--brand) 70%, var(--border));
+  box-shadow: 0 0 18px var(--brand-glow-subtle);
+}
+
+/* Label "Buscar projetos" */
+.search-bar__label {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap; /* Impede que o texto quebre a linha */
+  padding-right: 0.75rem;
+  border-right: 1.5px solid var(--border);
+}
+
+/* Campo de input */
+.search-bar input {
+  width: 100%;
+  flex-grow: 1; /* Faz o input ocupar o espaço disponível */
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.search-bar input::placeholder {
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+/* Ícone de lupa */
+.search-bar__icon {
+  color: var(--muted);
+  flex-shrink: 0; /* Impede que o ícone seja espremido */
+}

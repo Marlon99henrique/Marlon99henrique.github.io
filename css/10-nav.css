@@ -1,0 +1,222 @@
+/******************************************************************
+ * ================================================================
+ * STYLESHEET: NAVEGAÇÃO PRINCIPAL (10-nav.css)
+ * ================================================================
+ * Descrição: Estilos para a barra de navegação superior, seguindo
+ * o padrão retangular e com destaque na marca. As cores de
+ * destaque são controladas por variáveis de '00-vars.css'.
+ ******************************************************************/
+
+
+/***************************************************
+ * 1. ESTRUTURA GERAL DA NAVEGAÇÃO
+ ***************************************************/
+
+.site-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 12px 24px;
+  background: transparent;
+}
+
+.nav-shell {
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+
+  /* Estilo visual retangular */
+  background: rgba(12, 16, 28, .8);
+  backdrop-filter: blur(var(--blur, 14px));
+  border: 1px solid color-mix(in oklab, var(--brand) 40%, var(--border));
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+
+/***************************************************
+ * 2. MARCA, LINKS E AÇÕES
+ ***************************************************/
+
+/* Destaque para a marca, como um botão */
+.brand {
+  display: flex;
+  align-items: center;
+  padding: .5rem 1rem;
+  background-color: var(--bg);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.brand:hover {
+  background-color: color-mix(in oklab, var(--bg) 80%, var(--brand));
+  color: var(--brand-light);
+}
+
+.brand__text {
+  text-shadow: 0 0 8px var(--brand-glow-subtle);
+}
+
+/* Container do menu (links e ações) */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: var(--text);
+  background-color: rgba(255,255,255,0.05);
+}
+
+.nav__link.is-active {
+  color: var(--brand-light);
+}
+
+/* Botão de Alto Contraste */
+#contrastBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: var(--bg);
+  color: var(--text);
+  border: 1.5px solid var(--border);
+  transition: all .2s ease;
+}
+
+#contrastBtn:hover {
+  border-color: var(--brand);
+  color: var(--brand-light);
+}
+
+
+/***************************************************
+ * 3. MODO MOBILE E BREAKPOINT
+ ***************************************************/
+
+.nav__toggle {
+  display: none; /* Escondido por padrão em telas grandes */
+  background: transparent;
+  border: 1px solid var(--brand-glow-medium);
+  border-radius: 10px;
+  padding: .45rem;
+  cursor: pointer;
+}
+
+.nav__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animação para o 'X' do botão mobile */
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] .nav__bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Estilos para telas de 850px ou menores */
+@media (max-width: 850px) {
+  /* No mobile, o menu volta a ser uma pílula compacta */
+  .nav-shell {
+    border-radius: 999px;
+    padding: 8px 16px;
+  }
+
+  /* Remove o fundo de destaque da marca no mobile para economizar espaço */
+  .brand {
+    background-color: transparent;
+    padding: .5rem .2rem;
+  }
+
+  .nav__menu { display: none; }
+  .nav__toggle { display: block; margin-left: auto; }
+
+  /* Estilos do menu dropdown quando aberto (via JS) */
+  .nav__menu.is-open {
+    display: flex;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: max-content;
+    min-width: 200px;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 14px;
+    background: rgba(12, 16, 28, .92);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--brand);
+    border-radius: 14px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .45), 0 0 26px var(--brand-glow-medium);
+    z-index: 999;
+  }
+
+  .nav__menu.is-open .nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .nav__menu.is-open .nav__actions {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid var(--brand-glow-subtle);
+    width: 100%;
+  }
+}
+
+
+/***************************************************
+ * 4. ACESSIBILIDADE
+ ***************************************************/
+
+/* Estilos para o modo de Alto Contraste (quando ativado) */
+[data-contrast="high"] #contrastBtn {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Desativa animações para usuários que preferem movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  .brand,
+  .nav__link,
+  #contrastBtn,
+  .nav__bar {
+    transition: none !important;
+  }
+}

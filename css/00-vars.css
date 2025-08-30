@@ -1,0 +1,76 @@
+/* ==================================================================
+ * ARQUIVO DE VARIÁVEIS GLOBAIS (00-vars.css)
+ * TEMA: AZUL / CIANO NEON
+ * ================================================================== */
+
+:root {
+  /* --- Cores Base --- */
+  --bg: #0c101c;        /* Fundo principal (azul muito escuro, quase preto) */
+  --text: #e8f4ff;      /* Cor de texto primária (branco suave) */
+  --muted: #a6bdd6;     /* Cor de texto secundária (cinza azulado) */
+  --border: #333d52;    /* Cor de borda geral */
+
+  /* --- Cores de Destaque NEON (AZUL/CIANO) --- */
+  --brand: #3bd1ff;     /* Seu AZUL CIANO principal para brilhos e bordas */
+  --brand-light: #bfefff; /* Uma variação mais clara do azul/ciano */
+  --brand-dark: #008cb3;  /* Uma variação mais escura do azul/ciano */
+  
+  /* --- Efeitos de Brilho (Glow) --- */
+  --brand-glow-strong: rgba(59, 209, 255, .65); /* Brilho forte do azul */
+  --brand-glow-medium: rgba(59, 209, 255, .35); /* Brilho médio do azul */
+  --brand-glow-subtle: rgba(59, 209, 255, .18); /* Brilho sutil do azul */
+
+  /* --- Outras Variáveis de UI --- */
+  --blur: 14px;
+  --radius: 18px;
+}
+
+/* =================================
+ * MODO DE ALTO CONTRASTE
+ * ================================= */
+[data-contrast="high"] {
+  --bg: #000;
+  --text: #fff;
+  --muted: #ddd;
+  --border: #fff;
+  --brand: #fff;
+  --brand-glow-strong: rgba(255, 255, 255, .5);
+  --brand-glow-medium: rgba(255, 255, 255, .3);
+  --brand-glow-subtle: rgba(255, 255, 255, .1);
+}
+
+/* =================================
+ * ESTILOS GLOBAIS DO BODY
+ * ================================= */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   overflow-x: hidden;
+}
+/******************************************************************
+ * ================================================================
+ * STYLESHEET: RODAPÉ (90-footer.css)
+ * ================================================================
+ * Descrição: Estilos para o rodapé do site.
+ ******************************************************************/
+
+.footer {
+  /* A linha mais importante para centralizar o texto */
+  text-align: center;
+
+  /* Estilos adicionais para consistência visual */
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  
+  /* Linha divisória sutil no topo */
+  border-top: 1px solid var(--border);
+}
+
+

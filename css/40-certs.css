@@ -1,0 +1,171 @@
+/******************************************************************
+ * ================================================================
+ * STYLESHEET: SEÇÃO DE CERTIFICAÇÕES (40-certs.css)
+ * ================================================================
+ * Descrição: Estilos para a galeria de certificações, com cards
+ * interativos que revelam detalhes no hover, expandindo o conteúdo.
+ ******************************************************************/
+
+
+/***************************************************
+ * 1. ESTRUTURA GERAL DA SEÇÃO
+ ***************************************************/
+
+.certs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) clamp(24px, 5vw, 40px);
+  display: grid;
+  gap: 2rem;
+}
+
+.certs__head {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.certs h2 {
+  margin: 0;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  color: var(--text);
+  text-shadow: 0 0 12px var(--brand-glow-subtle);
+}
+
+
+/***************************************************
+ * 2. GRID E CARD DE CERTIFICADO
+ ***************************************************/
+
+.certs__grid {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .certs__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Os estilos base do .card (borda, sombra, etc.) devem estar em 30-projects.css ou 90-utils.css */
+/* Ajuste para que o card possa crescer */
+.card {
+  display: flex; /* Para o card se estender se a imagem for grande */
+  flex-direction: column;
+}
+
+.card__body {
+  position: relative; /* Para o card__preview se posicionar corretamente */
+  padding-bottom: 0; /* Remove padding inferior padrão para o preview */
+  overflow: hidden; /* Garante que o conteúdo que vai expandir comece escondido */
+}
+
+/* Conteúdo visível por padrão */
+.card__content-default {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem; /* Ajusta o padding para o conteúdo inicial */
+}
+
+/* O preview que aparece ao passar o mouse */
+.card__preview {
+  /* Começa com altura 0 e sem padding para ficar invisível */
+  max-height: 0; 
+  padding: 0 1.5rem; /* Padding horizontal para o conteúdo */
+  
+  /* Cor de fundo para se destacar sutilmente */
+  background-color: rgba(12, 16, 28, 0.9); 
+  
+  /* Transição suave para a expansão e opacidade */
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out, opacity 0.4s ease-out;
+  overflow: hidden; /* Esconde o conteúdo que transborda */
+  opacity: 0; /* Começa invisível */
+}
+
+/* Estado de hover: expande o preview */
+.card:hover .card__preview {
+  max-height: 300px; /* Altura máxima que o preview pode atingir ao expandir */
+  padding: 1rem 1.5rem 1.5rem 1.5rem; /* Adiciona padding vertical ao expandir */
+  opacity: 1; /* Torna-o visível */
+}
+
+
+.preview__text {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+/* Container para os 3 botões de ação */
+.card__actions {
+  display: flex;
+  flex-direction: column; /* Botões um abaixo do outro */
+  gap: 0.75rem;
+  width: 100%;
+}
+
+/* Estilo dos botões pequenos dentro do preview */
+.btn-small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  background-color: rgba(255, 255, 255, 0.05);
+  
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  
+  transition: all 0.2s ease;
+  flex-grow: 1;
+}
+
+.btn-small:hover {
+  background-color: var(--brand);
+  border-color: var(--brand);
+  color: var(--bg);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px var(--brand-glow-subtle);
+}
+
+/* Estilos para os cards de especialização (mantidos) */
+.card[data-category="especializacao"] .card__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__actions-default {
+  margin-top: auto;
+  padding: 1rem 1.5rem 1.5rem 1.5rem; /* Adiciona padding aqui para o botão "Ver Certificado" */
+}
+
+/* O estilo do link-more precisa ser ajustado para ser um botão também */
+.card__actions-default .link-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--muted);
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease;
+    flex-grow: 1; /* Para o botão se expandir */
+}
+
+.card__actions-default .link-more:hover {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: var(--bg);
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px var(--brand-glow-subtle);
+}
